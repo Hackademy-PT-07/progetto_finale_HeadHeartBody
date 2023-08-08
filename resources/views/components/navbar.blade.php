@@ -32,6 +32,6 @@
         </li>
       </ul>
     </div>
-    @endauth
+    
   </div>
 </nav>
