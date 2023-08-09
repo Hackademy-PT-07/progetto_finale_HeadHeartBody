@@ -1,5 +1,5 @@
 <x-main>
-    <x-slot:pageName>Aricoli</x-slot:pageName>
+    <x-slot:pageName>Annunci</x-slot:pageName>
 
     <div class="pt-5 mt-5 text-center">
         <h2 class="pt-4 fw-bold">Annunci</h2>

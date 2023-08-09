@@ -42,7 +42,7 @@
         
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('articles.index') }}">Annunci</a>
+          <a class="nav-link" href="{{route('announces.index') }}">Annunci</a>
         </li>
         <li class="nav-item dropdown px-2">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

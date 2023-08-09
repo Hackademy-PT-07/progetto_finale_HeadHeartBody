@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomepageController;
-use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AnnounceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,4 +16,4 @@ use App\Http\Controllers\ArticleController;
 */
 
 Route::get('/',[HomepageController::class, "homepage"])->name('home');
-Route::get('/articles', [ArticleController::class, "index"])->name('articles.index');
+Route::get('/announces', [AnnounceController::class, "index"])->name('announces.index');
