@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="text-end pt-5">
-                <a class="btn btn-primary" href="#">Inserisci annuncio</a>
+                <a class="btn btn-warning" href="#">Inserisci annuncio</a>
             </div>
         </div>
     </div>
