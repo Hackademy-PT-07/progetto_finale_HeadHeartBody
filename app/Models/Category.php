@@ -13,6 +13,6 @@ class Category extends Model
     ];
 
     public function announces(){
-        return $this->hasMany(Article::class);
+        return $this->hasMany(Announce::class);
     }
 }

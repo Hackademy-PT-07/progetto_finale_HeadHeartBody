@@ -16,4 +16,7 @@ use App\Http\Controllers\AnnounceController;
 */
 
 Route::get('/',[HomepageController::class, "homepage"])->name('home');
+
 Route::get('/announces', [AnnounceController::class, "index"])->name('announces.index');
+
+Route::get('/announces/form', [AnnounceController::class, "announcementsLivewire"])->name('announces.form');
