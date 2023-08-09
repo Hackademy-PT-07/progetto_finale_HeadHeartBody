@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomepageController;
-
+use App\Http\Controllers\ArticleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,5 @@ use App\Http\Controllers\HomepageController;
 |
 */
 
-Route::get('/',[HomepageController::class, "homepage"]);
+Route::get('/',[HomepageController::class, "homepage"])->name('home');
+Route::get('/articles', [ArticleController::class, "index"])->name('articles.index');
