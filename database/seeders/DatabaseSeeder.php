@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $names = ['politica', 'economia', 'food', 'sport', 'tech', 'intrattenimento', 'videogame', 'motori', 'case', 'agricoltura'];
+        $names = ['Abbigliamento', 'Sport', 'Motori', 'Videogames', 'Elettronica', 'Arredamento', 'Giardinaggio', 'Cucina', 'Libri', 'Giocattoli'];
         foreach($names as $name)
         {
             Category::create(
