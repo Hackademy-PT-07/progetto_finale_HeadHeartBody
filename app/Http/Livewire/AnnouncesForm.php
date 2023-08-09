@@ -73,9 +73,9 @@ class AnnouncesForm extends Component
 
         }*/
 
-        session()->flash("success", "Annuncio creato con successo!");
+        session()->flash("message", "Annuncio creato con successo!");
 
-        $this->clearForm();
+        //$this->clearForm();
 
     }
 
@@ -87,5 +87,9 @@ class AnnouncesForm extends Component
         return view('livewire.announces-form', compact("categories"));
     }
     
+    public function clearForm ()
+    {
+        
+    }
     
 }

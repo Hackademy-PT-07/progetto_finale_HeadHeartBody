@@ -2,6 +2,11 @@
         <div class="row">
             <div class="col-12">
                 <h1>Crea Annuncio</h1>
+                @if(session()->has("message"))
+                <div class="alert alert-success">
+                    {{ session("message") }}
+                </div>
+                @endif
                 <div class="card">
                     <div class="card-body">
                         <form wire:submit.prevent="store" enctype="multipart/form-data">
@@ -18,7 +23,7 @@
                                         <option selected>Seleziona Categoria</option>
                                         @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
-                                        @endforeach                                    
+                                        @endforeach
                                     </select>
                                     @error('category_id') <span class="small text-danger">{{ $message }}</span> @enderror
 
