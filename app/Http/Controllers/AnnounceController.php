@@ -10,8 +10,8 @@ class AnnounceController extends Controller
 {
    public function index (){
 
-      $announcements = Announce::all();
-
+      $announcements = Announce::paginate(4);
+      
       return view ('announces.index', compact("announcements"));
    }
 
@@ -21,4 +21,11 @@ class AnnounceController extends Controller
       
    }
 
+
+   public function timeOrder() {
+
+      $announcements = Announce::take(6)->get()->sortByDesc('created_at');
+
+      return view ('announces.timeOrder');
+   }
 }

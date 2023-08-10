@@ -2,7 +2,8 @@
     <x-slot:pageName>Crea Annuncio</x-slot:pageName>
 
     <div class="pt-5 mt-5 text-center">
-        <h2 class="pt-4 fw-bold">Presto.it</h2>
+    <span id="logo">Presto.it</span><br>
+    <img src="https://png.pngtree.com/png-vector/20220821/ourmid/pngtree-speed-arrow-fast-quick-icon-logo-design-png-image_6119232.png" alt="Logo" width="80">
     </div>
     <div class="container">
         <div class="row">
