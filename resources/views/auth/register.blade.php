@@ -13,7 +13,7 @@
                             <div class="row g-3">
                             <div class="col-12">
                                     <label for="name">Name</label>
-                                    <input name="name" id="name" class="form-control" >
+                                    <input type="text" name="name" id="name" class="form-control" >
                                     @error('name') <span class="small text-danger">{{ $message }}</span> @enderror
 
                                 </div>
