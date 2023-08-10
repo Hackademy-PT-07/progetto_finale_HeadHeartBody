@@ -15,11 +15,11 @@
                 <div class="container">
                     <div class="row">
                         @foreach($announcements as $announcement)
-                        <x-card :title="$announcement->title" :category="$announcement->category->name" :description="$announcement->description" :price="$announcement->price" />
+                        <x-card
+                            :announcement="$announcement"
+                        />
                         @endforeach
-                        
-                        {{ $announcements->links()}}
-                        
+
                     </div>
                 </div>
                 
