@@ -10,7 +10,7 @@ class AnnounceController extends Controller
 {
    public function index (){
 
-      $announcements = Announce::paginate(4);
+      $announcements = Announce::orderBy("created_at", "Desc")->get();
       
       return view ('announces.index', compact("announcements"));
    }
@@ -21,11 +21,18 @@ class AnnounceController extends Controller
       
    }
 
+   public function show(Announce $announce)
+   {
 
-   public function timeOrder() {
-
-      $announcements = Announce::take(6)->get()->sortByDesc('created_at');
-
-      return view ('announces.timeOrder');
+      
+      return view("announces.show", compact("announce"));
    }
+
+
+   /* public function TimeOrderAsc() {
+
+      
+
+      return view ('announces.index', compact("announcements"));
+   } */
 }
