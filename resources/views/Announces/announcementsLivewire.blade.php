@@ -11,7 +11,7 @@
                 <livewire:announces-form>
             </div>
             <div class="col-12 col-md-6">
-
+                <livewire:announces-list>
             </div>
         </div>
     </div>

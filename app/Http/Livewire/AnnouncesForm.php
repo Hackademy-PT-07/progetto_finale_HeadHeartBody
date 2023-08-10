@@ -21,6 +21,8 @@ class AnnouncesForm extends Component
 
     public $price;
 
+    protected $listeners = ["edit"];
+
     protected $rules = [
         
         "title" => "required|max:50",
@@ -47,7 +49,7 @@ class AnnouncesForm extends Component
 
         $this->validate();
 
-        $announcements = Announce::create([
+        $announces = Announce::create([
 
             "title" => $this->title,
 
@@ -60,33 +62,54 @@ class AnnouncesForm extends Component
             "user_id" => auth()->user()->id,
             
         ]);
-        session()->flash("message", "Annuncio creato con successo!");
-        $this->cleanForm();
 
-        /*if($announcements->hasFile("img") && $announcements->file("img")->isValid()){
+        /*if($???->hasFile("img") && $???->file("img")->isValid()){
             
             $extension = $this->img->file("img")->extension();
             
             $randomName = uniqid("announce_img_") . "$extension";
             
-            $imgPath = $announcements->file("img")->storeAs("public\image\ " . $announcements->id, $randomName);
+            $imgPath = $???->file("img")->storeAs("public\image\ " . $???->id, $randomName);
             
-            $announcements->img = $imgPath;
+            $???->img = $imgPath;
             
-            $announcements->save();
+            $???->save();
             
         }*/
         
+        session()->flash("message", "Annuncio creato con successo!");
+        
+        $this->cleanForm();
+
+        $this->emitTo("announces-list", "loadAnnounces");
         
     }
 
-    
     public function cleanForm() {
+
+        $this->mount();
+}
+    
+    public function mount() {
 
             $this->title = '';
             $this->category_id = '';
             $this->description = ''; 
             $this->price = '';
+    }
+
+    public function edit($announce_id) {
+
+        $announce = Announce::find($announce_id);
+
+        $this->title = $announce->title;
+
+        $this->category_id = $announce->category_id ;
+        
+        $this->description = $announce->description; 
+        
+        $this->price = $announce->price;
+
     }
 
 
