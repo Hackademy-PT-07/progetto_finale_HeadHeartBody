@@ -4,6 +4,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Patrick+Hand&family=Racing+Sans+One&display=swap');
 
+/* Body */
+
+body {
+
+  background-image: url('https://thumbs.dreamstime.com/z/cart-background-made-carts-vector-illustration-36868023.jpg?w=768');
+
+}
+
+/* Navbar */
+
 #logo {
     font-family: 'Racing Sans One', cursive;
     font-size: xx-large;
@@ -31,9 +41,18 @@
 }
 
 .buttonShadow {
-   box-shadow: 20px 20px 10px grey;
+   box-shadow: 5px 5px 5px grey;
 }
 
+/* Homepage */
+
+.homeImg {
+
+  width: 900px;
+
+  height: 450px;
+
+}
 
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);

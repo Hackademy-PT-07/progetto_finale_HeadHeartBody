@@ -21,6 +21,6 @@ Route::get('/announces/{announce}', [AnnounceController::class, "show"])->name('
 
 Route::get('/announces', [AnnounceController::class, "index"])->name('announces.index');
 
-Route::get('/announces/form', [AnnounceController::class, "announcementsLivewire"])->name('announces.form');
+Route::get('/announces/livewire/form', [AnnounceController::class, "announcementsLivewire"])->name('announces.livewire');
 
 

@@ -11,27 +11,20 @@ use App\Models\Category;
 
 class AnnouncesForm extends Component
 {
-    public $title;
 
-    public $category_id;
-
-    public $description;
-
-    public $img;
-
-    public $price;
+    public $announce;
 
     protected $listeners = ["edit"];
 
     protected $rules = [
         
-        "title" => "required|max:50",
+        "announce.title" => "required|max:50",
 
-        "category_id" => "required",
+        "announce.category_id" => "required",
 
-        "description" => "required",
+        "announce.description" => "required",
 
-        "price" => "required",
+        "announce.price" => "required",
 
     ];
 
@@ -39,7 +32,7 @@ class AnnouncesForm extends Component
         
         "required" => "Il campo è obbligatorio",
 
-        "title.max:50" => "Massimo 50 caratteri",
+        "announce.title.max:50" => "Massimo 50 caratteri",
 
     ];
    
@@ -49,19 +42,6 @@ class AnnouncesForm extends Component
 
         $this->validate();
 
-        $announces = Announce::create([
-
-            "title" => $this->title,
-
-            "category_id" => $this->category_id,
-
-            "description" => $this->description,
-
-            "price" =>$this->price,
-            
-            "user_id" => auth()->user()->id,
-            
-        ]);
 
         /*if($???->hasFile("img") && $???->file("img")->isValid()){
             
@@ -76,6 +56,10 @@ class AnnouncesForm extends Component
             $???->save();
             
         }*/
+
+        $this->announce->user_id = auth()->user()->id;
+
+        $this->announce->save();
         
         session()->flash("message", "Annuncio creato con successo!");
         
@@ -84,41 +68,31 @@ class AnnouncesForm extends Component
         $this->emitTo("announces-list", "loadAnnounces");
         
     }
-
-    public function cleanForm() {
-
-        $this->mount();
-}
     
-    public function mount() {
-
-            $this->title = '';
-            $this->category_id = '';
-            $this->description = ''; 
-            $this->price = '';
-    }
-
-    public function edit($announce_id) {
-
-        $announce = Announce::find($announce_id);
-
-        $this->title = $announce->title;
-
-        $this->category_id = $announce->category_id ;
-        
-        $this->description = $announce->description; 
-        
-        $this->price = $announce->price;
-
-    }
-
-
     public function render()
     {
         $categories = Category::all();
         
         return view('livewire.announces-form', compact("categories"));
     }
+
+    public function cleanForm() {
+
+        $this->mount();
+    }
+    
+    public function mount() {
+
+            $this->announce = new Announce;
+    }
+
+    public function edit($announce_id) {
+
+        $this->announce = Announce::find($announce_id);
+
+
+    }
+
     
     
 }

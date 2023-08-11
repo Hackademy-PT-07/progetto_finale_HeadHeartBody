@@ -20,7 +20,6 @@ class AnnouncesList extends Component
 
     public function render()
     {
-        $this->mount();
         
         return view('livewire.announces-list');
     }

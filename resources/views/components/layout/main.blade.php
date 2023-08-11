@@ -22,9 +22,15 @@
         <x-navbar />
     </header>
     
-    <main>
-        <div style="background-image: url('https://thumbs.dreamstime.com/z/cart-background-made-carts-vector-illustration-36868023.jpg?w=768'); background-repeat: no-repeat; background-size: cover;" class="bg-image vh-100">
-            {{ $slot }}
+    <main class="container">    
+        <div class="row">
+            <div class="col-0 col-md-1"></div>
+
+            <div class="col-12 col-md-10 bg-white">
+            {{$slot}}
+            </div>
+
+            <div class="col-0 col-md-1"></div>
         </div>
     </main>
 
