@@ -27,6 +27,10 @@ Route::get('/announces/OrderCategory/{id}', [AnnounceController::class, "categor
 
 Route::get('/announces/{announce}', [AnnounceController::class, "show"])->name('announces.show');
 
-Route::get('/announces/livewire/form', [AnnounceController::class, "announcementsLivewire"])->name('announces.livewire');
 
 
+Route::middleware("auth")->group(function () {
+
+    Route::get('/announces/livewire/form', [AnnounceController::class, "announcementsLivewire"])->name('announces.livewire');
+
+});

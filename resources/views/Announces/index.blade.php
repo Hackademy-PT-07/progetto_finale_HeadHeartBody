@@ -8,9 +8,8 @@
     <div class="container mt-5 justify-content-center py-5">
         <div class="row align-item-center pt-5">
             <h2 class="text-center fw-bold fst-italic">Annunci</h2>
-            <div class="d-flex justify-content-between py-5">
-                <div>
-                <div class="dropdown">
+            <div class="d-flex flex-wrap justify-content-between py-5">
+                <div class="dropdown p-3 ps-5 p-md-0 ms-4 ms-md-0">
                     <button class="btn btn-warning dropdown-toggle buttonShadow" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Riordina per categoria
                     </button>
@@ -20,7 +19,6 @@
                         <li><a class="dropdown-item" href="{{route('announces.categoryOrder', $category->id)}}">{{$category->name}}</a></li>
                         @endforeach
                     </ul>
-                </div>
                 </div>
                 <div>
                 @if(auth()->user())
@@ -32,15 +30,15 @@
                         Riordina per data
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{route('announces.timeOrderAsc')}}">Dal più recente</a></li>
-                        <li><a class="dropdown-item" href="{{route('announces.timeOrderDesc')}}">Dal meno recente</a></li>
+                        <li><a class="dropdown-item" href="{{route('announces.timeOrderDesc')}}">Dal più recente</a></li>
+                        <li><a class="dropdown-item" href="{{route('announces.timeOrderAsc')}}">Dal meno recente</a></li>
                     </ul>
                 </div>
             </div>
             @foreach($announces as $announce)
-            <div class="col-12 col-md-6 col-xl-4 pt-5">
-                <figure class="snip1418">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample85.jpg" alt="sample85" />
+            <div class="col-12 col-md-6 col-lg-4 pe-md-5 pt-5">
+                <figure class="snip1418 card">
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample85.jpg" alt="sample85" />
                     <div class="add-to-cart">
                         <i class="ion-android-add"></i>
                         <span>Clicca per dettagli</span>

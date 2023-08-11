@@ -37,6 +37,12 @@ class AnnouncesList extends Component
 
     public function deleteAnnounce($announce_id) {
 
+        if(!auth()->user()) {
+
+            abort(403);
+        
+        }
+        
         $announce = Announce::find($announce_id);
 
         $announce->delete();

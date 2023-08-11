@@ -3,7 +3,7 @@
 
     <div class="pt-5 mt-5">
 
-        <div class="pt-5 ps-5">
+        <div class="pt-5 ps-md-5">
             <a class="btn btn-warning buttonShadow" href="{{route('announces.index')}}">Indietro</a>
         </div>
 

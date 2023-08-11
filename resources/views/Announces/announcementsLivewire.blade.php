@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container vh-100">
         <div class="pb-3 pt-0 text-end">
             <a class="btn btn-warning buttonShadow" href="{{route('announces.index')}}">Visualizza tutti gli annunci</a>
          </div>

@@ -1,12 +1,9 @@
-    <div class="container vh-100">
+    <div class="container">
         <div class="row">
             <div class="col-12">
             <h2 class="fst-italic ps-2">Crea Annuncio</h2>
-
-            
             <div class="card">
-                <div class="card-body">
-                        
+                <div class="card-body"> 
                     <x-success />
 
                         <form wire:submit.prevent="store" enctype="multipart/form-data">

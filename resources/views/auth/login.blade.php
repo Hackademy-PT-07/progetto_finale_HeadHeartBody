@@ -3,7 +3,7 @@
    
     <div class="container mt-5 pt-5 vh-100">
         <div class="row">
-            <div class="col-6 mx-auto mt-5 pt-5">
+            <div class="col-12 col-xl-8 mx-auto mt-5 pt-5">
                 <h2 class="fst-italic ps-2">Accedi</h2>
                 <div class="card mt-4">
                     <div class="card-body">
@@ -23,7 +23,7 @@
                                     
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-primary" >Accedi</button>
+                                    <button type="submit" class="btn btn-warning" >Accedi</button>
                                 </div>
                             </div>
                         </form>

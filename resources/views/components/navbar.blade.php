@@ -32,7 +32,7 @@
           <ul class="dropdown-menu">
 
             <li>
-              <a class="dropdown-item" href="{{route('announces.livewire')}}">Benvenuto: <span class="fw-bold ps-2 fs-6 text-decoration-underline fst-italic">{{auth()->user()->name}}</span></a>
+              <a class="dropdown-item" href="{{route('announces.livewire')}}"><span class="small fst-italic">Benvenuto:</span> <span class="fw-bold ps-2 fs-6 text-decoration-underline">{{auth()->user()->name}}</span></a>
             </li>
 
             <li>
