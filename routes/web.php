@@ -16,4 +16,21 @@ use App\Http\Controllers\AnnounceController;
 */
 
 Route::get('/',[HomepageController::class, "homepage"])->name('home');
+
 Route::get('/announces', [AnnounceController::class, "index"])->name('announces.index');
+
+Route::get('/announces/orderAsc', [AnnounceController::class, "timeOrderAsc"])->name('announces.timeOrderAsc');
+
+Route::get('/announces/OrderDesc', [AnnounceController::class, "timeOrderDesc"])->name('announces.timeOrderDesc');
+
+Route::get('/announces/OrderCategory/{id}', [AnnounceController::class, "categoryOrder"])->name('announces.categoryOrder');
+
+Route::get('/announces/{announce}', [AnnounceController::class, "show"])->name('announces.show');
+
+
+
+Route::middleware("auth")->group(function () {
+
+    Route::get('/announces/livewire/form', [AnnounceController::class, "announcementsLivewire"])->name('announces.livewire');
+
+});
