@@ -1,10 +1,10 @@
 <x-main>
     <x-slot:pageName>Accedi</x-slot:pageName>
    
-    <div class="container mt-5 pt-5">
+    <div class="container mt-5 pt-5 vh-100">
         <div class="row">
-            <div class="col-6 mx-auto mt-3">
-                <h1>Accedi</h1>
+            <div class="col-6 mx-auto mt-5 pt-5">
+                <h2 class="fst-italic ps-2">Accedi</h2>
                 <div class="card mt-4">
                     <div class="card-body">
                         <form action="/login" method="POST">

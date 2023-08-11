@@ -2,10 +2,10 @@
 <x-main>
     <x-slot:pageName>Registrati</x-slot:pageName>
     
-    <div class="container mt-5 pt-5">
+    <div class="container mt-5 pt-5 vh-100">
         <div class="row">
-            <div class="col-6 mx-auto mt-3">
-                <h1>Registrati</h1>
+            <div class="col-6 mx-auto mt-5 pt-5">
+                <h2 class="fst-italic ps-2">Registrati</h2>
                 <div class="card mt-4">
                     <div class="card-body">
                         <form action="/register" method="POST">

@@ -71,7 +71,7 @@ class AnnouncesForm extends Component
     
     public function render()
     {
-        $categories = Category::all();
+        $categories = Category::orderBy("name", "ASC")->get();
         
         return view('livewire.announces-form', compact("categories"));
     }

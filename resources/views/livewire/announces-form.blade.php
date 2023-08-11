@@ -1,10 +1,10 @@
-    <div class="container">
+    <div class="container vh-100">
         <div class="row">
             <div class="col-12">
-            <h2 class='text-decoration-underline text-center bg-warning bg-gradient border border-4 border-warning rounded-top-4 p-3 mb-0 mt-5' id="titleForm">Crea Annuncio</h2>
+            <h2 class="fst-italic ps-2">Crea Annuncio</h2>
 
             
-            <div class="card mt-0 p-3 border border-4 border-warning rounded-bottom-4">
+            <div class="card">
                 <div class="card-body">
                         
                     <x-success />
