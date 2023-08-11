@@ -61,7 +61,7 @@ class AnnouncesForm extends Component
 
         $this->announce->save();
         
-        session()->flash("message", "Annuncio creato con successo!");
+        session()->flash("message", "Operazione effettuata con successo!");
         
         $this->cleanForm();
 

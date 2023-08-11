@@ -29,12 +29,13 @@ class AnnounceController extends Controller
    public function show(Announce $announce)
    {
 
-      
       return view("announces.show", compact("announce"));
+
    }
 
 
    public function timeOrderAsc() {
+      
 
       $announces = Announce::orderBy("created_at", "ASC")->get();
 
@@ -62,4 +63,5 @@ class AnnounceController extends Controller
 
       return view ('announces.index', compact("announces", "categories"));
    }
+
 }

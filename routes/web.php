@@ -21,9 +21,9 @@ Route::get('/announces', [AnnounceController::class, "index"])->name('announces.
 
 Route::get('/announces/orderAsc', [AnnounceController::class, "timeOrderAsc"])->name('announces.timeOrderAsc');
 
-Route::get('/announces/OrderDesc', [AnnounceController::class, "timeOrderDesc"])->name('announces.timeOrderDesc');
+Route::get('/announces/orderDesc', [AnnounceController::class, "timeOrderDesc"])->name('announces.timeOrderDesc');
 
-Route::get('/announces/OrderCategory/{id}', [AnnounceController::class, "categoryOrder"])->name('announces.categoryOrder');
+Route::get('/announces/orderCategory/{id}', [AnnounceController::class, "categoryOrder"])->name('announces.categoryOrder');
 
 Route::get('/announces/{announce}', [AnnounceController::class, "show"])->name('announces.show');
 
