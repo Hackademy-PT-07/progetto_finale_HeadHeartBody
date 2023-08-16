@@ -3,17 +3,17 @@
 
     <div class="pt-5 mt-5 text-center">
 
-        <div class="d-flex align-items-center justify-content-center py-5 pe-5 bg-warning bg-gradient border border-3 border-black rounded">
+        <div class="d-flex align-items-center justify-content-center py-5 pe-5">
             <img src="https://png.pngtree.com/png-vector/20220821/ourmid/pngtree-speed-arrow-fast-quick-icon-logo-design-png-image_6119232.png" alt="Logo" width="80">
-            <h1 id="logo">Presto.it</h1>
+            <h1 id="logo" class="fs-1">Presto.it</h1>
         </div>
 
         @if(auth()->user())
-        <div class="text-end py-5 pe-3">
+        <div class="text-end py-1 pe-3">
             <a class="btn btn-warning buttonShadow" href="{{route('announces.livewire')}}">Inserisci annuncio</a>
         </div>
         @endif
-        <div class="py-5 text-center">
+        <div class="py-3 text-center">
             <h4 class="fst-italic text-decoration-underline fw-bold"> Tutti i tuoi desideri in un click!</h4>
         </div>
 
