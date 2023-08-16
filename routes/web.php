@@ -15,22 +15,32 @@ use App\Http\Controllers\AnnounceController;
 |
 */
 
+// Homepage
 Route::get('/',[HomepageController::class, "homepage"])->name('home');
 
+// Announces
 Route::get('/announces', [AnnounceController::class, "index"])->name('announces.index');
+
+// Announces Order/Filter
 
 Route::get('/announces/orderAsc', [AnnounceController::class, "timeOrderAsc"])->name('announces.timeOrderAsc');
 
-Route::get('/announces/OrderDesc', [AnnounceController::class, "timeOrderDesc"])->name('announces.timeOrderDesc');
+Route::get('/announces/orderDesc', [AnnounceController::class, "timeOrderDesc"])->name('announces.timeOrderDesc');
 
-Route::get('/announces/OrderCategory/{id}', [AnnounceController::class, "categoryOrder"])->name('announces.categoryOrder');
+Route::get('/announces/orderCategory/{id}', [AnnounceController::class, "categoryOrder"])->name('announces.categoryOrder');
 
+Route::get('/announces/orderCategory/timedesc/{id}', [AnnounceController::class, "timeOrderDescCat"])->name('announces.timeOrderDescCat');
+
+Route::get('/announces/orderCategory/timeasc/{id}', [AnnounceController::class, "timeOrderAscCat"])->name('announces.timeOrderAscCat');
+
+// Announce 
 Route::get('/announces/{announce}', [AnnounceController::class, "show"])->name('announces.show');
 
 
-
+// Middleware
 Route::middleware("auth")->group(function () {
-
-    Route::get('/announces/livewire/form', [AnnounceController::class, "announcementsLivewire"])->name('announces.livewire');
+    
+    // Announces create session
+    Route::get('/announces/livewire/form', [AnnounceController::class, "announcesLivewire"])->name('announces.livewire');
 
 });

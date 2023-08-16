@@ -26,7 +26,7 @@ class AnnouncesList extends Component
 
     public function mount() {
 
-        $this->announces = auth()->user()->announces;
+        $this->announces = Announce::where("user_id", auth()->user()->id)->orderBy("created_at", "DESC")->get();
         
     }
 
