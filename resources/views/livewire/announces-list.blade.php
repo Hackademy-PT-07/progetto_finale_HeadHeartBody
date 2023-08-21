@@ -1,12 +1,12 @@
-<div class="container pt-5 pt-xl-0">
+<div class="container pt-5 pt-xl-0 mb-5">
     <div class="row">
         <div class="col-12">
-            <h2 class="fst-italic pb-1">I tuoi annunci</h2>
+            <h2 class="fst-italic mb-1">I tuoi annunci</h2>
             @foreach($announces as $announce)
             <div class="d-flex border-bottom border-secondary py-2 justify-content-between align-items-center">
                 <div>
                     <a class="link-offset-2 link-underline link-underline-opacity-0 text-black" href="{{route('announces.show', $announce->id) }}">
-                        <span>.{{$announce->title}}</span>
+                        <span>{{$announce->title}}</span>
                         <span class="ps-2"> - {{$announce->price}}€</span>
                         <span class="ps-2"> - ({{$announce->created_at->format("d/m/Y")}})</span>
                     </a>

@@ -4,6 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Patrick+Hand&family=Racing+Sans+One&display=swap');
 
+:root {
+  --primary-color: #C70039;
+  --primary-dark-color: #900C3F;
+  --primary-light-color: #F94C10;
+  --light-color: #F8DE22;
+
+  --pastello: #EFFDF5;
+}
 /* Body */
 
 body {
@@ -13,21 +21,26 @@ body {
 }
 
 /* Navbar */
+.navSize {
 
+  height: 65px;
+
+  background-color: var(--light-color);
+}
 #logo {
-    font-family: 'Racing Sans One', cursive;
-    font-size: xx-large;
-    text-shadow: 5px 5px 8px rgb(84, 36, 36);
+  font-family: 'Racing Sans One', cursive;
+  font-size: xx-large;
+  text-shadow: 5px 5px 8px rgb(84, 36, 36);
 }
 
 #navbarNav {
+
     font-family: 'Aclonica', sans-serif;
-    font-size: larger;
     
 }
 
 #titleForm {
-    text-shadow: 5px 5px 10px gray;
+  text-shadow: 5px 5px 10px gray;
    
 }
 
@@ -176,7 +189,7 @@ body {
 
   height: 50px;
 
-  border: 2px  rgb(255, 193, 7);
+  border: 2px  var(--light-color);
 
   border-style: solid;
 
@@ -187,7 +200,7 @@ body {
 
 .card-bdash {
 
-  border: 4px  rgb(255, 193, 7);
+  border: 4px  var(--light-color);
 
   border-style: solid;
 
@@ -195,7 +208,7 @@ body {
 
 .card-bdash:hover {
 
-  background-color: rgb(255, 193, 7);
+  background-color: var(--light-color);
 
 }
 

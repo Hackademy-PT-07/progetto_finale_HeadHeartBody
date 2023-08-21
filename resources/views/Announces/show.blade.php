@@ -17,7 +17,7 @@
                     <div id="carouselExampleFade" class="carousel slide carousel-fade pb-3">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://picsum.photos/seed/picsum/300/150" class="d-block w-100" alt="Foto Annuncio1">
+                                <img src="{{Storage::url($announce->img)}}" class="d-block w-100" alt="Foto Annuncio1">
                             </div>
                             <div class="carousel-item">
                                 <img src="https://picsum.photos/300/150/?blur" class="d-block w-100" alt="Foto Annuncio2">

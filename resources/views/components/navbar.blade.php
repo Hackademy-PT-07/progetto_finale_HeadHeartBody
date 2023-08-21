@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-warning bg-gradient fixed-top shadow">
+<nav class="navbar navbar-expand-lg navSize fixed-top shadow">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
       <img src="https://png.pngtree.com/png-vector/20220821/ourmid/pngtree-speed-arrow-fast-quick-icon-logo-design-png-image_6119232.png" alt="Logo" width="60">

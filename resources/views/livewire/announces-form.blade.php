@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="announce.img">Immagine</label>
-                                    <input type="file" name="announce.img" id="announce.img" wire:model="announce.img" class="form-control">
+                                    <input type="file" name="announce.img" id="announce.img" wire:model="img" class="form-control">
                                     @error('announce.img') <span class="small text-danger">{{ $message }}</span> @enderror
 
                                 </div>
