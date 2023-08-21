@@ -56,3 +56,5 @@ Route::patch("/accetta/annuncio/{announcement}", [RevisorController::class, "acc
 
 // Rifiuta annuncio
 Route::patch("/Rifiuta/annuncio/{announcement}", [RevisorController::class, "rejectAnnouncement"])->name("revisor.reject_announcement");
+
+Route::get('/lavoraConNoi',[PublicController::class, "lavoraConNoi"])->name("lavoraConNoi");
