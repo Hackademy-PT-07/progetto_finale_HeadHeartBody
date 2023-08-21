@@ -2,12 +2,12 @@
 <x-main>
     <x-slot:pageName>Registrati</x-slot:pageName>
     
-    <div class="container mt-5 pt-5 vh-100">
+    <div class="container mt-4 pt-5 vh-100">
         <div class="row">
             <div class="col-12 col-xl-8 mx-auto mt-5 pt-5">
-                <h2 class="fst-italic ps-2">Registrati</h2>
-                <div class="card mt-4">
-                    <div class="card-body">
+                <h2 class="ps-2 formTitle text-center">Registrati</h2>
+                <div class="mt-4">
+                    <div class="card-body formBox p-5">
                         <form action="/register" method="POST">
                             @csrf
                             <div class="row g-3">
@@ -35,8 +35,8 @@
                                     @error('password_confirmation') <span class="small text-danger">{{ $message }}</span> @enderror
 
                                 </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-warning" >Registrati</button>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-warning buttonStyle mt-3" >Registrati</button>
                                 </div>
                             </div>
                         </form>

@@ -14,48 +14,126 @@
 }
 /* Body */
 
+/*palette colori sito:
+    giallo chiaro-  rgba(252,212,5,1) (la 'a' è per la trasparenza, casomai eliminarla)
+    giallo scuro-  rgba(245,161,4,1)
+    verde/azzurro/acqua-  rgb(81,189,181);
+    viola-  rgb(87, 7, 141);
+    bordeaux(ombre di alcuni testi e di alcuni box)- rgb(84, 36, 36);
+*/
+
 body {
-
+  
+  
   background-image: url('https://thumbs.dreamstime.com/z/cart-background-made-carts-vector-illustration-36868023.jpg?w=768');
-
+ 
+  
 }
+
+
 
 /* Navbar */
 .navSize {
 
   height: 65px;
-
-  background-color: var(--light-color);
+  box-shadow: 10px 10px 15px rgb(84, 36, 36);
+  background: rgb(252,212,5);
+  background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%);
 }
+
 #logo {
   font-family: 'Racing Sans One', cursive;
   font-size: xx-large;
-  text-shadow: 5px 5px 8px rgb(84, 36, 36);
+  text-shadow: 5px 5px 8px white;
+  
 }
 
 #navbarNav {
 
-    font-family: 'Aclonica', sans-serif;
+  font-family: 'Aclonica', sans-serif;
     
 }
 
-#titleForm {
-  text-shadow: 5px 5px 10px gray;
-   
+.formBox {
+  font-family: 'Aclonica', sans-serif;;
+  font-size: x-large;
+  margin-bottom: 20px;
+  text-align: start;
+  color: rgb(87, 7, 141);
+  border-radius: 25px;
+  background-color:  rgba(81,189,181,0.5);
+  
+  box-shadow: 0 0 50px rgb(84, 36, 36);
 }
 
-.card {
-    box-shadow: 10px 10px 15px gray;
+.formTitle {
+  font-family: 'Racing Sans One', cursive;
+  font-weight: bold;
+  height: 80 px;
+  padding: 5px;
+  align-items: center;
+  color: rgb(87, 7, 141);
+  text-shadow: 5px 5px 8px white;
+  background: rgb(252,212,5);
+  background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%); border-radius: 5px; height: 50px;
+  border-radius: 10rem;
+  box-shadow: 0 0 50px 15px  rgb(84, 36, 36);
     
-}
+  }
 
-.textShadow {
+  .purple {
+    color: rgb(87, 7, 141);
+    text-shadow: 5px 5px 10px white;
+  }
+
+  #titleForm {
+    text-shadow: 5px 5px 10px rgb(84, 36, 36);
+        
+  }
+
+  .buttonStyle {
+    
+    background-color: rgba(252,212,5,1);
+    border-color: rgba(245,161,4,1) ;
+    border-radius: 25px;
+    font-family: 'Racing Sans One', cursive;
+    text-shadow: 5px 5px 8px white;
+    color: rgb(87, 7, 141);
+    font-size:x-large;
+    text-decoration: underline;
+    box-shadow: 5px 5px 5px rgb(84, 36, 36);
+  }
+  .buttonStyle:hover {
+    color:rgb(81,189,181);
+  }
+  
+  .immagine {
+    width: 90%;
+    
+  }
+  
+  .carousel {
+    box-shadow: 0 0 50px 15px white;
+    border-radius: 1rem;
+    
+  }
+
+  .carouselText {
+    color: rgb(81,189,181); 
+    text-shadow: 2px 2px rgb(84, 36, 36);
+    text-transform: uppercase;
+  }
+
+  .card {
+    box-shadow: 10px 10px 15px rgb(84, 36, 36);
+    
+  }
+
+  .textShadow {
     text-shadow: 2px 2px 3px rgb(61, 27, 27);
-}
-
-.buttonShadow {
-   box-shadow: 5px 5px 5px grey;
-}
+  }
+  
+  
 
 /* Homepage */
 
@@ -67,6 +145,8 @@ body {
 
 }
 
+/* card standard */
+
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
 .snip1418 {
@@ -77,11 +157,10 @@ body {
   min-width: 230px;
   max-width: 315px;
   width: 100%;
-  background: #ffffff;
+  background: rgba(81, 189, 182, 0.699);
   text-align: left;
-  color: #000000;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  font-size: 16px;
+  color:  rgb(87, 7, 141);
+  box-shadow: 10px 10px 15px rgb(84, 36, 36);
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-perspective: 20em;
@@ -108,7 +187,7 @@ body {
   text-transform: uppercase;
   font-size: 0.9em;
   opacity: 0;
-  background-color: #409ad5;
+  background-color:rgb(87, 7, 141);
   -webkit-transform: rotateX(-90deg);
   transform: rotateX(-90deg);
   -webkit-transform-origin: 100% 0;
@@ -121,7 +200,7 @@ body {
   width: 40px;
   line-height: 40px;
   text-align: center;
-  background-color: #164666;
+  background-color: rgb(87, 7, 141);
   color: #ffffff;
   font-size: 1.4em;
 }
@@ -169,7 +248,7 @@ body {
 }
 .snip1418:hover .add-to-cart i,
 .snip1418.hover .add-to-cart i {
-  background-color: #2980b9;
+  background-color:rgb(87, 7, 141);
 }
 
 /*Categories section*/
@@ -180,7 +259,7 @@ body {
 .circle-airplane{
 
   display: flex;
-
+  
   justify-content: center;
 
   align-items: center;
@@ -189,7 +268,7 @@ body {
 
   height: 50px;
 
-  border: 2px  var(--light-color);
+  border: 2px   rgb(87, 7, 141);
 
   border-style: solid;
 
@@ -200,7 +279,9 @@ body {
 
 .card-bdash {
 
-  border: 4px  var(--light-color);
+  background-color:  rgba(81,189,181,0.8);
+
+  border: 4px  rgb(87, 7, 141);
 
   border-style: solid;
 
@@ -208,13 +289,13 @@ body {
 
 .card-bdash:hover {
 
-  background-color: var(--light-color);
+  background-color:  rgba(252,212,5,1);
 
 }
 
 .card-bdash:hover div div{
 
-  background-color: white;
+  background-color:rgba(245,161,4,1);
 
 }
 
@@ -222,4 +303,13 @@ body {
 
   color: white;
 
+}
+
+
+
+.bgfooter {
+  background: rgb(252,212,5);
+  background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%);
+  
+  
 }

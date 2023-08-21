@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\AnnounceController;
+use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\PublicController;
 /*
+use App\Http\Controllers\PublicController;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -46,6 +48,11 @@ Route::middleware("auth")->group(function () {
 
 });
 
-// Form di lavora con noi
+// Home Revisore
+Route::get("/revisor/home", [RevisorController::class, "index"])->name("revisor.index");
 
-Route::get('/lavoraConNoi', [PublicController::class, "lavoraConNoi"] ) ->name('lavoraConNoi');
+// Accetta annuncio
+Route::patch("/accetta/annuncio/{announcement}", [RevisorController::class, "acceptAnnouncement"])->name("revisor.accept_announcement");
+
+// Rifiuta annuncio
+Route::patch("/Rifiuta/annuncio/{announcement}", [RevisorController::class, "rejectAnnouncement"])->name("revisor.reject_announcement");
