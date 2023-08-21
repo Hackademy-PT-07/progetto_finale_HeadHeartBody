@@ -17,11 +17,14 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-
+    
     <header>
         <x-navbar />
     </header>
     
+   
+<div style="background: rgb(81,189,181);
+  background: linear-gradient(0deg, rgba(81,189,181,0.9360994397759104) 3%, rgba(245,161,4,0.9332983193277311) 35%, rgba(113,19,175,0.8800770308123249) 98%);">
     <main class="container">    
         <div class="row">
             <div class="col-0 col-md-1"></div>
@@ -33,12 +36,15 @@
             <div class="col-0 col-md-1"></div>
         </div>
     </main>
+    
+</div>
 
-    <footer class="mt-auto">
-        <x-footer />
-    </footer>
-
+<footer class="mt-auto">
+    <x-footer />
+</footer>
+    
     @livewireScripts
+
 </body>
 
 </html>
