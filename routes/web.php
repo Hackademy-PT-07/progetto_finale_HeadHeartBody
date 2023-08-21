@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\AnnounceController;
+use App\Http\Controllers\PublicController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,3 +45,7 @@ Route::middleware("auth")->group(function () {
     Route::get('/announces/livewire/form', [AnnounceController::class, "announcesLivewire"])->name('announces.livewire');
 
 });
+
+// Form di lavora con noi
+
+Route::get('/lavoraConNoi', [PublicController::class, "lavoraConNoi"] ) ->name('lavoraConNoi');

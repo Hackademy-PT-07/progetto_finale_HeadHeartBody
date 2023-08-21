@@ -70,7 +70,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lavora con noi</a>
+          <a class="nav-link" href="{{route('lavoraConNoi')}}">Lavora con noi</a>
         </li>
       </ul>
     </div>
