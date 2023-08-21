@@ -27,7 +27,7 @@ class AnnouncesForm extends Component
 
         "announce.category_id" => "required",
 
-        "announce.description" => "required",
+        "announce.description" => "required|max:120",
 
         "announce.price" => "required",
 

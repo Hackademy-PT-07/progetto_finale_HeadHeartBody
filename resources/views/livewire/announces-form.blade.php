@@ -1,17 +1,19 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-            <h2 class="fst-italic ps-2">Crea Annuncio</h2>
-            <div class="card">
+                <div class="text-center mt-4 mb-3 formTitle"><h2>Scrivi Annuncio</h2></div>
+                
                 <div class="card-body"> 
+                        <div class="formBox">
+                            <br>
                     <x-success />
 
                         <form wire:submit.prevent="store" enctype="multipart/form-data">
-                            <div class="row">
+                            <div class="row p-3">
                                 @if($announce->id)
-                                <div class="col-12 d-flex justify-content-end">
-                                    <button wire:click="cleanForm" class="btn btn-warning btn-sm"><span class="bi bi-arrow-clockwise"></span></button>
-                                </div>
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button wire:click="cleanForm" class="btn btn-warning btn-sm"><span class="bi bi-arrow-clockwise"></span></button>
+                                    </div>
                                 @endif
                                 <div class="col-12">
                                     <label for="announce.title">Titolo</label>
@@ -32,7 +34,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="description">Descrizione</label>
-                                    <input type="text" name="announce.description" id="announce.description" wire:model="announce.description" class="form-control">
+                                    <textarea name="announce.description" id="announce.description" wire:model="announce.description" class="form-control" maxlength="500"></textarea>
                                     @error('announce.description') <span class="small text-danger">{{ $message }}</span> @enderror
 
                                 </div>
@@ -49,18 +51,22 @@
 
                                 </div>
                                 @if($announce->id)
-                                <div class="col-12 pt-3">
-                                    <button type="submit" class="btn btn-warning">Modifica</button>
+                                <div class="col-12 py-3 text-center">
+                                    <button type="submit" class="btn btn-warning buttonStyle">Modifica</button>
                                 </div>
                                 @else
-                                <div class="col-12 pt-3">
-                                    <button type="submit" class="btn btn-warning">Crea</button>
+                                <div class="col-12 py-3 text-center">
+                                    <button type="submit" class="btn btn-warning buttonStyle">Crea</button>
                                 </div>
                                 @endif
                             </div>
                         </form>
+                        
+                        
                     </div>
-                </div>
+                
             </div>
         </div>
     </div>
+</div>
+
