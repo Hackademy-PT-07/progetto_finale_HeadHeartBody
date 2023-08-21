@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\AnnounceController;
+use App\Http\Controllers\RevisorController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,3 +46,12 @@ Route::middleware("auth")->group(function () {
     Route::get('/announces/livewire/form', [AnnounceController::class, "announcesLivewire"])->name('announces.livewire');
 
 });
+
+// Home Revisore
+Route::get("/revisor/home", [RevisorController::class, "index"])->name("revisor.index");
+
+// Accetta annuncio
+Route::patch("/accetta/annuncio/{announcement}", [RevisorController::class, "acceptAnnouncement"])->name("revisor.accept_announcement");
+
+// Rifiuta annuncio
+Route::patch("/Rifiuta/annuncio/{announcement}", [RevisorController::class, "rejectAnnouncement"])->name("revisor.reject_announcement");
