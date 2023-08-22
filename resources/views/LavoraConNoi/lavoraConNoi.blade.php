@@ -9,11 +9,18 @@
                 <div class="card-body"> 
                     <x-success />
 
-                        <form action="" enctype="multipart/form-data">
+                    @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+
+                        <form action="{{route('lavoraConNoi.save')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="row">
                                 
                                 <div class="col-12">
-                                    <label for="username">Username</label>
+                                    <label for="username">Name</label>
                                     <input type="text" name="name" id="name" class="form-control">
                                     @error('name') <span class="small text-danger">{{ $message }}</span> @enderror
 
@@ -26,9 +33,9 @@
                                 </div>
                             
                                 <div class="col-12">
-                                    <label for="announce.price">Breve descrizione</label>
-                                    <textarea class="form-control" name="descrizione" id="descrizione" cols="30" rows="10"></textarea>
-                                    @error('descrizione') <span class="small text-danger">{{ $message }}</span> @enderror
+                                    <label for="announce.price">Message</label>
+                                    <textarea rows="6"  name="textMessage" id="textMessage"  class="form-control"></textarea>
+                                    @error('textMessage') <span class="small text-danger">{{ $message }}</span> @enderror
 
                                 </div>
                                 

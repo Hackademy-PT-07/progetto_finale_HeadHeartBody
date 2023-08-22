@@ -73,7 +73,13 @@
                         <a href="{{route('announces.show', $announce->id) }}"></a>
                     </figure>
                 </div>
-            @endforeach
+            @empty
+                <div class="col-12">
+                    <div class="alert alert-warning py-3 shadow">
+                        <p class="lead"> Non ci sono annunci per questa ricerca</p>
+                    </div>
+                </div>
+            @endforelse
             @else
             <div class="text-center buttonStyle py-3 my-5" style="text-shadow: 5px 5px 10px white";">
                 <p class="fs-2 text-decoration-underline purple">

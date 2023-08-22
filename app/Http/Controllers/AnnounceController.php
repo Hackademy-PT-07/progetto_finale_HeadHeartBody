@@ -15,7 +15,7 @@ class AnnounceController extends Controller
 
    public function index (){
 
-      $announces = Announce::orderBy("created_at", "DESC")->get();
+      $announces = Announce::where("is_accepted", true)->orderBy("created_at", "DESC")->get();
 
       $categories = Category::orderBy("name", "ASC")->get();
 
@@ -51,7 +51,7 @@ class AnnounceController extends Controller
    public function timeOrderAsc() {
       
 
-      $announces = Announce::orderBy("created_at", "ASC")->get();
+      $announces = Announce::where("is_accepted", true)->orderBy("created_at", "ASC")->get();
       
       $categories = Category::orderBy("name", "ASC")->get();
 
@@ -66,7 +66,7 @@ class AnnounceController extends Controller
 
    public function timeOrderDesc() {
 
-      $announces = Announce::orderBy("created_at", "DESC")->get();
+      $announces = Announce::where("is_accepted", true)->orderBy("created_at", "DESC")->get();
       
       $categories = Category::orderBy("name", "ASC")->get();
 
@@ -81,7 +81,7 @@ class AnnounceController extends Controller
 
    public function  categoryOrder($announce) {
 
-      $announces = Announce::where("category_id", $announce)->orderBy("created_at", "DESC")->get();
+      $announces = Announce::where("category_id", $announce)->where("is_accepted", true)->orderBy("created_at", "DESC")->get();
 
       $categories = Category::orderBy("name", "ASC")->get();
 
@@ -107,7 +107,7 @@ class AnnounceController extends Controller
 
    public function timeOrderAscCat($announce) {
       
-      $announces = Announce::where("category_id", $announce)->orderBy("created_at", "ASC")->get();
+      $announces = Announce::where("category_id", $announce)->where("is_accepted", true)->orderBy("created_at", "ASC")->get();
       
       $categories = Category::orderBy("name", "ASC")->get();
 
@@ -122,7 +122,7 @@ class AnnounceController extends Controller
 
    public function timeOrderDescCat($announce) {
       
-      $announces = Announce::where("category_id", $announce)->orderBy("created_at", "DESC")->get();
+      $announces = Announce::where("category_id", $announce)->where("is_accepted", true)->orderBy("created_at", "DESC")->get();
       
       $categories = Category::orderBy("name", "ASC")->get();
 
@@ -131,5 +131,19 @@ class AnnounceController extends Controller
       $timeOrderAsc = route('announces.timeOrderAscCat', $announces[0]["category_id"]);
 
       return view ('announces.index', compact("announces", "categories", "timeOrderDesc", "timeOrderAsc"));
+   }
+
+   public function searchAnnounces(Request $request)
+   {
+      // dd($request);
+       $announces = Announce::search($request->searched)->where('is_accepted', true)->get();
+
+       $categories = Category::orderBy("name", "ASC")->get();
+
+       $timeOrderDesc = route('announces.timeOrderDesc');
+
+       $timeOrderAsc = route('announces.timeOrderAsc');
+
+       return view("announces.index", compact('announces', 'categories', "timeOrderDesc", "timeOrderAsc"));
    }
 }
