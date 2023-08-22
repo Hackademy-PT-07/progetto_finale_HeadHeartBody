@@ -49,7 +49,7 @@
 
             <!-- Announces card -->
             @if(count($announces) > 0)
-            @foreach($announces as $announce)
+            @forelse($announces as $announce)
                 <div class="col-12 col-md-4 col-lg-4 pe-md-5 pt-3 d-flex">
                     <figure class="snip1418 card" style="width: 500px">
                         <img class="img-fluid border-bottom" style="height: 200px" src="{{Storage::url($announce->img)}}" alt="{{$announce->title}}"/>
@@ -71,7 +71,13 @@
                         <a href="{{route('announces.show', $announce->id) }}"></a>
                     </figure>
                 </div>
-            @endforeach
+            @empty
+                <div class="col-12">
+                    <div class="alert alert-warning py-3 shadow">
+                        <p class="lead"> Non ci sono annunci per questa ricerca</p>
+                    </div>
+                </div>
+            @endforelse
             @else
             <div class="text-center fw-bold py-5 my-5" style="text-shadow: 5px 5px 10px white";">
                 <p class="fs-2 fst-italic text-decoration-underline py-3 purple">
