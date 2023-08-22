@@ -59,3 +59,5 @@ Route::patch("/Rifiuta/annuncio/{announce}", [RevisorController::class, "rejectA
 
 Route::get('/lavoraConNoi',[LavoraConNoiController::class, "form"])->name("lavoraConNoi");
 Route::post('/lavoraConNoi/save',[LavoraConNoiController::class, "save"])->name("lavoraConNoi.save");
+
+Route::get('/ricerca/annuncio', [AnnounceController::class, 'searchAnnounces'])->name('announces.search');
