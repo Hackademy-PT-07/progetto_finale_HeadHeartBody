@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <div class="container col-10 formBox p-5">
+        <div class="container col-11 formBox p-5">
             <div class="row d-flex align-items-center">
                 <div class="col-12 col-xl-8">
                     <div id="carouselExampleFade" class="carousel slide carousel-fade me-5 pb-3">

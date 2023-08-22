@@ -34,7 +34,7 @@ body {
 
 /* Navbar */
 .navSize {
-
+  
   height: 65px;
   box-shadow: 10px 10px 15px rgb(84, 36, 36);
   background: rgb(252,212,5);
@@ -51,7 +51,6 @@ body {
 #navbarNav {
 
   font-family: 'Aclonica', sans-serif;
-    
 }
 
 .formBox {
@@ -75,7 +74,9 @@ body {
   color: rgb(87, 7, 141);
   text-shadow: 5px 5px 8px white;
   background: rgb(252,212,5);
-  background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%); border-radius: 5px; height: 50px;
+  background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%); 
+  border-radius: 5px; 
+  height: 50px;
   border-radius: 10rem;
   box-shadow: 0 0 50px 15px  rgb(84, 36, 36);
     
@@ -123,49 +124,75 @@ body {
     text-shadow: 2px 2px rgb(84, 36, 36);
     text-transform: uppercase;
   }
-
-  .card {
-    box-shadow: 10px 10px 15px rgb(84, 36, 36);
-    
-  }
-
+  
   .textShadow {
     text-shadow: 2px 2px 3px rgb(61, 27, 27);
   }
   
   
-
-/* Homepage */
-
-.homeImg {
-
-  width: 900px;
-
-  height: 450px;
-
-}
-
-/* card standard */
-
-@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+  
+  /* Homepage */
+  
+  .homeImg {
+    
+    width: 900px;
+    
+    height: 450px;
+    
+  }
+  
+  /* card standard */
+  
+  
+    .card {
+      box-shadow: 10px 10px 15px rgb(84, 36, 36);
+      
+    }
+    
+  @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
 .snip1418 {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Aclonica', sans-serif;
   position: relative;
   overflow: hidden;
-  margin: 10px;
-  min-width: 230px;
-  max-width: 315px;
-  width: 100%;
+  margin: 6px;
+  min-width: 180px;
+  max-width: 300px;
+  max-height: 500px;
+  width: 80%;
+  height: 90%;
   background: rgba(81, 189, 182, 0.699);
   text-align: left;
   color:  rgb(87, 7, 141);
   box-shadow: 10px 10px 15px rgb(84, 36, 36);
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-perspective: 20em;
   perspective: 20em;
 }
+
+.hidden{
+  text-align: center;
+  margin-bottom: 3px;
+  display: none;
+  transition:all 1s ease-out;
+}
+
+.snip1418:hover {
+  background-color: rgba(87, 7, 141, 0.692);
+  color:rgb(81,189,181);
+  box-shadow: 0 0 50px 15px white;
+  width: 100%;
+  height: 100%;
+  
+}
+
+/* .snip1418:hover .hidden {
+  display: block;
+} */
+
 .snip1418 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -176,18 +203,20 @@ body {
   max-width: 100%;
   vertical-align: top;
   position: relative;
+  border-bottom-right-radius: 50px;
+    
 }
 .snip1418 .add-to-cart {
+  
   position: absolute;
   top: 0;
   right: 0;
   padding-right: 10px;
   color: #ffffff;
   font-weight: 700;
-  text-transform: uppercase;
   font-size: 0.9em;
   opacity: 0;
-  background-color:rgb(87, 7, 141);
+  background-color:rgba(87, 7, 141, 0.8);
   -webkit-transform: rotateX(-90deg);
   transform: rotateX(-90deg);
   -webkit-transform-origin: 100% 0;
@@ -205,7 +234,7 @@ body {
   font-size: 1.4em;
 }
 .snip1418 figcaption {
-  padding: 20px;
+  padding: 10px;
 }
 .snip1418 h3,
 .snip1418 p {
@@ -215,7 +244,7 @@ body {
   font-size: 1.5em;
   font-weight: 700;
   margin-bottom: 10px;
-  text-transform: uppercase;
+  
 }
 .snip1418 p {
   font-size: 0.9em;
@@ -223,10 +252,11 @@ body {
   font-weight: 400;
 }
 .snip1418 .price {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.5em;
   line-height: 48px;
   letter-spacing: 1px;
+  
 }
 .snip1418 .price s {
   margin-right: 5px;
@@ -240,6 +270,12 @@ body {
   left: 0;
   right: 0;
 }
+.snip1418 #title {
+  font-family: 'Racing Sans One', cursive;
+  background: rgb(252,212,5); background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%);
+  border-radius: 0 25px 25px 0;
+  margin-left: -25px;
+}
 .snip1418:hover .add-to-cart,
 .snip1418.hover .add-to-cart {
   opacity: 1;
@@ -250,6 +286,9 @@ body {
 .snip1418.hover .add-to-cart i {
   background-color:rgb(87, 7, 141);
 }
+
+
+
 
 /*Categories section*/
 

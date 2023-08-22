@@ -4,7 +4,7 @@
                 <div class="text-center mt-4 mb-3 formTitle"><h2>Scrivi Annuncio</h2></div>
                 
                 <div class="card-body"> 
-                        <div class="formBox">
+                        <div class="formBox mx-4">
                             <br>
                     <x-success />
 
