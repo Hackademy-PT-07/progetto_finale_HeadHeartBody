@@ -8,6 +8,19 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div class=" collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav align-items-center ms-5 ps-5">
+        <li>
+        <form action="{{route('announces.search')}}" class="ms-5 ps-5 d-flex" method="GET">
+          <label for="searched" class="form-label"></label>
+          <input name="searched" class="form-control me-2 ms-5" list="datalistOptions" id="searched" type="search" placeholder="Type to search...">
+          <button class="btn btn-warning"> Search </button>
+        </form>
+        </li>
+      </ul>
+  
+    </div>
+
     <div class="collapse navbar-collapse justify-content-end fw-semibold pe-3" id="navbarNav">
       <ul class="navbar-nav align-items-center">
         <li class="nav-item dropdown pe-3 d-flex align-items-center">
@@ -91,8 +104,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('lavoraConNoi')}}">Lavora con noi</a>
-        </li>
+        </li> 
       </ul>
+
     </div>
   </div>
 </nav>
