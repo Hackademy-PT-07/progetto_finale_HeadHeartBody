@@ -5,8 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\AnnounceController;
 use App\Http\Controllers\RevisorController;
-
+use App\Http\Controllers\PublicController;
 /*
+use App\Http\Controllers\PublicController;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -55,3 +56,5 @@ Route::patch("/accetta/annuncio/{announcement}", [RevisorController::class, "acc
 
 // Rifiuta annuncio
 Route::patch("/Rifiuta/annuncio/{announcement}", [RevisorController::class, "rejectAnnouncement"])->name("revisor.reject_announcement");
+
+Route::get('/lavoraConNoi',[PublicController::class, "lavoraConNoi"])->name("lavoraConNoi");
