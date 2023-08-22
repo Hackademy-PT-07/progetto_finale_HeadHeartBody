@@ -7,18 +7,18 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse justify-content-end fw-semibold pe-3" id="navbarNav">
       <ul class="navbar-nav align-items-center">
         <li class="nav-item dropdown pe-3 d-flex align-items-center">
-
+     
           @guest
 
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="bi bi-person-dash text-danger fs-4"></span>
           </a>
           <ul class="dropdown-menu bg-warning">
-          
+
             <li><a class="dropdown-item nav-link" href="/login">Accedi</a></li>
             <li><a class="dropdown-item nav-link" href="/register">Registrati</a></li>
           </ul>
@@ -46,19 +46,32 @@
             <li>
               <hr>
             </li>
-            
-            <li><form class="d-flex justify-content-center" action="/logout" method="POST">
-              @csrf
-                  <button class="btn btn-sm bi bi-door-open-fill text-danger">
-                    <span class="ps-1 text-black">Logout</span>
-                  </button>
-                </form>
+
+            <li>
+              <form class="d-flex justify-content-center" action="/logout" method="POST">
+                @csrf
+                <button class="btn btn-sm bi bi-door-open-fill text-danger">
+                  <span class="ps-1 text-black">Logout</span>
+                </button>
+              </form>
             </li>
-          </ul>  
-        
+          </ul>
+
           @endguest
 
         </li>
+
+        @if(auth()->user() && auth()->user()->is_revisor)
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-success btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">
+            Pagina Revisore
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg danger">
+              {{App\Models\Announce::toBeRevisionedCount()}}
+              <span class="visually-hidden">Messaggi non letti</span>
+            </span>
+          </a>
+        </li>
+        @endif
 
         <li class="nav-item">
           <a class="nav-link" href="{{route('announces.index') }}">Annunci</a>
@@ -68,7 +81,7 @@
         </li>
         <li class="nav-item dropdown px-2">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class="bi bi-flag-fill"></span>
+            <span class="bi bi-flag-fill"></span>
           </a>
           <ul class="dropdown-menu bg-warning">
             <li><a class="dropdown-item" href="#">Italiano</a></li>
