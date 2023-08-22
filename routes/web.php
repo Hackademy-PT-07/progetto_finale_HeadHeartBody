@@ -52,10 +52,10 @@ Route::middleware("auth")->group(function () {
 Route::get("/revisor/home", [RevisorController::class, "index"])->name("revisor.index");
 
 // Accetta annuncio
-Route::patch("/accetta/annuncio/{announcement}", [RevisorController::class, "acceptAnnouncement"])->name("revisor.accept_announcement");
+Route::patch("/accetta/annuncio/{announce}", [RevisorController::class, "acceptAnnounce"])->name("revisor.accept_announce");
 
 // Rifiuta annuncio
-Route::patch("/Rifiuta/annuncio/{announcement}", [RevisorController::class, "rejectAnnouncement"])->name("revisor.reject_announcement");
+Route::patch("/Rifiuta/annuncio/{announce}", [RevisorController::class, "rejectAnnounce"])->name("revisor.reject_announce");
 
 Route::get('/lavoraConNoi',[LavoraConNoiController::class, "form"])->name("lavoraConNoi");
 Route::post('/lavoraConNoi/save',[LavoraConNoiController::class, "save"])->name("lavoraConNoi.save");

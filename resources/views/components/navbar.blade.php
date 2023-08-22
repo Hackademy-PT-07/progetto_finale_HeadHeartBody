@@ -61,7 +61,7 @@
 
         </li>
 
-        @if(auth()->user() && auth()->user()->is_revisor)
+        @if(auth()->user() && auth()->user()->role == "revisor")
         <li class="nav-item">
           <a class="nav-link btn btn-outline-success btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">
             Pagina Revisore

@@ -10,19 +10,19 @@ class RevisorController extends Controller
     
     public function index()
     {
-        $announcement_to_check = Announce::where("is_accepted", null)->first();
-        return view("revisor.index", compact("announcement_to_check"));
+        $announces_to_check = Announce::where("is_accepted", false)->first();
+        return view("revisor.index", compact("announces_to_check"));
     }
 
-    public function acceptAnnouncement(Announce $announcement)
+    public function acceptAnnounce(Announce $announce)
     {
-        $announcement->setAccepted(true);
+        $announce->setAccepted(true);
         return redirect()->back()->with("message", "Annuncio Accettato");
     }
 
-    public function rejectAnnouncement(Announce $announcement)
+    public function rejectAnnounce(Announce $announce)
     {
-        $announcement->setAccepted(false);
+        $announce->delete();
         return redirect()->back()->with("message", "Annuncio Rifiutato");
     }
 

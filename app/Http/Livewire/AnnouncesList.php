@@ -37,7 +37,7 @@ class AnnouncesList extends Component
 
     public function deleteAnnounce($announce_id) {
 
-        if(!auth()->user()) {
+        if(auth()->user()->id != $announce_id->user_id || auth()->user()->role != "revisor") {
 
             abort(403);
         

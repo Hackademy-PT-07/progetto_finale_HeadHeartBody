@@ -23,7 +23,7 @@ class Announce extends Model
 
     public static function toBeRevisionedCount()
     {
-        return Announce::where("is_accepted", null)->count();
+        return Announce::where("is_accepted", false)->count();
     }
 
     public function setAccepted($value)
