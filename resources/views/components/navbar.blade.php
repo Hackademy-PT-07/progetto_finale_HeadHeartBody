@@ -8,23 +8,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class=" collapse navbar-collapse justify-content-end">
-      <ul class="navbar-nav align-items-center ms-5 ps-5">
-        <li>
-        <form action="{{route('announces.search')}}" class="ms-5 ps-5 d-flex" method="GET">
-          <label for="searched" class="form-label"></label>
-          <input name="searched" class="form-control me-2 ms-5" list="datalistOptions" id="searched" type="search" placeholder="Type to search...">
-          <button class="btn btn-warning"> Search </button>
-        </form>
-        </li>
-      </ul>
-  
-    </div>
-
     <div class="collapse navbar-collapse justify-content-end fw-semibold pe-3" id="navbarNav">
       <ul class="navbar-nav align-items-center">
         <li class="nav-item dropdown pe-3 d-flex align-items-center">
-     
+
           @guest
 
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -78,19 +65,18 @@
         <li class="nav-item">
           <a class="nav-link btn btn-outline-success btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">
             Pagina Revisore
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg danger">
+            @if(App\Models\Announce::toBeRevisionedCount() > 0)
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               {{App\Models\Announce::toBeRevisionedCount()}}
               <span class="visually-hidden">Messaggi non letti</span>
             </span>
+            @endif
           </a>
         </li>
         @endif
 
         <li class="nav-item">
           <a class="nav-link" href="{{route('announces.index') }}">Annunci</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Lavora con noi</a>
         </li>
         <li class="nav-item dropdown px-2">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -102,9 +88,11 @@
             <li><a class="dropdown-item" href="#">Spagnolo</a></li>
           </ul>
         </li>
+        @if(auth()->user() && auth()->user()->role != "revisor")
         <li class="nav-item">
-          <a class="nav-link" href="{{route('lavoraConNoi')}}">Lavora con noi</a>
-        </li> 
+          <a class="nav-link" href="{{route('revisor.request')}}">Lavora con noi</a>
+        </li>
+        @endif
       </ul>
 
     </div>

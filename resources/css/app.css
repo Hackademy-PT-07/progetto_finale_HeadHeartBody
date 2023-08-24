@@ -26,8 +26,16 @@ body {
   
   
   background-image: url('https://thumbs.dreamstime.com/z/cart-background-made-carts-vector-illustration-36868023.jpg?w=768');
- 
   
+  
+}
+
+.ovBg {
+
+  background-color: rgba(214, 214, 214, 0.711);
+
+  background: radial-gradient(circle, rgba(214, 214, 214, 0.711) 29%, rgba(99, 99, 99, 0.711) 84%);
+
 }
 
 
@@ -78,7 +86,7 @@ body {
   border-radius: 5px; 
   height: 50px;
   border-radius: 10rem;
-  box-shadow: 0 0 50px 15px  rgb(84, 36, 36);
+  box-shadow: 5px 5px 5px  rgb(84, 36, 36);
     
   }
 
@@ -351,4 +359,28 @@ body {
   background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%);
   
   
+}
+
+
+.select-bg {
+
+
+  border: 0;
+
+  border-bottom: 2px rgb(252,212,5) solid;
+
+  border-right: 2px rgb(252,212,5) solid;
+
+}
+
+.select-bg:focus {
+
+  color: rgb(252,212,5);
+
+  background-color: rgba(99, 99, 99, 0.711);
+
+  border: 0;
+
+  border-bottom: 2px rgb(252,212,5) solid;
+
 }

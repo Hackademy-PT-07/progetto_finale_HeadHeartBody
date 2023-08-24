@@ -19,45 +19,40 @@ use App\Http\Controllers\PublicController;
 */
 
 // Homepage
-Route::get('/',[HomepageController::class, "homepage"])->name('home');
+Route::get('/', [HomepageController::class, "homepage"])->name('home');
 
 // Announces
 Route::get('/announces', [AnnounceController::class, "index"])->name('announces.index');
 
 // Announces Order/Filter
-
-Route::get('/announces/orderAsc', [AnnounceController::class, "timeOrderAsc"])->name('announces.timeOrderAsc');
-
-Route::get('/announces/orderDesc', [AnnounceController::class, "timeOrderDesc"])->name('announces.timeOrderDesc');
-
-Route::get('/announces/orderCategory/{id}', [AnnounceController::class, "categoryOrder"])->name('announces.categoryOrder');
-
-Route::get('/announces/orderCategory/timedesc/{id}', [AnnounceController::class, "timeOrderDescCat"])->name('announces.timeOrderDescCat');
-
-Route::get('/announces/orderCategory/timeasc/{id}', [AnnounceController::class, "timeOrderAscCat"])->name('announces.timeOrderAscCat');
+Route::get('/filter/announces', [AnnounceController::class, 'filterAnnounces'])->name('announces.filter');
 
 // Announce 
 Route::get('/announces/{announce}', [AnnounceController::class, "show"])->name('announces.show');
 
 
-// Middleware
+// Middleware auth
 Route::middleware("auth")->group(function () {
-    
+
     // Announces create session
     Route::get('/announces/livewire/form', [AnnounceController::class, "announcesLivewire"])->name('announces.livewire');
 
+    // Become revisor request
+    Route::get('/revisor/request', [RevisorController::class, "revisorRequest"])->name("revisor.request");
 });
 
-// Home Revisore
-Route::get("/revisor/home", [RevisorController::class, "index"])->name("revisor.index");
+// Middleware revisor
+route::middleware("revisor")->group(function () {
 
-// Accetta annuncio
-Route::patch("/accetta/annuncio/{announce}", [RevisorController::class, "acceptAnnounce"])->name("revisor.accept_announce");
+    // Home revisor
+    Route::get("/revisor/home", [RevisorController::class, "index"])->name("revisor.index");
 
-// Rifiuta annuncio
-Route::patch("/Rifiuta/annuncio/{announce}", [RevisorController::class, "rejectAnnounce"])->name("revisor.reject_announce");
+    // Announces accept
+    Route::patch("/accetta/annuncio/{announce}", [RevisorController::class, "acceptAnnounce"])->name("revisor.accept_announce");
 
-Route::get('/lavoraConNoi',[LavoraConNoiController::class, "form"])->name("lavoraConNoi");
-Route::post('/lavoraConNoi/save',[LavoraConNoiController::class, "save"])->name("lavoraConNoi.save");
+    // Annunce Reject
+    Route::patch("/Rifiuta/annuncio/{announce}", [RevisorController::class, "rejectAnnounce"])->name("revisor.reject_announce");
+});
 
-Route::get('/ricerca/annuncio', [AnnounceController::class, 'searchAnnounces'])->name('announces.search');
+// Revisor request accept
+Route::get('/revisor/request/{user}', [RevisorController::class, "acceptRequest"])->name("revisor.acceptRequest");

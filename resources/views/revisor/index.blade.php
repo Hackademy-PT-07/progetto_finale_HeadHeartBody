@@ -2,73 +2,96 @@
 
     <x-slot:pageName>Revisore</x-slot:pageName>
 
-    <div class="container-fluid p-5 bg-gradient bg-success p-5 shadow mb-4">
+    <div class="container pt-5 mt-4">
         <div class="row">
-            <div class="col-12 text-light p-5">
-                <h1 class="display-2">
-                    {{$announcement_to_check ? "Ecco l'annuncio da revisionare" : "Non ci sono annunci da revisionare"}}
-                </h1>
+            @if($announce_to_check)
+
+            <div class="col-12 text-light">
+                <h3 class="display-4 text-center">
+                    Ecco l'annuncio da revisionare:
+                </h3>
             </div>
-        </div>
-    </div>
-    @if($announcement_to_check)
-    <div class="container">
-        <div class="row">
             <div class="col-12">
                 <div>
-                    @if(count($announces) > 0)
-                    @foreach($announces as $announce)
-                    <div class="col-12 col-md-4 col-lg-4 pe-md-5 pt-3 d-flex">
-                        <figure class="snip1418 card" style="width: 500px">
-                            <img class="img-fluid border-bottom" style="height: 200px" src="{{Storage::url($announce->img)}}" alt="{{$announce->title}}" />
-                            <div class="add-to-cart">
-                                <i class="ion-android-add"></i>
-                                <span>Clicca per dettagli</span>
+                    <div>
+
+                        <div class="pt-5 mt-5 mb-3 me-3 text-end">
+                            <a class="btn btn-warning buttonStyle text-end" href="{{route('announces.index')}}">Indietro</a>
+                        </div>
+
+                        <div class="col-12 formTitle mb-3">
+                            <div class=" ps-5 text-start">
+                                <h2 class="d-inline">{{$announce_to_check->title}}</h2>
                             </div>
-                            <figcaption>
-                                <h3 class="fw-bold text-center text-decoration-underline">{{ $announce->title }}</h3>
+                        </div>
 
-                                <p class="card-text text-warning fw-semibold text-decoration-underline mb-2 text-end fs-6">{{ $announce->category->name }}</p>
-
-                                <p style="height:120px">{{ $announce->description }}</p>
-
-                                <div class="price text-center"><span>€{{ $announce->price }}</span></div>
-
-                                <p class="card-footer bg-warning fst-italic"> Creato il: {{ $announce->created_at->format("d/m/Y") }} </p>
-                            </figcaption>
-                            <a href="{{route('announces.show', $announce->id) }}"></a>
-                        </figure>
+                        <div class="container col-11 formBox p-5">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-12 col-xl-8">
+                                    <div id="carouselExampleFade" class="carousel slide carousel-fade me-5 pb-3">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{Storage::url($announce_to_check->img)}}" class="d-block w-100" alt="Foto Annuncio1">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://picsum.photos/300/150/?blur" class="d-block w-100" alt="Foto Annuncio2">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://picsum.photos/300/150?grayscale" class="d-block w-100" alt="Foto Annuncio3">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-4">
+                                    <span class="small fst-italic">Prezzo: </span>
+                                    <p class="text-center fw-bold border-bottom pb-2">{{$announce_to_check->price}}€</p>
+                                    <span class="small fst-italic">Pubblicato da: </span>
+                                    <p class="text-center fw-bold border-bottom pb-2">{{$announce_to_check->user->name}} </p>
+                                    <span class="small fst-italic">Pubblicato il: </span>
+                                    <p class="text-center fw-bold border-bottom pb-2">{{$announce_to_check->created_at->format("d/m/Y")}}</p>
+                                </div>
+                            </div>
+                            <div class="pt-5  text-center">
+                                <h3 class="small fst-italic fs-3">Descrizione</h3>
+                                <hr>
+                                <p class="fs-5 m-0">{{$announce_to_check->description}}</p>
+                            </div>
+                        </div>
                     </div>
-                    @endforeach
-                    @else
-                    <div class="text-center fw-bold py-5 my-5" style="text-shadow: 5px 5px 10px white" ;">
-                        <p class="fs-2 fst-italic text-decoration-underline py-3 purple">
-                            Nessun annuncio per la categoria selezionata.
-                        </p>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-between py-5 px-5">
+                            <form class="ps-3" action="{{route('revisor.accept_announce', ['announce'=>$announce_to_check])}}" method="post">
+                                @csrf
+                                @method("PATCH")
+                                <button type="submit" class="btn btn-lg btn-success shadow">Accetta</button>
+                            </form>
+
+                            <form class="pe-3" action="{{route('revisor.reject_announce', ['announce'=>$announce_to_check])}}" method="post">
+                                @csrf
+                                @method("PATCH")
+                                <button type="submit" class="btn btn-lg btn-danger shadow">Rifiuta</button>
+                            </form>
+                        </div>
                     </div>
-                    @endif
                 </div>
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <form action="{{route('revisor.accept_announcement', ['announcement'=>$announcement_to_check])}}" method="post">
-                            @csrf
-                            @method("PATCH")
-                            <button type="submit" class="btn btn-success shadow">Accetta</button>
-                        </form>
-                    </div>
+                @else
+                <div class="vh-100">
+                <div class="col-12 text-light bg-success border-secondary rounded">
+                    <h3 class="display-4 text-center">
+                        Nessun annuncio da revisionare
+                    </h3>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-md-6 text-end">
-                        <form action="{{route('revisor.reject_announcement', ['announcement'=>$announcement_to_check])}}" method="post">
-                            @csrf
-                            @method("PATCH")
-                            <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
-                        </form>
-                    </div>
                 </div>
+
+                @endif
             </div>
         </div>
-    </div>
-    @endif
-
 </x-main>

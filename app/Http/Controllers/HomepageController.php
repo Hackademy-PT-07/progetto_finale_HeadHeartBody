@@ -15,9 +15,7 @@ class HomepageController extends Controller
 {
     public function homepage() {
 
-        $categories = Category::orderBy("name", "ASC")->get();
-
-        return view("homepage.homepage", compact("categories"));
+        return view("homepage.homepage");
     }
 
 }
