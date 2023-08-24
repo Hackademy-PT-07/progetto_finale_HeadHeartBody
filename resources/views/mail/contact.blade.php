@@ -9,9 +9,11 @@
     <div>
         Hai ricevuto una richiesta di contatto:
         <br>
-        Nome: {{$name}} <br>
-        Email: {{$email}} <br>
-        Message: {{$textMessage}}
+        Nome: {{$user->name}} <br>
+        Email: {{$user->email}} <br>
+        Message: "Salve, posso essere anche io un revisore? Grazie in anticipo." <br>
+        Clicca per rendere {{$user->name}} revisore: <br>
+        <a href="{{route('revisor.acceptRequest', compact('user'))}}">Rendi Revisore</a>
     </div>
 </body>
 </html>

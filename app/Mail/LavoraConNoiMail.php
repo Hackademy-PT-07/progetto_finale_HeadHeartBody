@@ -8,6 +8,8 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Address;
+use App\Models\User;
 
 class LavoraConNoiMail extends Mailable
 {
@@ -16,9 +18,10 @@ class LavoraConNoiMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct( public $name, public $email, public $textMessage)
+    public $user;
+    public function __construct(User $user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -28,6 +31,7 @@ class LavoraConNoiMail extends Mailable
     {
         return new Envelope(
             subject: 'Lavora Con Noi Mail',
+            from: new Address("presto.it@noreply.com"),
         );
     }
 

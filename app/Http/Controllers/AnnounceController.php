@@ -6,34 +6,34 @@ use Illuminate\Http\Request;
 
 use App\Models\Announce;
 
-use App\Models\Category;
 
 
 class AnnounceController extends Controller
 {
    // Announces
 
-   public function index (){
+   public function index()
+   {
+
+      $searched = "";
+
+      $category = [];
+
+      $order = [];
+      
+      $price = 0;
 
       $announces = Announce::where("is_accepted", true)->orderBy("created_at", "DESC")->get();
 
-      $categories = Category::orderBy("name", "ASC")->get();
-
-      $timeOrderDesc = route('announces.timeOrderDesc');
-
-      $timeOrderAsc = route('announces.timeOrderAsc');
-      
-      //dd($announces);
-      
-      return view ('announces.index', compact("announces", "categories", "timeOrderDesc", "timeOrderAsc"));
+      return view('announces.index', compact("announces", "searched", "category", "order", "price"));
    }
 
    // Announces create form/list
 
-   public function announcesLivewire() {
+   public function announcesLivewire()
+   {
 
-      return view ('announces.announcesLivewire');
-      
+      return view('announces.announcesLivewire');
    }
 
    // Announce
@@ -43,94 +43,312 @@ class AnnounceController extends Controller
       //dd($announce);
 
       return view("announces.show", compact("announce"));
-
    }
 
-   // Announces Order Asc
+   public function filterAnnounces(Request $request)
+   {
 
-   public function timeOrderAsc() {
-      
+      //dd($request); 
 
-      $announces = Announce::where("is_accepted", true)->orderBy("created_at", "ASC")->get();
-      
-      $categories = Category::orderBy("name", "ASC")->get();
+      $announces = [];
 
-      $timeOrderDesc = route('announces.timeOrderDesc');
+      $searched = "";
 
-      $timeOrderAsc = route('announces.timeOrderAsc');
+      $category = [];
 
-      return view ('announces.index', compact("announces", "categories", "timeOrderDesc", "timeOrderAsc"));
-   }
+      $order = [];
 
-   // Announces Order Desc
+      $price = 0;
 
-   public function timeOrderDesc() {
 
-      $announces = Announce::where("is_accepted", true)->orderBy("created_at", "DESC")->get();
-      
-      $categories = Category::orderBy("name", "ASC")->get();
+      if ($request->searched) {
 
-      $timeOrderDesc = route('announces.timeOrderDesc');
+         $announces = Announce::search($request->searched)->where('is_accepted', true)->get();
 
-      $timeOrderAsc = route('announces.timeOrderAsc');
-
-      return view ('announces.index', compact("announces", "categories", "timeOrderDesc", "timeOrderAsc"));
-   }
-
-   // Announces Filter for category
-
-   public function  categoryOrder($announce) {
-
-      $announces = Announce::where("category_id", $announce)->where("is_accepted", true)->orderBy("created_at", "DESC")->get();
-
-      $categories = Category::orderBy("name", "ASC")->get();
-
-      if(count($announces) > 0){
-
-         $timeOrderDesc = route('announces.timeOrderDescCat', $announces[0]["category_id"]);
-
-         $timeOrderAsc = route('announces.timeOrderAscCat', $announces[0]["category_id"]);
-
-      }
-      else{
-
-         $timeOrderDesc = route('announces.timeOrderDesc');
-
-         $timeOrderAsc = route('announces.timeOrderAsc');
-
+         $searched = $request->searched;
       }
 
-      return view ('announces.index', compact("announces", "categories", "timeOrderDesc", "timeOrderAsc"));
-   }
 
-   // Announces Order Asc if category is select
+      if ($request->searched && $request->category) {
 
-   public function timeOrderAscCat($announce) {
+         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->get();
+
+         $searched = $request->searched;
+
+         if (count($announces)) {
+            foreach ($announces as $announce) {
+
+               $categoryName = $announce->category->name;
+            }
+
+            $category = [$request->category => $categoryName];
+         } else {
+            $category = [];
+         }
+
+      } else if ($request->category) {
+
+         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->get();
+
+         if (count($announces)) {
+            foreach ($announces as $announce) {
+
+               $categoryName = $announce->category->name;
+            }
+
+            $category = [$request->category => $categoryName];
+         } else {
+            $category = [];
+         }
+      }
+
+
+
+      if ($request->searched && $request->category && $request->order == "Desc") {
+
+         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "DESC")->get();
+
+         $searched = $request->searched;
+
+         if (count($announces)) {
+            foreach ($announces as $announce) {
+
+               $categoryName = $announce->category->name;
+            }
+
+            $category = [$request->category => $categoryName];
+         } else {
+
+            $category = [];
+         
+         }
+
+         $order = ["Desc" => "Ordine Decrescente"];
+
+      } else if ($request->searched && $request->order == "Desc") {
+
+         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("created_at", "DESC")->get();
+
+         $searched = $request->searched;
+
+         $order = ["Desc" => "Ordine Decrescente"];
+
+      } else if ($request->category && $request->order == "Desc") {
+
+         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "DESC")->get();
+         
+         if (count($announces)) {
+
+            foreach ($announces as $announce) {
+
+               $categoryName = $announce->category->name;
+            }
+
+            $category = [$request->category => $categoryName];
+
+         } else {
+
+            $category = [];
+         
+         }
+
+         $order = ["Desc" => "Ordine Decrescente"];
+
+      } else if ($request->order == "Desc") {
+
+         $announces = Announce::orderBy("created_at", "DESC")->where('is_accepted', true)->get();
+
+         
+         $order = ["Desc" => "Ordine Decrescente"];
+      }
+
+
+      if ($request->searched && $request->category && $request->order == "Asc") {
+
+         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "ASC")->get();
+
+         $searched = $request->searched;
+
+         if (count($announces)) {
+
+            foreach ($announces as $announce) {
+
+               $categoryName = $announce->category->name;
+            }
+
+            $category = [$request->category => $categoryName];
+
+         } else {
+
+            $category = [];
+         
+         }
+
+         $order = ["Asc" => "Ordine Crescente"];
+
+      } else if ($request->searched && $request->order == "Asc") {
+
+         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("created_at", "ASC")->get();
+
+         $searched = $request->searched;
+         
+         $order = ["Asc" => "Ordine Crescente"];
+
+      } else if ($request->category && $request->order == "Asc") {
+
+         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "ASC")->get();
+
+         if (count($announces)) {
+
+            foreach ($announces as $announce) {
+
+               $categoryName = $announce->category->name;
+            }
+
+            $category = [$request->category => $categoryName];
+            
+         } else {
+
+            $category = [];
+         
+         }
+
+         $order = ["Asc" => "Ordine Crescente"];
+
+      } else if ($request->order == "Asc") {
+
+         $announces = Announce::orderBy("created_at", "ASC")->where('is_accepted', true)->get();
+
+         $order = ["Asc" => "Ordine Crescente"];
+
+      }
+
+      //
+      if ($request->searched && $request->category && $request->order == "PriceDesc") {
+
+         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "DESC")->get();
+
+         $searched = $request->searched;
+
+         if (count($announces)) {
+            foreach ($announces as $announce) {
+
+               $categoryName = $announce->category->name;
+            }
+
+            $category = [$request->category => $categoryName];
+         } else {
+
+            $category = [];
+         
+         }
+
+         $order = ["PriceDesc" => "Prezze Decrescente"];
+
+      } else if ($request->searched && $request->order == "PriceDesc") {
+
+         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("price", "DESC")->get();
+
+         $searched = $request->searched;
+
+         $order = ["PriceDesc" => "Prezzo Decrescente"];
+
+      } else if ($request->category && $request->order == "PriceDesc") {
+
+         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "DESC")->get();
+         
+         if (count($announces)) {
+
+            foreach ($announces as $announce) {
+
+               $categoryName = $announce->category->name;
+            }
+
+            $category = [$request->category => $categoryName];
+
+         } else {
+
+            $category = [];
+         
+         }
+
+         $order = ["PriceDesc" => "Prezzo Decrescente"];
+
+      } else if ($request->order == "PriceDesc") {
+
+         $announces = Announce::orderBy("price", "DESC")->where('is_accepted', true)->get();
+
+         
+         $order = ["PriceDesc" => "Prezzo Decrescente"];
+      }
+
+
+      if ($request->searched && $request->category && $request->order == "PriceAsc") {
+
+         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "ASC")->get();
+
+         $searched = $request->searched;
+
+         if (count($announces)) {
+            foreach ($announces as $announce) {
+
+               $categoryName = $announce->category->name;
+            }
+
+            $category = [$request->category => $categoryName];
+         } else {
+
+            $category = [];
+         
+         }
+
+         $order = ["PriceAsc" => "Prezze Crescente"];
+
+      } else if ($request->searched && $request->order == "PriceAsc") {
+
+         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("price", "ASC")->get();
+
+         $searched = $request->searched;
+
+         $order = ["PriceAsc" => "Prezzo Crescente"];
+
+      } else if ($request->category && $request->order == "PriceAsc") {
+
+         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "ASC")->get();
+         
+         if (count($announces)) {
+
+            foreach ($announces as $announce) {
+
+               $categoryName = $announce->category->name;
+            }
+
+            $category = [$request->category => $categoryName];
+
+         } else {
+
+            $category = [];
+         
+         }
+
+         $order = ["PriceAsc" => "Prezzo Crescente"];
+
+      } else if ($request->order == "PriceAsc") {
+
+         $announces = Announce::orderBy("price", "ASC")->where('is_accepted', true)->get();
+
+         
+         $order = ["PriceAsc" => "Prezzo Crescente"];
+      }
       
-      $announces = Announce::where("category_id", $announce)->where("is_accepted", true)->orderBy("created_at", "ASC")->get();
-      
-      $categories = Category::orderBy("name", "ASC")->get();
 
-      $timeOrderDesc = route('announces.timeOrderDescCat', $announces[0]["category_id"]);
+      if (!$request->searched && !$request->category && !$request->order) {
 
-      $timeOrderAsc = route('announces.timeOrderAscCat', $announces[0]["category_id"]);
+         return redirect()->route('announces.index');
+      }
 
-      return view ('announces.index', compact("announces", "categories", "timeOrderDesc", "timeOrderAsc"));
-   }
 
-   // Announces Order Desc if category is select
-
-   public function timeOrderDescCat($announce) {
-      
-      $announces = Announce::where("category_id", $announce)->where("is_accepted", true)->orderBy("created_at", "DESC")->get();
-      
-      $categories = Category::orderBy("name", "ASC")->get();
-
-      $timeOrderDesc = route('announces.timeOrderDescCat', $announces[0]["category_id"]);
-
-      $timeOrderAsc = route('announces.timeOrderAscCat', $announces[0]["category_id"]);
-
-      return view ('announces.index', compact("announces", "categories", "timeOrderDesc", "timeOrderAsc"));
+      return view("announces.index", compact("announces", "searched", "category", "order", "price"));
    }
 
    public function searchAnnounces(Request $request)

@@ -7,7 +7,7 @@
             <div class="col-12 col-xl-8 mx-auto mt-5 pt-5">
                 <h2 class="ps-2 formTitle text-center">Registrati</h2>
                 <div class="mt-4">
-                    <div class="card-body formBox p-5">
+                    <div class="card-body mx-4 formBox p-5">
                         <form action="/register" method="POST">
                             @csrf
                             <div class="row g-3">
