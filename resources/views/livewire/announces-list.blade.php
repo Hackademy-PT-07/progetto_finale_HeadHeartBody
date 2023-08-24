@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
             <div class="text-center mt-4 mb-3 formTitle"><h2>I tuoi annunci</h2></div>
-            <div class="formBox p-5">
+            <div class="formBox p-5 mx-4">
                 @foreach($announces as $announce)
                     <div class="d-flex border-bottom py-2 justify-content-between  align-items-center">
                         <div>
@@ -13,8 +13,8 @@
                             </a>
                         </div>
                         <div class="d-flex">
-                            <button class="btn btn-sm btn-warning ms-3" wire:click="editAnnounce({{$announce->id}})">Modifica</button>
-                            <button class="btn btn-sm btn-danger ms-3" wire:click="deleteAnnounce({{$announce->id}})">Elimina</button>
+                            <button class="btn btn-sm btn-outline-warning ms-3" wire:click="editAnnounce({{$announce->id}})">Modifica</button>
+                            <button class="btn btn-sm btn-outline-danger ms-3" wire:click="deleteAnnounce({{$announce->id}})">Elimina</button>
                         </div>
                     </div>
                     @endforeach

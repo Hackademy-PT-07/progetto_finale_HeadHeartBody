@@ -3,19 +3,27 @@
 
     <div class="pt-5 mt-5 text-center">
 
+
         <div class="d-flex align-items-center justify-content-center py-5 pe-5 formTitle text-black">
             <img src="https://png.pngtree.com/png-vector/20220821/ourmid/pngtree-speed-arrow-fast-quick-icon-logo-design-png-image_6119232.png" alt="Logo" width="80">
             <h1 id="logo" class="fs-1">Presto.it</h1>
         </div>
 
+
+
         <div class="mt-3 pt-2 pb-5 text-center text-warning">
-            <a href="{{route('announces.index')}}"><h4 class="fst-italic text-capitalize text-decoration-underline text-warning" id="titleForm"> Tutti i tuoi desideri in un CLICK!</h4></a>
+            <a href="{{route('announces.index')}}">
+                <h4 class="fst-italic text-capitalize text-decoration-underline text-warning" id="titleForm"> Tutti i tuoi desideri in un CLICK!</h4>
+            </a>
+        </div>
+
+        <div class="mt-3 mb-5">
+            <x-success />
         </div>
 
     </div>
 
-
-    <div class="container d-flex justify-content-center col-8 pb-5">
+    <div class="container d-flex justify-content-center col-8 pb-5 pt-2">
         <div class="row py-3">
             <div class="col-12 carousel">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade">
@@ -54,37 +62,36 @@
             </div>
         </div>
     </div>
-    
+
     <div class="d-flex d-inline justify-content-between">
         @if(auth()->user())
-            <div class="text-center ms-3 pb-3 ">
-                <a class="btn btn-warning buttonStyle" href="{{route('announces.livewire')}}">Inserisci annuncio</a>
-            </div>
-            <div class="pb-5 me-3 text-center">
-                <a class="btn btn-warning buttonStyle" href="{{route('announces.index')}}">Tutti gli annunci</a>
-            </div>    
+        <div class="text-center ms-3 pb-3 ">
+            <a class="btn btn-warning buttonStyle" href="{{route('announces.livewire')}}">Inserisci annuncio</a>
+        </div>
+        <div class="pb-5 me-3 text-center">
+            <a class="btn btn-warning buttonStyle" href="{{route('announces.index')}}">Tutti gli annunci</a>
+        </div>
         @endif
     </div>
 
 
-<div class="container mb-5">
-<div class="row d-flex justify-content-center">
-        <h2 class="text-center mb-3 formTitle">Categorie</h2>
+    <div class="container mb-5">
+        <div class="row d-flex justify-content-center">
+            <h2 class="text-center mb-3 formTitle">Categorie</h2>
             @foreach($categories as $category)
-                <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-3 card-bgc">
-                    <div class="card card-bdash">
-                        <div class="card-body d-flex flex-column align-items-center">
-                            <div class="circle-airplane mb-4 mt-2">
-                                <i class="bi bi-tags color-card"></i>
-                            </div>
-
-                            <a class="text-decoration-underline fs-4 fw-semibold" style="color: rgb(87, 7, 141);" href="{{route('announces.categoryOrder', $category->id)}}">{{$category->name}}</a>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-3 card-bgc">
+                <div class="card card-bdash">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <div class="circle-airplane mb-4 mt-2">
+                            <i class="bi bi-tags color-card"></i>
                         </div>
+
+                        <a class="text-decoration-underline fs-4 fw-semibold" style="color: rgb(87, 7, 141);" href="#">{{$category->name}}</a>
                     </div>
                 </div>
+            </div>
             @endforeach
-        
-    </div>
-</div>
-</x-main>
 
+        </div>
+    </div>
+</x-main>
