@@ -56,7 +56,6 @@
 
             <!-- Announces card -->
 
-            @if(count($announces) > 0)
             @forelse($announces as $announce)
             <div class="col-12 col-md-6 col-lg-4 md-5 pt-3 d-flex justify-content-center">
                 <figure class="snip1418 card">
@@ -81,20 +80,14 @@
                 </figure>
             </div>
             @empty
-            <div class="col-12">
-                <div class="alert alert-warning py-3 shadow">
-                    <p class="lead"> Non ci sono annunci per questa ricerca</p>
+            <div class="col-12 vh-100">
+                <div class="alert alert-warning my-5">
+                    <p class="lead"> Nessun annuncio</p>
                 </div>
             </div>
             @endforelse
+            {{$announces->links()}}
 
-            @else
-            <div class="text-center buttonStyle py-3 my-5" style="text-shadow: 5px 5px 10px white">
-                <p class="fs-2 text-decoration-underline purple">
-                    Nessun annuncio
-                </p>
-            </div>
-            @endif
             <!-- Announces card end -->
 
         </div>
