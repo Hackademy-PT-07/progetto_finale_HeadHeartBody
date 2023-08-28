@@ -6,7 +6,7 @@
 
         <div class="d-flex align-items-center justify-content-center py-5 pe-5 formTitle text-black">
             <img src="https://png.pngtree.com/png-vector/20220821/ourmid/pngtree-speed-arrow-fast-quick-icon-logo-design-png-image_6119232.png" alt="Logo" width="80">
-            <h1 id="logo" class="fs-1">Presto.it</h1>
+            <h1 id="logo" class="fs-1">@lang('ui.title')</h1>
         </div>
 
 

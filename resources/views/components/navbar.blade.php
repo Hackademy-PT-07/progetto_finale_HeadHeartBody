@@ -83,8 +83,8 @@
             <span class="bi bi-flag-fill"></span>
           </a>
           <ul class="dropdown-menu bg-warning">
-            <li><a class="dropdown-item" href="#">Italiano</a></li>
-            <li><a class="dropdown-item" href="#">Inglese</a></li>
+            <li><a class="dropdown-item" href="{{url('it')}}">Italiano</a></li>
+            <li><a class="dropdown-item" href="{{url('en')}}">Inglese</a></li>
             <li><a class="dropdown-item" href="#">Spagnolo</a></li>
           </ul>
         </li>

@@ -18,4 +18,10 @@ class HomepageController extends Controller
         return view("homepage.homepage");
     }
 
+    public function setLanguage($lang)
+    {
+        session()->put("locale", $lang);
+        return redirect()->back();
+    }
+
 }

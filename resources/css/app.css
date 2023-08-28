@@ -4,6 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Patrick+Hand&family=Racing+Sans+One&display=swap');
 
+@import "/node_modules/flag-icons/css/flag-icons.min.css";
+
 :root {
 
   --background-color: #8AA6A3;
