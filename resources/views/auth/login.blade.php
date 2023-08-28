@@ -25,6 +25,9 @@
                                 <div class="col-12 text-center">
                                     <button type="submit" class="btn btn-warning buttonStyle" >Accedi</button>
                                 </div>
+                               <div class="col-12 text-center">
+                                        <a href="{{route('google.login')}}" class="btn btn-lg btn-danger">Accedi con Google</a>
+                                </div>
                             </div>
                         </form>
                     </div>

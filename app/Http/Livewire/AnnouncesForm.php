@@ -50,6 +50,11 @@ class AnnouncesForm extends Component
 
         $this->announce->user_id = auth()->user()->id;
 
+        if(auth()->user()->role == "revisor") {
+
+            $this->announce->is_accepted = true;
+        }
+
         $this->announce->save();
 
         if($this->img && $this->img->isValid()){

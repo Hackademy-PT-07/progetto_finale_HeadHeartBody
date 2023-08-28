@@ -5,12 +5,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Patrick+Hand&family=Racing+Sans+One&display=swap');
 
 :root {
-  --primary-color: #C70039;
-  --primary-dark-color: #900C3F;
-  --primary-light-color: #F94C10;
-  --light-color: #F8DE22;
 
-  --pastello: #EFFDF5;
+  --background-color: #8AA6A3;
+  --background-color-opacity: #8aa6a386;
+  
+  --primary-color: #127369;
+  --primary-dark-color: #10403B;
+
+  --secondary-color: #BFBFBF;
+  --secondary-dark-color: #4C5958;
+
 }
 /* Body */
 

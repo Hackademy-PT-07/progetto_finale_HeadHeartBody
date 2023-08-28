@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\AnnounceController;
 use App\Http\Controllers\RevisorController;
-use App\Http\Controllers\LavoraConNoiController;
+use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\GoogleController;
+
 /*
 use App\Http\Controllers\PublicController;
 |--------------------------------------------------------------------------
@@ -39,6 +41,7 @@ Route::middleware("auth")->group(function () {
 
     // Become revisor request
     Route::get('/revisor/request', [RevisorController::class, "revisorRequest"])->name("revisor.request");
+
 });
 
 // Middleware revisor
@@ -47,12 +50,22 @@ route::middleware("revisor")->group(function () {
     // Home revisor
     Route::get("/revisor/home", [RevisorController::class, "index"])->name("revisor.index");
 
-    // Announces accept
-    Route::patch("/accetta/annuncio/{announce}", [RevisorController::class, "acceptAnnounce"])->name("revisor.accept_announce");
+    Route::get("/revisor/revised", [RevisorController::class, "revisedAnnounces"])->name("revisor.revised");
 
-    // Annunce Reject
-    Route::patch("/Rifiuta/annuncio/{announce}", [RevisorController::class, "rejectAnnounce"])->name("revisor.reject_announce");
+    // Announces accept
+    Route::patch("/accept/announce/{announce}", [RevisorController::class, "acceptAnnounce"])->name("revisor.accept_announce");
+
+    // Annunce reject
+    Route::patch("/reject/announce/{announce}", [RevisorController::class, "rejectAnnounce"])->name("revisor.reject_announce");
+
+    // Annunce revised again
+    Route::patch("/revised/announces/{announce}", [RevisorController::class, "revisedAnnounceAgain"])->name("revisor.announce_revised");
 });
 
 // Revisor request accept
 Route::get('/revisor/request/{user}', [RevisorController::class, "acceptRequest"])->name("revisor.acceptRequest");
+
+// Socialite
+Route::get("/auth/google", [GoogleController::class, "loginUsingGoogle"])->name("google.login");
+
+Route::get("/auth/google/callback", [GoogleController::class, "callbackFromGoogle"])->name("google.callback");
