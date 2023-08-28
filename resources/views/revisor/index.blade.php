@@ -4,6 +4,7 @@
 
     <div class="container pt-5 mt-4">
         <div class="row">
+
             @if($announce_to_check)
 
             <div class="col-12 text-light">
@@ -68,13 +69,13 @@
                     </div>
                     <div class="row">
                         <div class="col-12 d-flex justify-content-between py-5 px-5">
-                            <form class="ps-3" action="{{route('revisor.accept_announce', ['announce'=>$announce_to_check])}}" method="post">
+                            <form class="ps-3" action="{{route('revisor.accept_announce', ['announce'=>$announce_to_check])}}" method="POST">
                                 @csrf
                                 @method("PATCH")
                                 <button type="submit" class="btn btn-lg btn-success shadow">Accetta</button>
                             </form>
 
-                            <form class="pe-3" action="{{route('revisor.reject_announce', ['announce'=>$announce_to_check])}}" method="post">
+                            <form class="pe-3" action="{{route('revisor.reject_announce', ['announce'=>$announce_to_check])}}" method="POST">
                                 @csrf
                                 @method("PATCH")
                                 <button type="submit" class="btn btn-lg btn-danger shadow">Rifiuta</button>
@@ -83,12 +84,10 @@
                     </div>
                 </div>
                 @else
-                <div class="vh-100">
-                <div class="col-12 text-light bg-success border-secondary rounded">
+                <div class="col-12 vh-100">
                     <h3 class="display-4 text-center">
-                        Nessun annuncio da revisionare
+                        Nessun annuncio da revisionare.. ricontrolla gli annunci che hai già revisionato <a href="{{route('revisor.revised')}}" class="btn btn-secondary">Annunci revisionati</a>
                     </h3>
-                </div>
                 </div>
 
                 @endif

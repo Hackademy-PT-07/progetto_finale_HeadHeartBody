@@ -20,18 +20,45 @@ class RevisorController extends Controller
         return view("revisor.index", compact("announce_to_check"));
     }
 
+    public function revisedAnnounces()
+    {
+        $announces_revised = Announce::where("is_accepted", !null)->where("revisor_id", auth()->user()->id)->orderBy("updated_at", "DESC")->paginate(9);
+
+        return view("revisor.checked", compact("announces_revised"));
+    }
+
     public function acceptAnnounce(Announce $announce)
     {
+
+        $announce->revisor_id = auth()->user()->id;
+
+        $announce->save();
+
         $announce->setAccepted(true);
         
-        return redirect()->back()->with("message", "Annuncio Accettato");
+        return redirect()->back();
     }
 
     public function rejectAnnounce(Announce $announce)
     {
+        $announce->revisor_id = auth()->user()->id;
+
+        $announce->save();
+
         $announce->setAccepted(false);
         
-        return redirect()->back()->with("message", "Annuncio Rifiutato");
+        return redirect()->back();
+    }
+
+    public function revisedAnnounceAgain(Announce $announce)
+    {
+        $announce->revisor_id = auth()->user()->id;
+
+        $announce->save();
+
+        $announce->setAccepted(null);
+        
+        return redirect()->route("revisor.index");
     }
 
 
