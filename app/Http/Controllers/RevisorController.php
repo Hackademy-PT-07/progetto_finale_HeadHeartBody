@@ -66,7 +66,7 @@ class RevisorController extends Controller
 
     Mail::to('admin@example.com')->send(new LavoraConNoiMail(auth()->user()));
 
-    return redirect()->route("home")->with(['message'=>'Abbiamo ricevuto la tua richiesta. Ti risponderemo il prima possibile']);
+    return redirect("/")->with(['message'=>'Abbiamo ricevuto la tua richiesta. Ti risponderemo il prima possibile']);
 
    }
 
@@ -74,7 +74,7 @@ class RevisorController extends Controller
 
     Artisan::call("presto:makeUserRevisor", ["email" => $user->email]);
 
-    return redirect()->route("home")->with(['message'=>"Complimenti utente $user->name, ora sei un revisore!"]);
+    return redirect("/")->with(['message'=>"Complimenti utente $user->name, ora sei un revisore!"]);
 
    }
 
