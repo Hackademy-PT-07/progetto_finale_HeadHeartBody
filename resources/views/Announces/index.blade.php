@@ -81,7 +81,7 @@
             @empty
             <div class="col-12 vh-100">
                 <div class="alert alert-warning my-5">
-                    <p class="lead"> Nessun annuncio</p>
+                    <p class="lead"> {{__('No announcement')}} </p>
                 </div>
             </div>
             @endforelse

@@ -83,9 +83,15 @@
             <span class="bi bi-flag"></span>
           </a>
           <ul class="dropdown-menu bg-warning">
-            <li><a class="dropdown-item" href="{{url('it')}}">Italiano</a></li>
-            <li><a class="dropdown-item" href="{{url('en')}}">Inglese</a></li>
-            <li><a class="dropdown-item" href="#">Spagnolo</a></li>
+            <form action="{{route('setLocale', 'en')}}" method="post">
+              @csrf
+              <button type="submit">Inglese</button>
+            </form>
+
+
+            <!-- <li><a class="dropdown-item" href="{{route('setLocale', 'it')}}">Italiano</a></li>
+            <li><a class="dropdown-item" href="{{route('setLocale', 'en')}}">Inglese</a></li>
+            <li><a class="dropdown-item" href="{{route('setLocale', 'es')}}">Spagnolo</a></li> -->
           </ul>
         </li>
         @if(auth()->user() && auth()->user()->role != "revisor")

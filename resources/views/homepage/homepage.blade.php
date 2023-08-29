@@ -50,7 +50,7 @@
 
         <div class="mt-3 pt-2 pb-2 text-center text-warning">
             <a href="{{route('announces.index')}}">
-                <h4 class="fst-italic text-capitalize text-decoration-underline text-warning" id="titleForm"> Tutti i tuoi desideri in un CLICK!</h4>
+                <h4 class="fst-italic text-capitalize text-decoration-underline text-warning" id="titleForm"> {{ __('ui.title') }} </h4>
             </a>
         </div>
 

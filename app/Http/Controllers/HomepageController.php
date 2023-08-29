@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\Announce;
 
 use App\Models\Category;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 
 
@@ -30,6 +31,7 @@ class HomepageController extends Controller
     public function setLanguage($lang)
     {
         session()->put("locale", $lang);
+        
         return redirect()->back();
     }
 

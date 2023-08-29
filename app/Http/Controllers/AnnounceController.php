@@ -12,6 +12,8 @@ class AnnounceController extends Controller
 {
    // Announces
 
+   
+
    public function index()
    {
 

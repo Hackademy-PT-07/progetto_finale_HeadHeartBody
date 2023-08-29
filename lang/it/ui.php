@@ -2,6 +2,7 @@
 
 return [
     
-    'title' => 'Benvenuto su Presto.it',
+    'title' => 'Welcome in italiano',
+    
 
 ];
