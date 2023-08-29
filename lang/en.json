@@ -2,6 +2,7 @@
     "(and :count more error)": "(and :count more error)",
     "(and :count more errors)": "(and :count more errors)",
     "All rights reserved.": "All rights reserved.",
+<<<<<<< HEAD
     "Forbidden": "Forbidden",
     "Go to page :page": "Go to page :page",
     "Hello!": "Hello!",
@@ -53,7 +54,12 @@
     "(and :count more error)": "(and :count more error)",
     "(and :count more errors)": "(and :count more errors)",
     "All rights reserved.": "All rights reserved.",
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 9c9fe9c74d14af81ce15a3c77ec983c27154d1a8
     "All your wishes in a CLICK!": "All your wishes in a CLICK!",
+>>>>>>> ef1277f40ad567bd5f01db562f0ba97a77a37bde
     "Forbidden": "Forbidden",
     "Go to page :page": "Go to page :page",
     "Hello!": "Hello!",
@@ -63,7 +69,10 @@
     "Invalid JSON was returned from the route.": "Invalid JSON was returned from the route.",
     "Login": "Login",
     "Logout": "Logout",
+<<<<<<< HEAD
+=======
     "No announcement": "No announcement",
+>>>>>>> ef1277f40ad567bd5f01db562f0ba97a77a37bde
     "Not Found": "Not Found",
     "of": "of",
     "Page Expired": "Page Expired",

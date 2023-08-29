@@ -2,6 +2,7 @@
     "(and :count more error)": "(e :count altro errore)",
     "(and :count more errors)": "(e :count altri errori)",
     "All rights reserved.": "Tutti i diritti riservati",
+<<<<<<< HEAD
     "Forbidden": "Vietato",
     "Go to page :page": "Vai alla pagina :page",
     "Hello!": "Ciao!",
@@ -53,7 +54,12 @@
     "(and :count more error)": "(e :count altro errore)",
     "(and :count more errors)": "(e :count altri errori)",
     "All rights reserved.": "Tutti i diritti riservati",
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 9c9fe9c74d14af81ce15a3c77ec983c27154d1a8
     "All your wishes in a CLICK!": "Tutti i vostri desideri in un CLICK!",
+>>>>>>> ef1277f40ad567bd5f01db562f0ba97a77a37bde
     "Forbidden": "Vietato",
     "Go to page :page": "Vai alla pagina :page",
     "Hello!": "Ciao!",
@@ -63,7 +69,10 @@
     "Invalid JSON was returned from the route.": "JSON non valido è stato restituito dalla route.",
     "Login": "Accedi",
     "Logout": "Esci",
+<<<<<<< HEAD
+=======
     "No announcement": "Nessun annuncio",
+>>>>>>> ef1277f40ad567bd5f01db562f0ba97a77a37bde
     "Not Found": "Non trovato",
     "of": "di",
     "Page Expired": "Pagina scaduta",

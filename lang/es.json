@@ -2,6 +2,13 @@
     "(and :count more error)": "(y :count error más)",
     "(and :count more errors)": "(y :count errores más)",
     "All rights reserved.": "Todos los derechos reservados.",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    "All your wishes in a CLICK!": "¡Todos tus deseos en un CLIC!",
+>>>>>>> ef1277f40ad567bd5f01db562f0ba97a77a37bde
+>>>>>>> 9c9fe9c74d14af81ce15a3c77ec983c27154d1a8
     "Forbidden": "Prohibido",
     "Go to page :page": "Ir a la página :page",
     "Hello!": "¡Hola!",
