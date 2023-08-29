@@ -1,17 +1,54 @@
 <x-main>
     <x-slot:pageName>Homepage</x-slot:pageName>
 
-    <div class="pt-5 mt-5 text-center">
+<div class="d-flex justify-content-center mt-3 pt-5 search">
 
 
-        <div class="d-flex align-items-center justify-content-center py-5 pe-5 formTitle text-black">
-            <img src="https://png.pngtree.com/png-vector/20220821/ourmid/pngtree-speed-arrow-fast-quick-icon-logo-design-png-image_6119232.png" alt="Logo" width="80">
-            <h1 id="logo" class="fs-1">@lang('ui.title')</h1>
+    <form action="{{route('announces.filter')}}" class="row d-flex justify-content-center align-items-center ms-5 ps-5" method="GET">
+
+        <div class="col-12 col-md-3">
+        <label for="category" class="form-label"></label>
+        <select class="form-select select-bg" aria-label="Default select example" id="category" name="category">
+            <option  selected @if($category) value="{{key($category)}}" @else value="" @endif>
+                @if($category) {{$category[key($category)]}} @else Categorie @endif</option>
+            @if($category)<option value="">Rimuovi filtro</option>@endif
+            @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+        </select>
         </div>
 
+        <div class="col-12 col-md-3">
+            <label for="searched" class="form-label"></label>
+            <input name="searched" class="form-control select-bg" list="datalistOptions" id="searched" name="searched" type="search" placeholder="Cerca" @if($searched) value="{{$searched}}" @endif>
+
+        </div>
+
+        <div class="col-12 col-md-3">
+            <label for="order" class="form-label"></label>
+            <select class="form-select select-bg" aria-label="Default select example" id="order" name="order">
+            <option  selected @if($order) value="{{key($order)}}" @else value="" @endif>
+                    @if($order) {{$order[key($order)]}} @else Riordina @endif</option>
+                @if($order)<option value="">Rimuovi filtro</option>@endif
+                <option value="Desc">Dal più recente</option>
+                <option value="Asc">Dal meno recente</option>
+                <option value="PriceDesc">Dal prezzo più alto</option>
+                <option value="PriceAsc">Dal prezzo pìù basso</option>
+            </select>
+
+        </div>
+
+        <div class="col-12 col-md-3">
+            <button class="btn btn-warning mt-4"> Search </button>
+        </div>
+    </form>
+
+</div>
 
 
-        <div class="mt-3 pt-2 pb-5 text-center text-warning">
+    <div class="mt-5 text-center">
+
+        <div class="mt-3 pt-2 pb-2 text-center text-warning">
             <a href="{{route('announces.index')}}">
                 <h4 class="fst-italic text-capitalize text-decoration-underline text-warning" id="titleForm"> Tutti i tuoi desideri in un CLICK!</h4>
             </a>
@@ -23,9 +60,31 @@
 
     </div>
 
-    <div class="container d-flex justify-content-center col-8 pb-5 pt-2">
-        <div class="row py-3">
-            <div class="col-12 carousel">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://img.freepik.com/free-vector/worldwide-connection_53876-90449.jpg?w=740&t=st=1691689711~exp=1691690311~hmac=0934f82063cc1b8c644a50a5bf785da3eaf7cb4065825136de5ab364307e533e" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://img.freepik.com/premium-photo/top-view-happy-easter-background_1921-1186.jpg?w=740" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://img.freepik.com/free-photo/vehicles-boxes-supply-chain-representation_23-2149853158.jpg?w=740&t=st=1691689210~exp=1691689810~hmac=fc239f90cbaecb45565ce335fe3469640f410cf714240f90b5f4dbdcceb0445f" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    <!-- <div class="container d-flex justify-content-center col-10 pb-5 pt-2">
+        <div class="row py-3"> -->
+        
+            <!-- <div class="col-12 carousel">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -59,9 +118,10 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
-        </div>
-    </div>
+                
+            </div> -->
+        <!-- </div>
+    </div> -->
 
     <div class="d-flex d-inline justify-content-between">
         @if(auth()->user())
@@ -77,7 +137,7 @@
 
     <div class="container mb-5">
         <div class="row d-flex justify-content-center">
-            <h2 class="text-center mb-3 formTitle">Categorie</h2>
+            
             @foreach($categories as $category)
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-3 card-bgc">
                 <div class="card card-bdash">

@@ -29,8 +29,7 @@
 */
 
 body {
-  
-  
+    
   background-image: url('https://thumbs.dreamstime.com/z/cart-background-made-carts-vector-illustration-36868023.jpg?w=768');
   
   
@@ -38,28 +37,26 @@ body {
 
 .ovBg {
 
-  background-color: rgba(214, 214, 214, 0.711);
-
-  background: radial-gradient(circle, rgba(214, 214, 214, 0.711) 29%, rgba(99, 99, 99, 0.711) 84%);
+  background-color: rgba(138, 166, 163, 0.6);
+  background: radial-gradient(circle,  var(--background-color-opacity), var(--background-color));
+ 
 
 }
-
-
 
 /* Navbar */
 .navSize {
   
   height: 65px;
-  box-shadow: 10px 10px 15px rgb(84, 36, 36);
-  background: rgb(252,212,5);
-  background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%);
+  box-shadow: 10px 10px 15px var(--secondary-dark-color);
+  background:  var(--background-color);
+  background: radial-gradient(circle,  var(--primary-color), var(--background-color));
 }
 
 #logo {
   font-family: 'Racing Sans One', cursive;
   font-size: xx-large;
-  text-shadow: 5px 5px 8px white;
-  
+  color: var(--primary-dark-color); 
+    
 }
 
 #navbarNav {
@@ -122,23 +119,24 @@ body {
     color:rgb(81,189,181);
   }
   
+  .search {
+    background:  var(--background-color);
+    background: radial-gradient(circle,  var(--primary-color), var(--background-color));
+    border-radius: 10px;
+    padding-bottom: 20px;
+  }
+
   .immagine {
     width: 90%;
     
   }
   
-  .carousel {
-    box-shadow: 0 0 50px 15px white;
-    border-radius: 1rem;
-    
-  }
-
   .carouselText {
     color: rgb(81,189,181); 
     text-shadow: 2px 2px rgb(84, 36, 36);
     text-transform: uppercase;
   }
-  
+   
   .textShadow {
     text-shadow: 2px 2px 3px rgb(61, 27, 27);
   }
@@ -361,32 +359,43 @@ body {
 
 
 .bgfooter {
-  background: rgb(252,212,5);
-  background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%);
   
+  background:  var(--background-color);
+  background: radial-gradient(circle,  var(--primary-color), var(--background-color));
+  height: 100px;
   
+}
+
+.footerRef {
+   color: var(--primary-dark-color); 
+   text-decoration: none;
+     
+}
+
+.footerRef:hover{
+  color: var(--primary-color)
 }
 
 
 .select-bg {
 
-
   border: 0;
 
-  border-bottom: 2px rgb(252,212,5) solid;
+  border-bottom: 2px var(--primary-dark-color) solid;
 
-  border-right: 2px rgb(252,212,5) solid;
+  border-right: 2px var(--primary-dark-color) solid;
 
 }
 
 .select-bg:focus {
 
-  color: rgb(252,212,5);
+  color: var(--primary-dark-color);
 
-  background-color: rgba(99, 99, 99, 0.711);
+  background-color:var(--background-color);
 
   border: 0;
 
-  border-bottom: 2px rgb(252,212,5) solid;
+  border-bottom: 2px  var(--primary-dark-color) solid;
 
 }
+

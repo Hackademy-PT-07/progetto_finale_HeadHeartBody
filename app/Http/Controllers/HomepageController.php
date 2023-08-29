@@ -15,7 +15,16 @@ class HomepageController extends Controller
 {
     public function homepage() {
 
-        return view("homepage.homepage");
+        $searched = "";
+
+        $category = [];
+
+        $order = [];
+      
+        $price = 0;
+
+        return view("homepage.homepage", compact('searched', 'category', 'order', 'price'));
+
     }
 
     public function setLanguage($lang)
