@@ -8,8 +8,7 @@
                     <img class="immagine" src="https://www.farolloefalpala.it/wp-content/uploads/2017/07/megafono_urlo.png" alt="megafono">
                 </div>
                 <div class="col-9 formTitle">
-                    <div class="text-center">
-                        <h2 class="d-inline">Annunci</h2>
+                    <div class="text-center"><h2 class="d-inline">Annunci</h2>
                     </div>
                 </div>
             </div>
