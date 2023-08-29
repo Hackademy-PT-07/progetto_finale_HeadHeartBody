@@ -12,6 +12,8 @@ class AnnounceController extends Controller
 {
    // Announces
 
+   
+
    public function index()
    {
 
@@ -350,4 +352,6 @@ class AnnounceController extends Controller
 
       return view("announces.index", compact("announces", "searched", "category", "order", "price"));
    }
+
+   
 }
