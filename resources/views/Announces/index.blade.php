@@ -55,17 +55,16 @@
 
             <!-- Announces card -->
 
-            @if(count($announces) > 0)
-            @foreach($announces as $announce)
-                <div class="col-12 col-md-4 col-lg-4 pe-md-5 pt-3 d-flex">
-                    <figure class="snip1418 card" style="width: 500px">
-                        <img class="img-fluid border-bottom" style="height: 200px" src="{{Storage::url($announce->img)}}" alt="{{$announce->title}}"/>
-                        <div class="add-to-cart">
-                            <i class="ion-android-add"></i>
-                            <span>Clicca per dettagli</span>
-                        </div>
-                        <figcaption>
-                            <h3 class="fw-bold text-center text-decoration-underline">{{ $announce->title }}</h3>
+            @forelse($announces as $announce)
+            <div class="col-12 col-md-6 col-lg-4 md-5 pt-3 d-flex justify-content-center">
+                <figure class="snip1418 card">
+                    <img class="img-fluid" style="height: 240px" src="{{Storage::url($announce->img)}}" alt="{{$announce->title}}" />
+                    <div class="add-to-cart">
+                        <i class="ion-android-add"></i>
+                        <span>Clicca per dettagli</span>
+                    </div>
+                    <figcaption class="snip1418Body">
+                        <h3 class="text-center text-decoration-underline p-2 purple card" id="title">{{ $announce->title }}</h3>
 
                         <p class="card-text text-warning fw-semibold mb-2 text-end fs-6">{{ $announce->category->name }}</p>
 
@@ -73,19 +72,21 @@
 
                         <div class="price text-center"><span>€{{ $announce->price }}</span></div>
 
-                            <p class="card-footer bg-warning fst-italic"> Creato il: {{ $announce->created_at->format("d/m/Y") }} </p>
-                        </figcaption>
-                        <a href="{{route('announces.show', $announce->id) }}"></a>
-                    </figure>
-                </div>
-            @endforeach
-            @else
-            <div class="text-center buttonStyle py-3 my-5" style="text-shadow: 5px 5px 10px white">
-                <p class="fs-2 text-decoration-underline purple">
-                    Nessun annuncio
-                </p>
+                        <p class="card-footer fst-italic"> Creato il: {{ $announce->created_at->format("d/m/Y") }} </p>
+                    </figcaption>
+
+                    <a href="{{route('announces.show', $announce->id) }}"></a>
+                </figure>
             </div>
-            @endif
+            @empty
+            <div class="col-12 vh-100">
+                <div class="alert alert-warning my-5">
+                    <p class="lead"> Nessun annuncio</p>
+                </div>
+            </div>
+            @endforelse
+            {{$announces->links()}}
+
             <!-- Announces card end -->
 
         </div>

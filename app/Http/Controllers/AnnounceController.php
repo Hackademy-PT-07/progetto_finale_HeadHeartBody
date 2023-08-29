@@ -23,7 +23,7 @@ class AnnounceController extends Controller
       
       $price = 0;
 
-      $announces = Announce::where("is_accepted", true)->orderBy("created_at", "DESC")->get();
+      $announces = Announce::where("is_accepted", true)->orderBy("created_at", "DESC")->paginate(15);
 
       return view('announces.index', compact("announces", "searched", "category", "order", "price"));
    }
@@ -63,7 +63,7 @@ class AnnounceController extends Controller
 
       if ($request->searched) {
 
-         $announces = Announce::search($request->searched)->where('is_accepted', true)->get();
+         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("created_at", "DESC")->paginate(15);
 
          $searched = $request->searched;
       }
@@ -71,7 +71,7 @@ class AnnounceController extends Controller
 
       if ($request->searched && $request->category) {
 
-         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->get();
+         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "DESC")->paginate(15);
 
          $searched = $request->searched;
 
@@ -88,7 +88,7 @@ class AnnounceController extends Controller
 
       } else if ($request->category) {
 
-         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->get();
+         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "DESC")->paginate(15);
 
          if (count($announces)) {
             foreach ($announces as $announce) {
@@ -106,7 +106,7 @@ class AnnounceController extends Controller
 
       if ($request->searched && $request->category && $request->order == "Desc") {
 
-         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "DESC")->get();
+         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "DESC")->paginate(15);
 
          $searched = $request->searched;
 
@@ -127,7 +127,7 @@ class AnnounceController extends Controller
 
       } else if ($request->searched && $request->order == "Desc") {
 
-         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("created_at", "DESC")->get();
+         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("created_at", "DESC")->paginate(15);
 
          $searched = $request->searched;
 
@@ -135,7 +135,7 @@ class AnnounceController extends Controller
 
       } else if ($request->category && $request->order == "Desc") {
 
-         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "DESC")->get();
+         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "DESC")->paginate(15);
          
          if (count($announces)) {
 
@@ -156,7 +156,7 @@ class AnnounceController extends Controller
 
       } else if ($request->order == "Desc") {
 
-         $announces = Announce::orderBy("created_at", "DESC")->where('is_accepted', true)->get();
+         $announces = Announce::orderBy("created_at", "DESC")->where('is_accepted', true)->paginate(15);
 
          
          $order = ["Desc" => "Ordine Decrescente"];
@@ -165,7 +165,7 @@ class AnnounceController extends Controller
 
       if ($request->searched && $request->category && $request->order == "Asc") {
 
-         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "ASC")->get();
+         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "ASC")->paginate(15);
 
          $searched = $request->searched;
 
@@ -188,7 +188,7 @@ class AnnounceController extends Controller
 
       } else if ($request->searched && $request->order == "Asc") {
 
-         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("created_at", "ASC")->get();
+         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("created_at", "ASC")->paginate(15);
 
          $searched = $request->searched;
          
@@ -196,7 +196,7 @@ class AnnounceController extends Controller
 
       } else if ($request->category && $request->order == "Asc") {
 
-         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "ASC")->get();
+         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("created_at", "ASC")->paginate(15);
 
          if (count($announces)) {
 
@@ -217,7 +217,7 @@ class AnnounceController extends Controller
 
       } else if ($request->order == "Asc") {
 
-         $announces = Announce::orderBy("created_at", "ASC")->where('is_accepted', true)->get();
+         $announces = Announce::orderBy("created_at", "ASC")->where('is_accepted', true)->paginate(15);
 
          $order = ["Asc" => "Ordine Crescente"];
 
@@ -226,7 +226,7 @@ class AnnounceController extends Controller
       //
       if ($request->searched && $request->category && $request->order == "PriceDesc") {
 
-         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "DESC")->get();
+         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "DESC")->paginate(15);
 
          $searched = $request->searched;
 
@@ -247,7 +247,7 @@ class AnnounceController extends Controller
 
       } else if ($request->searched && $request->order == "PriceDesc") {
 
-         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("price", "DESC")->get();
+         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("price", "DESC")->paginate(15);
 
          $searched = $request->searched;
 
@@ -255,7 +255,7 @@ class AnnounceController extends Controller
 
       } else if ($request->category && $request->order == "PriceDesc") {
 
-         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "DESC")->get();
+         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "DESC")->paginate(15);
          
          if (count($announces)) {
 
@@ -276,7 +276,7 @@ class AnnounceController extends Controller
 
       } else if ($request->order == "PriceDesc") {
 
-         $announces = Announce::orderBy("price", "DESC")->where('is_accepted', true)->get();
+         $announces = Announce::orderBy("price", "DESC")->where('is_accepted', true)->paginate(15);
 
          
          $order = ["PriceDesc" => "Prezzo Decrescente"];
@@ -285,7 +285,7 @@ class AnnounceController extends Controller
 
       if ($request->searched && $request->category && $request->order == "PriceAsc") {
 
-         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "ASC")->get();
+         $announces = Announce::search($request->searched)->where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "ASC")->paginate(15);
 
          $searched = $request->searched;
 
@@ -306,7 +306,7 @@ class AnnounceController extends Controller
 
       } else if ($request->searched && $request->order == "PriceAsc") {
 
-         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("price", "ASC")->get();
+         $announces = Announce::search($request->searched)->where('is_accepted', true)->orderBy("price", "ASC")->paginate(15);
 
          $searched = $request->searched;
 
@@ -314,7 +314,7 @@ class AnnounceController extends Controller
 
       } else if ($request->category && $request->order == "PriceAsc") {
 
-         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "ASC")->get();
+         $announces = Announce::where("category_id", $request->category)->where('is_accepted', true)->orderBy("price", "ASC")->paginate(15);
          
          if (count($announces)) {
 
@@ -335,7 +335,7 @@ class AnnounceController extends Controller
 
       } else if ($request->order == "PriceAsc") {
 
-         $announces = Announce::orderBy("price", "ASC")->where('is_accepted', true)->get();
+         $announces = Announce::orderBy("price", "ASC")->where('is_accepted', true)->paginate(15);
 
          
          $order = ["PriceAsc" => "Prezzo Crescente"];

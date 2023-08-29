@@ -40,12 +40,6 @@ class AnnouncesList extends Component
         
         $announce = Announce::find($announce_id);
 
-        if(auth()->user()->id != $announce->user_id || auth()->user()->role != "revisor") {
-
-            abort(403);
-        
-        }
-
         $announce->delete();
 
         $this->loadAnnounces();

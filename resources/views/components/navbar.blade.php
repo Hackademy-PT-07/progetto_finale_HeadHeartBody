@@ -80,11 +80,11 @@
         </li>
         <li class="nav-item dropdown px-2">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="bi bi-flag-fill"></span>
+            <span class="bi bi-flag"></span>
           </a>
           <ul class="dropdown-menu bg-warning">
-            <li><a class="dropdown-item" href="#">Italiano</a></li>
-            <li><a class="dropdown-item" href="#">Inglese</a></li>
+            <li><a class="dropdown-item" href="{{url('it')}}">Italiano</a></li>
+            <li><a class="dropdown-item" href="{{url('en')}}">Inglese</a></li>
             <li><a class="dropdown-item" href="#">Spagnolo</a></li>
           </ul>
         </li>
@@ -98,3 +98,4 @@
     </div>
   </div>
 </nav>
+
