@@ -8,8 +8,7 @@
                     <img class="immagine" src="https://www.farolloefalpala.it/wp-content/uploads/2017/07/megafono_urlo.png" alt="megafono">
                 </div>
                 <div class="col-9 formTitle">
-                    <div class="text-center">
-                        <h2 class="d-inline">Annunci</h2>
+                    <div class="text-center"><h2 class="d-inline">Annunci</h2>
                     </div>
                 </div>
             </div>
@@ -82,7 +81,7 @@
             @empty
             <div class="col-12 vh-100">
                 <div class="alert alert-warning my-5">
-                    <p class="lead"> Nessun annuncio</p>
+                    <p class="lead"> {{__('No announcement')}} </p>
                 </div>
             </div>
             @endforelse

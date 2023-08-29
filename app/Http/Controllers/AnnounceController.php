@@ -12,6 +12,8 @@ class AnnounceController extends Controller
 {
    // Announces
 
+   
+
    public function index()
    {
 
@@ -349,5 +351,19 @@ class AnnounceController extends Controller
 
 
       return view("announces.index", compact("announces", "searched", "category", "order", "price"));
+   }
+
+   public function searchAnnounces(Request $request)
+   {
+      // dd($request);
+       $announces = Announce::search($request->searched)->where('is_accepted', true)->get();
+
+       $categories = Category::orderBy("name", "ASC")->get();
+
+       $timeOrderDesc = route('announces.timeOrderDesc');
+
+       $timeOrderAsc = route('announces.timeOrderAsc');
+
+       return view("announces.index", compact('announces', 'categories', "timeOrderDesc", "timeOrderAsc"));
    }
 }
