@@ -2,6 +2,7 @@
     "(and :count more error)": "(and :count more error)",
     "(and :count more errors)": "(and :count more errors)",
     "All rights reserved.": "All rights reserved.",
+    "All your wishes in a CLICK!": "All your wishes in a CLICK!",
     "Forbidden": "Forbidden",
     "Go to page :page": "Go to page :page",
     "Hello!": "Hello!",
@@ -11,6 +12,7 @@
     "Invalid JSON was returned from the route.": "Invalid JSON was returned from the route.",
     "Login": "Login",
     "Logout": "Logout",
+    "No announcement": "No announcement",
     "Not Found": "Not Found",
     "of": "of",
     "Page Expired": "Page Expired",
@@ -47,8 +49,5 @@
     "Unauthorized": "Unauthorized",
     "Verify Email Address": "Verify Email Address",
     "Whoops!": "Whoops!",
-    "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account.",
-    
-    "All your wishes in a CLICK!": "All your wishes in a CLICK!",
-    "No announcement": "No announcement"
+    "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account."
 }
