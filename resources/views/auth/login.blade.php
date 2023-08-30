@@ -1,10 +1,10 @@
 <x-main>
-    <x-slot:pageName>Accedi</x-slot:pageName>
+    <x-slot:pageName>{{ __('ui.login') }}</x-slot:pageName>
    
     <div class="container mt-4 pt-5 vh-100">
         <div class="row">
             <div class="col-12 col-xl-8 mx-auto mt-5 pt-5">
-                <h2 class="ps-2 formTitle text-center">Accedi</h2>
+                <h2 class="ps-2 formTitle text-center">{{ __('ui.login') }}</h2>
                 <div class="mt-4">
                     <div class="card-body mx-4 formBox p-5">
                         <form action="/login" method="POST">
@@ -23,10 +23,10 @@
                                     
                                 </div>
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-warning buttonStyle" >Accedi</button>
+                                    <button type="submit" class="btn btn-warning buttonStyle" >{{ __('ui.login') }}</button>
                                 </div>
                                <div class="col-12 text-center">
-                                        <a href="{{route('google.login')}}" class="btn btn-lg btn-danger">Accedi con Google</a>
+                                        <a href="{{route('google.login')}}" class="btn btn-lg btn-danger">{{ __('ui.loginGoogle') }}</a>
                                 </div>
                             </div>
                         </form>

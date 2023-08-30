@@ -1,10 +1,10 @@
 <x-main>
-    <x-slot:pageName>Titolo {{$announce->title}}</x-slot:pageName>
+    <x-slot:pageName>{{ __('ui.titleAd') }} {{$announce->title}}</x-slot:pageName>
 
     <div>
 
         <div class="pt-5 mt-5 mb-3 me-3 text-end">
-            <a class="btn btn-warning buttonStyle text-end" href="{{route('announces.index')}}">Indietro</a>
+            <a class="btn btn-warning buttonStyle text-end" href="{{route('announces.index')}}">{{ __('ui.back') }}</a>
         </div>
 
         <div class="col-12 formTitle mb-3">
@@ -38,16 +38,16 @@
                     </div>
                 </div>
                 <div class="col-12 col-xl-4"> 
-                    <span class="small fst-italic">Prezzo: </span>
+                    <span class="small fst-italic">{{ __('ui.priceAd') }}: </span>
                         <p class="text-center fw-bold border-bottom pb-2">{{$announce->price}}€</p>
-                    <span class="small fst-italic">Pubblicato da: </span>
+                    <span class="small fst-italic">{{ __('ui.pubFrom') }}: </span>
                         <p class="text-center fw-bold border-bottom pb-2">{{$announce->user->name}} </p>
-                    <span class="small fst-italic">Pubblicato il: </span>
+                    <span class="small fst-italic">{{ __('ui.pubOn') }}: </span>
                         <p class="text-center fw-bold border-bottom pb-2">{{$announce->created_at->format("d/m/Y")}}</p>
                 </div>
             </div>
             <div class="pt-5  text-center">
-                <h3 class="small fst-italic fs-3">Descrizione</h3>
+                <h3 class="small fst-italic fs-3">{{ __('ui.descAd') }}</h3>
                 <hr>
                 <p class="fs-5 m-0">{{$announce->description}}</p>
             </div>

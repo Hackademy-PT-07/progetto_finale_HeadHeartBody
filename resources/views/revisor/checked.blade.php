@@ -1,12 +1,12 @@
 <x-main>
-    <x-slot:pageName>Annunci Revisionati</x-slot:pageName>
+    <x-slot:pageName>{{ __('ui.pageNameRev') }}</x-slot:pageName>      
 
     <div class="container mt-4 justify-content-center py-5">
         <div class="row pt-5">
 
             <div class="col-12 text-light">
                 <h3 class="display-4 text-center">
-                    Ecco gli annunci da te revisionati:
+                {{ __('ui.txtRevAd') }}:
                 </h3>
             </div>
 
@@ -26,10 +26,10 @@
                         <form class="ps-3" action="{{route('revisor.announce_revised', ['announce'=>$announce])}}" method="POST">
                                 @csrf
                                 @method("PATCH")
-                                <button type="submit" class="btn btn-primary shadow my-2">Revisiona</button>
+                                <button type="submit" class="btn btn-primary shadow my-2">{{ __('ui.revAd') }}</button>
                             </form>
                         </div>
-                        <p class="card-footer fst-italic m-0 text-center"> Creato il: {{ $announce->created_at->format("d/m/Y") }} </p>
+                        <p class="card-footer fst-italic m-0 text-center"> {{ __('ui.createAt') }}: {{ $announce->created_at->format("d/m/Y") }} </p>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
             @empty
             <div class="col-12 vh-100">
                 <div class="alert alert-warning py-3 shadow">
-                    <p class="lead">Nessun annuncio da te revisionato.. inizia a revisionare annunci dalla <a href="{{route('revisor.index')}}" class="btn btn-secondary">Pagina Revisore</a></p>
+                    <p class="lead">{{ __('ui.txtRevLong') }} <a href="{{route('revisor.index')}}" class="btn btn-secondary">{{ __('ui.revisorPage') }}</a></p>
                 </div>
             </div>
             @endforelse
