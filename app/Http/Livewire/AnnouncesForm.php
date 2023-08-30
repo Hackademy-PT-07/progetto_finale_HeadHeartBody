@@ -24,9 +24,7 @@ class AnnouncesForm extends Component
 
     public $temporary_images;
 
-    public $image;
-
-
+    public $dbImg;
 
     protected $listeners = ["edit"];
 
@@ -62,7 +60,7 @@ class AnnouncesForm extends Component
 
     ];
 
-    public function updateTemporaryImg()
+    public function updateTemporaryImages()
     {
 
             foreach ($this->temporary_images as $img) {
@@ -71,7 +69,7 @@ class AnnouncesForm extends Component
             }
     }
 
-    public function removeImg($key)
+    public function removeImages($key)
     {
 
         if (in_array($key, array_keys($this->images))) {
@@ -80,18 +78,37 @@ class AnnouncesForm extends Component
         }
     }
 
+    public function removeDbImages($key)
+    {
+
+        if ($this->dbImg->hasAny($key)) {
+            
+            $idImg = $this->dbImg[$key]->id;            
+            
+            $this->dbImg->forget($key);
+
+            $image = Image::find($idImg);
+
+            $image->delete();
+        }
+
+
+    }
+
     public function store()
     {
 
         $this->validate();
 
         $this->announce->user_id = auth()->user()->id;
+                
 
         if (auth()->user()->role == "revisor") {
 
             $this->announce->is_accepted = true;
         }
 
+        $this->announce->save();
 
 
         if (count($this->images)) {
@@ -101,8 +118,6 @@ class AnnouncesForm extends Component
                 $this->announce->images()->create(['path' => $image->store('images', 'public')]);
             }
         }
-        $this->announce->save();
-
 
         session()->flash("message", "Operazione effettuata con successo!");
 
@@ -131,12 +146,16 @@ class AnnouncesForm extends Component
 
         $this->images = [];
 
-        $this->temporary_images;
+        $this->temporary_images = "";
     }
 
     public function edit($announce_id)
     {
 
         $this->announce = Announce::find($announce_id);
+
+        $this->dbImg = $this->announce->images;
+
+
     }
 }

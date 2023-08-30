@@ -14,6 +14,7 @@ class Image extends Model
     protected $fillable = ['path'];
 
     public function announce(){
+        
         return $this->belongsTo(Announce::class);
 
     }

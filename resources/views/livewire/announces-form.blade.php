@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="images">Immagine</label>
-                                    <input type="file" wire:model="images" name="images" id="images"  multiple class="form-control @error('temporary_img.*') is_invalid @enderror">
+                                    <input type="file" wire:model="images" name="images" multiple class="form-control @error('temporary_img.*') is_invalid @enderror">
                                     @error('temporary_img.*') <span class="small text-danger">{{ $message }}</span> @enderror
                                 </div>
                                 @if(!empty($images))
@@ -54,9 +54,22 @@
                                     <div class="col-12">
                                         <p>Foto caricate:</p>
                                         @foreach($images as $key => $image)
-                                        <div class="img-preview mx-auto shadow rounded">
+                                        <div class="mx-auto shadow rounded">
                                             <img src="{{$image->temporaryUrl()}}"  style="height: 100px; width:100px" alt="">
-                                            <button wire:click="removeImg({{$key}})" class="btn btn-danger">Elimina</button>
+                                            <button wire:click="removeImages({{$key}})" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                @endif
+                                @if(!empty($dbImg))
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>Foto caricate:</p>
+                                        @foreach($dbImg as $key => $image)
+                                        <div class="mx-auto shadow rounded">
+                                            <img src="{{asset('storage/' . $image->path)}}"  style="height: 100px; width:100px" alt="">
+                                            <button wire:click="removeDbImages({{$key}})" class="btn btn-danger">Elimina</button>
                                         </div>
 
                                         @endforeach

@@ -58,7 +58,7 @@
             @forelse($announces as $announce)
             <div class="col-12 col-md-6 col-lg-4 md-5 pt-3 d-flex justify-content-center">
                 <figure class="snip1418 card">
-                    <img class="img-fluid" style="height: 240px" src="{{Storage::url($announce->img)}}" alt="{{$announce->title}}" />
+                    <img class="img-fluid" style="height: 240px" @foreach($announce->images as $img) src="{{Storage::url($img->path)}}" @endforeach alt="{{$announce->title}}" />
                     <div class="add-to-cart">
                         <i class="ion-android-add"></i>
                         <span>Clicca per dettagli</span>
