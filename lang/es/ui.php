@@ -76,4 +76,6 @@ return [
     'category_9' => 'Libri',
     'category_10' => 'Giocattoli',
 
+    'categories' => 'Categorie',
+
 ];

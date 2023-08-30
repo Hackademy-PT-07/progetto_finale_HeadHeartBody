@@ -75,6 +75,7 @@ return [
     'category_9' => 'Books',
     'category_10' => 'Toys',
 
+    'categories' => 'Categories',
     
 
 ];
