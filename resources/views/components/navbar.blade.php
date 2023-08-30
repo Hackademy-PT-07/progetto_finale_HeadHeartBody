@@ -78,25 +78,41 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('announces.index') }}">Annunci</a>
         </li>
-        <li class="nav-item dropdown px-2">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="bi bi-flag"></span>
           </a>
-          <ul class="dropdown-menu bg-warning">
-            <form action="{{route('setLocale', 'en')}}" method="post">
-              @csrf
-              <button type="submit">Inglese</button>
-            </form>
-
-
-            <!-- <li><a class="dropdown-item" href="{{route('setLocale', 'it')}}">Italiano</a></li>
-            <li><a class="dropdown-item" href="{{route('setLocale', 'en')}}">Inglese</a></li>
-            <li><a class="dropdown-item" href="{{route('setLocale', 'es')}}">Spagnolo</a></li> -->
+          <ul class="dropdown-menu">
+            <div class="d-flex flex-column align-items-center">
+            <li>
+              <form action="{{route('setLocale', 'it')}}" method="POST">
+                @csrf
+                <button type="submit" class="btn border-0 fi fi-it"></button>
+              </form>
+            </li>
+            <li>
+              <form action="{{route('setLocale', 'en')}}" method="POST">
+                @csrf
+                <button type="submit" class="btn border-0 fi fi-gb"></button>
+              </form>
+            </li>
+            <li>
+              <form action="{{route('setLocale', 'es')}}" method="POST">
+                @csrf
+                <button type="submit" class="btn border-0 fi fi-es"></button>
+              </form>
+            </li>
+            </div>
           </ul>
         </li>
         @if(auth()->user() && auth()->user()->role != "revisor")
         <li class="nav-item">
           <a class="nav-link" href="{{route('revisor.request')}}">Lavora con noi</a>
+        </li>
+        @endif
+        @if(auth()->user())
+        <li>
+          {{auth()->user()->email}}
         </li>
         @endif
       </ul>
