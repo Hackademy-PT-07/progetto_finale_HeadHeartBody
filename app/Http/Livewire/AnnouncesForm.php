@@ -10,6 +10,9 @@ use App\Models\Announce;
 
 use App\Models\Category;
 
+use App\Models\Image;
+
+
 
 class AnnouncesForm extends Component
 {
@@ -17,12 +20,18 @@ class AnnouncesForm extends Component
 
     public $announce;
 
-    public $img;
+    public $images = [];
+
+    public $temporary_images;
+
+    public $image;
+
+
 
     protected $listeners = ["edit"];
 
     protected $rules = [
-        
+
         "announce.title" => "required|max:50",
 
         "announce.category_id" => "required",
@@ -31,80 +40,103 @@ class AnnouncesForm extends Component
 
         "announce.price" => "required",
 
+        "images.*" => "image|max:1024",
+
+        "temporary_images.*" => "image|max:1024",
 
     ];
 
     protected $messages = [
-        
+
         "required" => "Il campo è obbligatorio",
 
         "announce.title.max:50" => "Massimo 50 caratteri",
 
+        "images.*.image" => "Deve essere un file immagine",
+
+        "images.*.max" => "Il file può essere massimo di 1mb",
+
+        "temporary_images.*.image" => "Deve essere un file immagine",
+
+        "temporary_images.*.max" => "Il file può essere massimo di 1mb",
+
     ];
-   
 
+    public function updateTemporaryImg()
+    {
 
-    public function store() {
+            foreach ($this->temporary_images as $img) {
+
+                $this->images[] = $img;
+            }
+    }
+
+    public function removeImg($key)
+    {
+
+        if (in_array($key, array_keys($this->images))) {
+
+            unset($this->images[$key]);
+        }
+    }
+
+    public function store()
+    {
 
         $this->validate();
 
         $this->announce->user_id = auth()->user()->id;
 
-        if(auth()->user()->role == "revisor") {
+        if (auth()->user()->role == "revisor") {
 
             $this->announce->is_accepted = true;
         }
 
+
+
+        if (count($this->images)) {
+
+            foreach ($this->images as $image) {
+
+                $this->announce->images()->create(['path' => $image->store('images', 'public')]);
+            }
+        }
         $this->announce->save();
 
-        if($this->img && $this->img->isValid()){
-            
-            $extension = $this->img->extension();
-            
-            $randomName = uniqid("announce_img_") . ".$extension";
-            
-            $imgPath = $this->img->storeAs("public/image" . $this->announce->id, $randomName);
-            
-            $this->announce->img = $imgPath;
-            
-            $this->announce->save();
-            
-        }
-        
-        //dd($this->announce);
 
         session()->flash("message", "Operazione effettuata con successo!");
-        
+
         $this->cleanForm();
 
         $this->emitTo("announces-list", "loadAnnounces");
-        
     }
-    
+
     public function render()
     {
         $categories = Category::orderBy("name", "ASC")->get();
-        
+
         return view('livewire.announces-form', compact("categories"));
     }
 
-    public function cleanForm() {
+    public function cleanForm()
+    {
 
         $this->mount();
     }
-    
-    public function mount() {
 
-            $this->announce = new Announce;
+    public function mount()
+    {
+
+        $this->announce = new Announce;
+
+        $this->images = [];
+
+        $this->temporary_images;
     }
 
-    public function edit($announce_id) {
+    public function edit($announce_id)
+    {
 
         $this->announce = Announce::find($announce_id);
-
-
     }
-
-    
-    
 }

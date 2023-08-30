@@ -8,7 +8,7 @@
                             <br>
                     <x-success />
 
-                        <form wire:submit.prevent="store" enctype="multipart/form-data">
+                        <form wire:submit.prevent="store">
                             <div class="row p-3">
                                 @if($announce->id)
                                     <div class="col-12 d-flex justify-content-end">
@@ -39,17 +39,31 @@
 
                                 </div>
                                 <div class="col-12">
-                                    <label for="announce.img">{{ __('ui.imgAd') }}</label>
-                                    <input type="file" name="announce.img" id="announce.img" wire:model="img" class="form-control">
-                                    @error('announce.img') <span class="small text-danger">{{ $message }}</span> @enderror
-
-                                </div>
-                                <div class="col-12">
                                     <label for="announce.price">{{ __('ui.priceAd') }}</label>
                                     <input type="number" min="0" name="announce.price" id="announce.price" wire:model="announce.price" class="form-control">
                                     @error('announce.price') <span class="small text-danger">{{ $message }}</span> @enderror
 
                                 </div>
+                                <div class="col-12">
+                                    <label for="images">Immagine</label>
+                                    <input type="file" wire:model="images" name="images" id="images"  multiple class="form-control @error('temporary_img.*') is_invalid @enderror">
+                                    @error('temporary_img.*') <span class="small text-danger">{{ $message }}</span> @enderror
+                                </div>
+                                @if(!empty($images))
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>Foto caricate:</p>
+                                        @foreach($images as $key => $image)
+                                        <div class="img-preview mx-auto shadow rounded">
+                                            <img src="{{$image->temporaryUrl()}}"  style="height: 100px; width:100px" alt="">
+                                            <button wire:click="removeImg({{$key}})" class="btn btn-danger">Elimina</button>
+                                        </div>
+
+                                        @endforeach
+                                    </div>
+                                </div>
+                                @endif
+
                                 @if($announce->id)
                                 <div class="col-12 py-3 text-center">
                                     <button type="submit" class="btn btn-warning buttonStyle">{{ __('ui.modAd') }}</button>
