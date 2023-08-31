@@ -17,7 +17,9 @@ class AnnouncesForm extends Component
 
     public $announce;
 
-    public $img;
+    public $images = [];
+
+    public $temporaryImages;
 
     protected $listeners = ["edit"];
 
