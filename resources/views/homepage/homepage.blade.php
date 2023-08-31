@@ -119,7 +119,7 @@
                             <i class="bi bi-megaphone m-5"></i>
                         </div>
 
-                        <a class="text-decoration-underline fs-6 fw-semibold" style="color:  var(--primary-dark-color);" href="#">{{__('ui.category_'.$category->id)}}</a>
+                        <a class="text-decoration-underline fs-6 fw-semibold" style="color:  var(--primary-dark-color);" href="{{route('hp.announces.category', $category->id)}}">{{__('ui.category_'.$category->id)}}</a>
                     </div>
                 </div>
             </div>
@@ -130,6 +130,8 @@
 
     <!-- form lavora con noi -->
 
+    <div class="py-5" id="form"></div>
+
     @if(auth()->user() && auth()->user()->role != 'revisor'&& auth()->user()->role != 'admin')
     <div class="container">
         <div class="row">
@@ -137,7 +139,6 @@
                 <h2 class="formTitle ps-5 mb-3">{{ __('ui.workWithUsForm') }}</h2>
                 <div class="card mx-5">
                     <div class="card-body py-5">
-                        <x-success />
 
                         @if(session()->has('success'))
                         <div class="alert alert-success">
@@ -199,7 +200,6 @@
                     <h2 class="formTitle ps-5 mb-3">Contatta l'amministratore</h2>
                     <div class="card mx-5">
                         <div class="card-body py-5">
-                            <x-success />
 
                             @if(session()->has('success'))
                             <div class="alert alert-success">

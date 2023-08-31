@@ -11,8 +11,8 @@
         <br>
         Nome: {{$name}} <br>
         Email: {{$email}} <br>
-        Message: "Salve, posso essere anche io un revisore? Grazie in anticipo." <br>
         @if(auth()->user()->role == 'user')
+        Message: "Salve, posso essere anche io un revisore? Grazie in anticipo." <br>
         Clicca per rendere {{$name}} revisore: <br>
         <a href="{{route('revisor.acceptRequest', compact('user'))}}">Rendi Revisore</a>
         @endif

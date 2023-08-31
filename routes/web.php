@@ -23,6 +23,9 @@ use App\Http\Controllers\PublicController;
 // Homepage
 Route::get('/', [HomepageController::class, "homepage"])->name('home');
 
+Route::get('/{category}', [HomepageController::class, "announceCategorySearch"])->name('hp.announces.category');
+
+
 // Announces
 Route::get('/announces', [AnnounceController::class, "index"])->name('announces.index');
 
