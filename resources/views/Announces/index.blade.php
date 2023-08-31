@@ -121,7 +121,7 @@
                     <figcaption class="snip1418Body">
                         <h3 class="text-center text-decoration-underline p-2 purple card" id="title">{{ $announce->title }}</h3>
 
-                        <p class="card-text text-warning fw-semibold mb-2 text-end fs-6">{{ $announce->category->name }}</p>
+                        <p class="card-text text-warning fw-semibold mb-2 text-end fs-6">{{__('ui.category_'.$announce->category_id)}}</p>
 
                         <p class="hidden">{{ $announce->description }}</p>
 
@@ -136,7 +136,7 @@
             @empty
             <div class="col-12 vh-100">
                 <div class="alert alert-warning my-5">
-                    <p class="lead"> {{__('No announcement')}} </p>
+                    <p class="lead"> {{__('ui.noAdfound')}} </p>
                 </div>
             </div>
             @endforelse

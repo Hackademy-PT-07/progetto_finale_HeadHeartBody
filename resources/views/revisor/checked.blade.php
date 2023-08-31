@@ -19,7 +19,7 @@
                     <img style="height: 200px" src="{{Storage::url($announce->img)}}" class="card-img-top img-fluid" alt="{{$announce->title}}">
                     <div class="card-body">
                         <h5 class="card-title text-center">{{ $announce->title }}</h5>
-                        <span class="small">{{ $announce->category->name }}</span>
+                        <span class="small">{{__('ui.category_'.$announce->category_id)}}</span>
                         <p class="card-text m-0 pt-1 text-center">{{ $announce->description }}</p>
                         <p class="card-text m-0 pt-1">{{ $announce->price }}€</p>
                         <div class="d-flex justify-content-end">
