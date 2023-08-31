@@ -18,10 +18,10 @@ class LavoraConNoiMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public $user;
-    public function __construct(User $user)
+    
+    public function __construct(public $name, public $email, public $message, public $user)
     {
-        $this->user = $user;
+        
     }
 
     /**
@@ -41,7 +41,7 @@ class LavoraConNoiMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.contact',
+            view: 'mail.LavoraConNoi',
         );
     }
 

@@ -8,16 +8,24 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-end fw-semibold pe-3" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-end pe-3" id="navbarNav">
+
+      
       <ul class="navbar-nav align-items-center">
+        @if(auth()->user())
+            <li class="text-decoration-underline">
+              {{auth()->user()->email}} 
+            </li>
+        @endif
+        <span> </span>
         <li class="nav-item dropdown pe-3 d-flex align-items-center">
 
           @guest
 
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle btn btn-outline-warning " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="bi bi-person-dash text-danger fs-4"></span>
           </a>
-          <ul class="dropdown-menu bg-warning">
+          <ul class="dropdown-menu select-bg">
 
             <li><a class="dropdown-item nav-link" href="/login">{{ __('ui.login') }}</a></li>
             <li><a class="dropdown-item nav-link" href="/register">{{ __('ui.signUp') }}</a></li>
@@ -25,14 +33,14 @@
 
           @else
 
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="bi bi-person-check text-success fs-4"></span>
+          <a class="nav-link btn btn-outline-warning dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="bi bi-person-check my-1 ms-1 fs-4"></span>
           </a>
 
-          <ul class="dropdown-menu bg-warning">
+          <ul class="dropdown-menu select-bg">
 
-            <li>
-              <a class="dropdown-item" href="{{route('announces.livewire')}}"><span class="small fst-italic"></span> <span class="fw-bold purple ps-2 fs-6">{{auth()->user()->name}}</span></a>
+            <li class="text-center">
+              <span class="small fst-italic"></span> <span class="fw-bold purple fs-6">{{auth()->user()->name}} </span>
             </li>
 
             <li>
@@ -63,7 +71,7 @@
 
         @if(auth()->user() && auth()->user()->role == "revisor")
         <li class="nav-item">
-          <a class="nav-link btn btn-outline-success btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">
+          <a class="nav-link btn btn-outline-warning me-4 btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">
           {{ __('ui.revisorPage') }}
             @if(App\Models\Announce::toBeRevisionedCount() > 0)
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -76,45 +84,37 @@
         @endif
 
         <li class="nav-item">
-          <a class="nav-link" href="{{route('announces.index') }}">{{ __('ui.announces') }}</a>
+          <a class="nav-link me-4 btn btn-outline-warning" href="{{route('announces.index') }}">{{ __('ui.announces') }}</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="bi bi-flag"></span>
+          <a class="nav-link dropdown-toggle btn btn-outline-warning" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span>{{ __('ui.lang') }}</span>
           </a>
-          <ul class="dropdown-menu">
-            <div class="d-flex flex-column align-items-center">
+          <ul class="dropdown-menu select-bg me-4">
+            <div class="d-flex flex-column align-items-start">
             <li>
               <form action="{{route('setLocale', 'it')}}" method="POST">
                 @csrf
-                <button type="submit" class="btn border-0 fi fi-it"></button>
+                <button type="submit" class="btn border-0 ms-2 fi fi-it"></button>
               </form>
             </li>
             <li>
               <form action="{{route('setLocale', 'en')}}" method="POST">
                 @csrf
-                <button type="submit" class="btn border-0 fi fi-gb"></button>
+                <button type="submit" class="btn border-0 ms-2 fi fi-gb"></button>
               </form>
             </li>
             <li>
               <form action="{{route('setLocale', 'es')}}" method="POST">
                 @csrf
-                <button type="submit" class="btn border-0 fi fi-es"></button>
+                <button type="submit" class="btn border-0 ms-2 fi fi-es"></button>
               </form>
             </li>
             </div>
           </ul>
         </li>
-        @if(auth()->user() && auth()->user()->role != "revisor")
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('revisor.request')}}">{{ __('ui.workWithUsForm') }}</a>
-        </li>
-        @endif
-        @if(auth()->user())
-        <li>
-          {{auth()->user()->email}}
-        </li>
-        @endif
+       
+       
       </ul>
 
     </div>

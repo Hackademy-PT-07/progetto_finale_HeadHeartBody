@@ -7,7 +7,7 @@ use App\Http\Controllers\AnnounceController;
 use App\Http\Controllers\RevisorController;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\GoogleController;
-
+use App\Http\Controllers\ContactController;
 /*
 use App\Http\Controllers\PublicController;
 |--------------------------------------------------------------------------
@@ -40,7 +40,7 @@ Route::middleware("auth")->group(function () {
     Route::get('/announces/livewire/form', [AnnounceController::class, "announcesLivewire"])->name('announces.livewire');
 
     // Become revisor request
-    Route::get('/revisor/request', [RevisorController::class, "revisorRequest"])->name("revisor.request");
+    Route::post('/lavoraConNoi/save', [ContactController::class , 'save']) -> name('LavoraConNoi.save');
 
 });
 
@@ -73,3 +73,6 @@ Route::get("/auth/google/callback", [GoogleController::class, "callbackFromGoogl
 // Cambio Lingua
 
 Route::post("/language/{lang}", [HomepageController::class, "setLanguage"])->name("setLocale");
+
+
+

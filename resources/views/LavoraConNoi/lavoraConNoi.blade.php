@@ -15,7 +15,7 @@
                     </div>
                     @endif
 
-                        <form action="{{route('lavoraConNoi.save')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('LavoraConNoi.save')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 

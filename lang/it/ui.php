@@ -24,6 +24,7 @@ return [
     'revisorPage' => 'Pagina Revisore ',
     'unreadMsg' => 'Messaggi non letti',
     'announces' => 'Annunci',
+    'lang' => 'Lingua',
 
     /* Footer */
     'social' => 'Seguici sui social!',
@@ -67,7 +68,7 @@ return [
     'category_1' => 'Abbigliamento',
     'category_2' => 'Sport',
     'category_3' => 'Motori',
-    'category_4' => 'Videogame',
+    'category_4' => 'Videogames',
     'category_5' => 'Elettronica',
     'category_6' => 'Arredamento',
     'category_7' => 'Giardinaggio',
@@ -77,4 +78,13 @@ return [
 
     'categories' => 'Categorie',
 
+     /* Carousel */
+     'carousel_1_1' => 'Entra nel nostro network',
+     'carousel_1_2' => 'Milioni di utenti già registrati',
+     'carousel_2_1' => 'Spedizioni in tutto il mondo',
+     'carousel_2_2' => 'Comodamente da casa tua',
+     'carousel_3_1' => 'Basta un click!',
+     'carousel_3_2' => 'Acquista o vendi gli articoli di tuo interesse',
+
+     'noAdfound' => 'Nessun annuncio',
 ];

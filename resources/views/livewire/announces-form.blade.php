@@ -26,7 +26,7 @@
                                     <select name="announce.category_id" id="announce.category_id" wire:model="announce.category_id" class="form-select" aria-label="Default select example">
                                         <option selected>{{ __('ui.selectCategoryAd') }}</option>
                                         @foreach($categories as $category)
-                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                        <option value="{{$category->id}}">{{__('ui.category_'.$category->id)}}</option>
                                         @endforeach
                                     </select>
                                     @error('announce.category_id') <span class="small text-danger">{{ $message }}</span> @enderror

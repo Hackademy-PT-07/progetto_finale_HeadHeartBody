@@ -62,13 +62,7 @@ class RevisorController extends Controller
     }
 
 
-   public function revisorRequest(){
-
-    Mail::to('admin@example.com')->send(new LavoraConNoiMail(auth()->user()));
-
-    return redirect("/")->with(['message'=>'Abbiamo ricevuto la tua richiesta. Ti risponderemo il prima possibile']);
-
-   }
+  
 
    public function acceptRequest(User $user){
 
