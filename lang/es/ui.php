@@ -85,5 +85,7 @@ return [
     'carousel_2_1' => 'Envíos a todo el mundo',
     'carousel_2_2' => 'Cómodamente desde tu casa',
     'carousel_3_1' => 'Sólo un clic!',
-    'carousel_3_2' => 'Compra y vende los artículos de tu interés'
+    'carousel_3_2' => 'Compra y vende los artículos de tu interés',
+
+    'noAdfound' => 'Sin anuncios',
 ];

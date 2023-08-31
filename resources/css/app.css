@@ -194,12 +194,13 @@ body {
   max-height: 500px;
   width: 80%;
   height: 90%;
-  background: rgba(81, 189, 182, 0.699);
+  background: var(--background-color);
   text-align: left;
   color: var(--primary-dark-color);
-  box-shadow: 10px 10px 15px rgb(84, 36, 36);
-  border-bottom-right-radius: 50px;
-  border-top-left-radius: 50px;
+  box-shadow: 10px 10px 15px var(--secondary-dark-color);
+  /* border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px; */
+  border-radius: 15px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-perspective: 20em;
@@ -214,11 +215,12 @@ body {
 }
 
 .snip1418:hover {
-  background-color: rgba(87, 7, 141, 0.692);
-  color:rgb(81,189,181);
+  background-color: var(--background-color);
+  color: var(--primary-dark-color);
   box-shadow: 0 0 50px 15px white;
-  width: 100%;
-  height: 100%;
+  border-radius: 15px;
+  /* width: 100%;
+  height: 100%; */
   
 }
 
@@ -249,7 +251,8 @@ body {
   font-weight: 700;
   font-size: 0.9em;
   opacity: 0;
-  background-color:rgba(87, 7, 141, 0.8);
+  background-color:var(--primary-color);
+  border-bottom-left-radius: 7px;
   -webkit-transform: rotateX(-90deg);
   transform: rotateX(-90deg);
   -webkit-transform-origin: 100% 0;
@@ -307,7 +310,7 @@ body {
 .snip1418 #title {
   font-family: 'Racing Sans One', cursive;
   background: rgb(252,212,5); background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%);
-  border-radius: 0 25px 25px 0;
+  border-radius: 0 5px 50px 0px;
   margin-left: -25px;
 }
 .snip1418:hover .add-to-cart,

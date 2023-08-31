@@ -54,6 +54,8 @@
                                 <div class="col-12 col-xl-4">
                                     <span class="small fst-italic">{{ __('ui.priceAd') }}: </span>
                                     <p class="text-center fw-bold border-bottom pb-2">{{$announce_to_check->price}}€</p>
+                                    <span class="small fst-italic">{{ __('ui.categories') }}: </span>
+                                    <p class="text-center fw-bold border-bottom pb-2">{{__('ui.category_'.$announce_to_check->category_id)}}</p>
                                     <span class="small fst-italic">{{ __('ui.pubFrom') }}: </span>
                                     <p class="text-center fw-bold border-bottom pb-2">{{$announce_to_check->user->name}} </p>
                                     <span class="small fst-italic">{{ __('ui.pubOn') }}: </span>
