@@ -122,8 +122,10 @@ body {
   .search {
     background:  var(--background-color);
     background: radial-gradient(circle,  var(--primary-color), var(--background-color));
-    border-radius: 10px;
+    border-radius: 16rem;
     padding-bottom: 20px;
+
+
   }
 
   .immagine {

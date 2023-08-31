@@ -1,5 +1,5 @@
 <x-main>
-    <x-slot:pageName>Crea Annuncio</x-slot:pageName>
+    <x-slot:pageName>{{ __('ui.createAnnounce') }}</x-slot:pageName>
 
     <!-- <div class="pt-5">
         <div class="d-flex align-items-center justify-content-center pt-5 pe-5">
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="pb-3 mb-5 text-center">
-            <a class="btn btn-warning buttonStyle" href="{{route('announces.index')}}">Tutti gli annunci</a>
+            <a class="btn btn-warning buttonStyle" href="{{route('announces.index')}}">{{ __('ui.allAnnounces') }}</a>
         </div>
     </div>
 </x-main>

@@ -19,8 +19,8 @@
           </a>
           <ul class="dropdown-menu bg-warning">
 
-            <li><a class="dropdown-item nav-link" href="/login">Accedi</a></li>
-            <li><a class="dropdown-item nav-link" href="/register">Registrati</a></li>
+            <li><a class="dropdown-item nav-link" href="/login">{{ __('ui.login') }}</a></li>
+            <li><a class="dropdown-item nav-link" href="/register">{{ __('ui.signUp') }}</a></li>
           </ul>
 
           @else
@@ -40,7 +40,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item" href="{{route('announces.livewire')}}">Inserisci annuncio</a>
+              <a class="dropdown-item" href="{{route('announces.livewire')}}">{{ __('ui.addAnnounce') }}</a>
             </li>
 
             <li>
@@ -51,7 +51,7 @@
               <form class="d-flex justify-content-center" action="/logout" method="POST">
                 @csrf
                 <button class="btn btn-sm bi bi-door-open-fill text-danger">
-                  <span class="ps-1 text-black">Logout</span>
+                  <span class="ps-1 text-black">{{ __('ui.logout') }}</span>
                 </button>
               </form>
             </li>
@@ -64,11 +64,11 @@
         @if(auth()->user() && auth()->user()->role == "revisor")
         <li class="nav-item">
           <a class="nav-link btn btn-outline-success btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">
-            Pagina Revisore
+          {{ __('ui.revisorPage') }}
             @if(App\Models\Announce::toBeRevisionedCount() > 0)
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               {{App\Models\Announce::toBeRevisionedCount()}}
-              <span class="visually-hidden">Messaggi non letti</span>
+              <span class="visually-hidden">{{ __('ui.unreadMsg') }}</span>
             </span>
             @endif
           </a>
@@ -76,27 +76,43 @@
         @endif
 
         <li class="nav-item">
-          <a class="nav-link" href="{{route('announces.index') }}">Annunci</a>
+          <a class="nav-link" href="{{route('announces.index') }}">{{ __('ui.announces') }}</a>
         </li>
-        <li class="nav-item dropdown px-2">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="bi bi-flag"></span>
           </a>
-          <ul class="dropdown-menu bg-warning">
-            <form action="{{route('setLocale', 'en')}}" method="post">
-              @csrf
-              <button type="submit">Inglese</button>
-            </form>
-
-
-            <!-- <li><a class="dropdown-item" href="{{route('setLocale', 'it')}}">Italiano</a></li>
-            <li><a class="dropdown-item" href="{{route('setLocale', 'en')}}">Inglese</a></li>
-            <li><a class="dropdown-item" href="{{route('setLocale', 'es')}}">Spagnolo</a></li> -->
+          <ul class="dropdown-menu">
+            <div class="d-flex flex-column align-items-center">
+            <li>
+              <form action="{{route('setLocale', 'it')}}" method="POST">
+                @csrf
+                <button type="submit" class="btn border-0 fi fi-it"></button>
+              </form>
+            </li>
+            <li>
+              <form action="{{route('setLocale', 'en')}}" method="POST">
+                @csrf
+                <button type="submit" class="btn border-0 fi fi-gb"></button>
+              </form>
+            </li>
+            <li>
+              <form action="{{route('setLocale', 'es')}}" method="POST">
+                @csrf
+                <button type="submit" class="btn border-0 fi fi-es"></button>
+              </form>
+            </li>
+            </div>
           </ul>
         </li>
         @if(auth()->user() && auth()->user()->role != "revisor")
         <li class="nav-item">
-          <a class="nav-link" href="{{route('revisor.request')}}">Lavora con noi</a>
+          <a class="nav-link" href="{{route('revisor.request')}}">{{ __('ui.workWithUsForm') }}</a>
+        </li>
+        @endif
+        @if(auth()->user())
+        <li>
+          {{auth()->user()->email}}
         </li>
         @endif
       </ul>
