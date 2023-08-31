@@ -12,6 +12,8 @@ class AnnounceController extends Controller
 {
    // Announces
 
+   
+
    public function index()
    {
 
@@ -21,11 +23,10 @@ class AnnounceController extends Controller
 
       $order = [];
       
-      $price = 0;
 
       $announces = Announce::where("is_accepted", true)->orderBy("created_at", "DESC")->paginate(15);
 
-      return view('announces.index', compact("announces", "searched", "category", "order", "price"));
+      return view('announces.index', compact("announces", "searched", "category", "order"));
    }
 
    // Announces create form/list
@@ -58,7 +59,6 @@ class AnnounceController extends Controller
 
       $order = [];
 
-      $price = 0;
 
 
       if ($request->searched) {
@@ -348,7 +348,7 @@ class AnnounceController extends Controller
       }
 
 
-      return view("announces.index", compact("announces", "searched", "category", "order", "price"));
+      return view("announces.index", compact("announces", "searched", "category", "order"));
    }
 
    public function searchAnnounces(Request $request)

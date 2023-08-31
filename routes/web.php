@@ -71,8 +71,5 @@ Route::get("/auth/google", [GoogleController::class, "loginUsingGoogle"])->name(
 Route::get("/auth/google/callback", [GoogleController::class, "callbackFromGoogle"])->name("google.callback");
 
 // Cambio Lingua
-/* Route::get("/lang/{lang}", [HomepageController::class, "setLanguage"])->name("set_language_locale")->middleware("setLocale"); */
 
-Route::group(["prefix"=>"{locale}"],function() {
-    Route::get('/', [HomepageController::class, "homepage"])->name('home')->middleware("setLocale");
-});
+Route::post("/language/{lang}", [HomepageController::class, "setLanguage"])->name("setLocale");

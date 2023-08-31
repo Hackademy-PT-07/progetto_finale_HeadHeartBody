@@ -1,18 +1,18 @@
 
 <x-main>
-    <x-slot:pageName>Registrati</x-slot:pageName>
+    <x-slot:pageName>{{ __('ui.signUp') }}</x-slot:pageName>
     
-    <div class="container mt-4 pt-5 vh-100">
+    <div class="container vh-100">
         <div class="row">
             <div class="col-12 col-xl-8 mx-auto mt-5 pt-5">
-                <h2 class="ps-2 formTitle text-center">Registrati</h2>
+                <h2 class="ps-2 formTitle text-center">{{ __('ui.signUp') }}</h2>
                 <div class="mt-4">
-                    <div class="card-body mx-4 formBox p-5">
+                    <div class="card-body m-4 formBox p-5">
                         <form action="/register" method="POST">
                             @csrf
                             <div class="row g-3">
                             <div class="col-12">
-                                    <label for="name">Name</label>
+                                    <label for="name">{{ __('ui.nameForm') }}</label>
                                     <input type="text" name="name" id="name" class="form-control" >
                                     @error('name') <span class="small text-danger">{{ $message }}</span> @enderror
 
@@ -30,13 +30,13 @@
 
                                 </div>
                                 <div class="col-12">
-                                    <label for="password_confirmation">Conferma password</label>
+                                    <label for="password_confirmation">{{ __('ui.acceptPsw') }}</label>
                                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" >
                                     @error('password_confirmation') <span class="small text-danger">{{ $message }}</span> @enderror
 
                                 </div>
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-warning buttonStyle mt-3" >Registrati</button>
+                                    <button type="submit" class="btn btn-warning buttonStyle mt-3" >{{ __('ui.signUp') }}</button>
                                 </div>
                             </div>
                         </form>
