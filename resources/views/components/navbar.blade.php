@@ -113,11 +113,7 @@
             </div>
           </ul>
         </li>
-        <!-- @if(auth()->user() && auth()->user()->role != "revisor")
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('revisor.request')}}">{{ __('ui.workWithUsForm') }}</a>
-        </li>
-        @endif -->
+       
        
       </ul>
 
