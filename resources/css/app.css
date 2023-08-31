@@ -396,6 +396,8 @@ body {
   border: 0;
 
   border-bottom: 2px  var(--primary-dark-color) solid;
+  
+  /* transition: 0.5s; */
 
 }
 
