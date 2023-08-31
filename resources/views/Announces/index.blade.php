@@ -65,7 +65,7 @@
                     <div class="col-12 col-md-3">
                         <label for="category" class="form-label"></label>
                         <select class="form-select select-bg" aria-label="Default select example" id="category" name="category">
-                            <option selected @if($category) value="{{key($category)}}" @else value="" @endif>
+php                            <option selected @if($category) value="{{key($category)}}" @else value="" @endif>
                                 @if($category) {{$category[key($category)]}} @else Categorie @endif</option>
                             @if($category)<option value="">{{ __('ui.filterOff') }}</option>@endif
                             @foreach($categories as $category)
