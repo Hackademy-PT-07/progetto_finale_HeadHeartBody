@@ -119,7 +119,7 @@
                             <i class="bi bi-megaphone m-5"></i>
                         </div>
 
-                        <a class="text-decoration-underline fs-6 fw-semibold" style="color:  var(--primary-dark-color);" href="#">{{$category->name}}</a>
+                        <a class="text-decoration-underline fs-6 fw-semibold" style="color:  var(--primary-dark-color);" href="#">{{__('ui.category_'.$category->id)}}</a>
                     </div>
                 </div>
             </div>

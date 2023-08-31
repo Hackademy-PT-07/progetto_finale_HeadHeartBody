@@ -68,7 +68,7 @@ return [
     'category_1' => 'Clothing',
     'category_2' => 'Sport',
     'category_3' => 'Engines',
-    'category_4' => 'Videogame',
+    'category_4' => 'Videogames',
     'category_5' => 'Electronics',
     'category_6' => 'Furniture',
     'category_7' => 'Gardening',
@@ -84,6 +84,8 @@ return [
     'carousel_2_1' => 'Shipments all over the world',
     'carousel_2_2' => 'Comfortably from your home',
     'carousel_3_1' => 'Just a click!',
-    'carousel_3_2' => 'Buy or sell the items of your interest'
+    'carousel_3_2' => 'Buy or sell the items of your interest',
+
+    'noAdfound' => 'No announcement',
 
 ];
