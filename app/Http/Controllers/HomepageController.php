@@ -21,10 +21,8 @@ class HomepageController extends Controller
         $category = [];
 
         $order = [];
-      
-        $price = 0;
 
-        return view("homepage.homepage", compact('searched', 'category', 'order', 'price'));
+        return view("homepage.homepage", compact('searched', 'category', 'order'));
 
     }
 

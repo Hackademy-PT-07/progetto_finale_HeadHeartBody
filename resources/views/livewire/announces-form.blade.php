@@ -56,7 +56,7 @@
                                         @foreach($images as $key => $image)
                                         <div class="mx-auto shadow rounded">
                                             <img src="{{$image->temporaryUrl()}}"  style="height: 100px; width:100px" alt="">
-                                            <button wire:click="removeImages({{$key}})" class="btn btn-danger">Elimina</button>
+                                            <button type="button" wire:click="removeImages({{$key}})" class="btn btn-danger">Elimina</button>
                                         </div>
                                         @endforeach
                                     </div>
@@ -69,7 +69,7 @@
                                         @foreach($dbImg as $key => $image)
                                         <div class="mx-auto shadow rounded">
                                             <img src="{{asset('storage/' . $image->path)}}"  style="height: 100px; width:100px" alt="">
-                                            <button wire:click="removeDbImages({{$key}})" class="btn btn-danger">Elimina</button>
+                                            <button type="button" wire:click="removeDbImages({{$key}})" class="btn btn-danger">Elimina</button>
                                         </div>
 
                                         @endforeach
