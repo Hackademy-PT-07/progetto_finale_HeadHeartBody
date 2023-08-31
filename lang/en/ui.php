@@ -24,6 +24,7 @@ return [
     'revisorPage' => 'Revisor Page ',
     'unreadMsg' => 'Unread Posts',
     'announces' => 'Announces',
+    'lang' => 'Languages',
 
     /* Footer */
     'social' => 'Follow Us!',
@@ -77,5 +78,12 @@ return [
 
     'categories' => 'Categories',
     
+    /* Carousel */
+    'carousel_1_1' => 'Join us in our network',
+    'carousel_1_2' => 'Millions of users already registered',
+    'carousel_2_1' => 'Shipments all over the world',
+    'carousel_2_2' => 'Comfortably from your home',
+    'carousel_3_1' => 'Just a click!',
+    'carousel_3_2' => 'Buy or sell the items of your interest'
 
 ];
