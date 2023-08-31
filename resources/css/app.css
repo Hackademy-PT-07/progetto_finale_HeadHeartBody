@@ -52,6 +52,16 @@ body {
   background: radial-gradient(circle,  var(--primary-color), var(--background-color));
 }
 
+.navButton {
+  background-color: none;
+}
+
+
+#navbarNav {
+
+  font-family: 'Aclonica', sans-serif;
+}
+
 #logo {
   font-family: 'Racing Sans One', cursive;
   font-size: xx-large;
@@ -59,9 +69,8 @@ body {
     
 }
 
-#navbarNav {
-
-  font-family: 'Aclonica', sans-serif;
+#logo:hover {
+  color:rgb(81,189,181);
 }
 
 .formBox {
@@ -69,32 +78,30 @@ body {
   font-size: x-large;
   margin-bottom: 20px;
   text-align: start;
-  color: rgb(87, 7, 141);
+  color:var(--primary-dark-color);
   border-radius: 25px;
-  background-color:  rgba(81,189,181,0.5);
-  
+  background-color: var(--background-color);
   box-shadow: 0 0 50px rgb(84, 36, 36);
 }
 
 .formTitle {
-  font-family: 'Racing Sans One', cursive;
+  font-family: 'Racing Sans One';
   font-weight: bold;
   height: 80 px;
   padding: 5px;
   align-items: center;
-  color: rgb(87, 7, 141);
-  text-shadow: 5px 5px 8px white;
+  color: var(--primary-dark-color);
+  
   background: rgb(252,212,5);
   background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%); 
-  border-radius: 5px; 
+  border-radius: 50px 5px 50px 5px; 
   height: 50px;
-  border-radius: 10rem;
   box-shadow: 5px 5px 5px  rgb(84, 36, 36);
     
   }
 
   .purple {
-    color: rgb(87, 7, 141);
+    color:var(--primary-dark-color);
     text-shadow: 5px 5px 10px white;
   }
 
@@ -107,23 +114,24 @@ body {
     
     background-color: rgba(252,212,5,1);
     border-color: rgba(245,161,4,1) ;
-    border-radius: 25px;
-    font-family: 'Racing Sans One', cursive;
-    text-shadow: 5px 5px 8px white;
-    color: rgb(87, 7, 141);
-    font-size:x-large;
-    text-decoration: underline;
-    box-shadow: 5px 5px 5px rgb(84, 36, 36);
+    border-radius: 5px;
+    font-family: 'Aclonica', sans-serif;
+    color: var(--primary-dark-color);
+    /* box-shadow: 5px 5px 5px rgb(84, 36, 36); */
   }
+
   .buttonStyle:hover {
     color:rgb(81,189,181);
+    
   }
   
   .search {
     background:  var(--background-color);
     background: radial-gradient(circle,  var(--primary-color), var(--background-color));
-    border-radius: 10px;
+    border-radius: 16rem;
     padding-bottom: 20px;
+
+
   }
 
   .immagine {
@@ -152,14 +160,27 @@ body {
     height: 450px;
     
   }
+
+  #firstTitle {
+    color: var(--primary-dark-color);
+  }
   
-  /* card standard */
+  #firstTitle:hover {
+    color:rgb(81,189,181);
+  }
+
+  .joinUs {
+    width: 40%;
+    margin-right: 100px;
+    
+  }
   
   
-    .card {
+  .card {
       box-shadow: 10px 10px 15px rgb(84, 36, 36);
+      background-color: var(--background-color);
       
-    }
+  }
     
   @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
@@ -175,7 +196,7 @@ body {
   height: 90%;
   background: rgba(81, 189, 182, 0.699);
   text-align: left;
-  color:  rgb(87, 7, 141);
+  color: var(--primary-dark-color);
   box-shadow: 10px 10px 15px rgb(84, 36, 36);
   border-bottom-right-radius: 50px;
   border-top-left-radius: 50px;
@@ -241,10 +262,11 @@ body {
   width: 40px;
   line-height: 40px;
   text-align: center;
-  background-color: rgb(87, 7, 141);
+  background-color:var(--primary-dark-color);
   color: #ffffff;
   font-size: 1.4em;
 }
+
 .snip1418 figcaption {
   padding: 10px;
 }
@@ -301,10 +323,6 @@ body {
 
 
 
-
-/*Categories section*/
-
-
 /*Categories card custom*/
 
 .circle-airplane{
@@ -315,11 +333,11 @@ body {
 
   align-items: center;
 
-  width: 50px;
+  width: 25px;
 
-  height: 50px;
+  height: 25px;
 
-  border: 2px   rgb(87, 7, 141);
+  border: 2px  var(--primary-dark-color);
 
   border-style: solid;
 
@@ -330,17 +348,24 @@ body {
 
 .card-bdash {
 
-  background-color:  rgba(81,189,181,0.8);
+  background-color:  var(--background-color);
 
-  border: 4px  rgb(87, 7, 141);
+  border: 4px var(--primary-dark-color);
+
+  border-radius: 50%;
 
   border-style: solid;
 
+  width: 50%;
+  
+  transition-duration: 1s, 1s;
 }
 
 .card-bdash:hover {
 
   background-color:  rgba(252,212,5,1);
+  
+  border-radius: 25%;
 
 }
 
@@ -357,12 +382,11 @@ body {
 }
 
 
-
 .bgfooter {
   
   background:  var(--background-color);
   background: radial-gradient(circle,  var(--primary-color), var(--background-color));
-  height: 100px;
+  
   
 }
 
@@ -381,6 +405,8 @@ body {
 
   border: 0;
 
+  background-color:var(--background-color);
+
   border-bottom: 2px var(--primary-dark-color) solid;
 
   border-right: 2px var(--primary-dark-color) solid;
@@ -396,6 +422,8 @@ body {
   border: 0;
 
   border-bottom: 2px  var(--primary-dark-color) solid;
+  
+  /* transition: 0.5s; */
 
 }
 
