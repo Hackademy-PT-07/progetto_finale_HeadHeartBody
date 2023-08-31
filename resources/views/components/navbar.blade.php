@@ -33,7 +33,7 @@
 
           @else
 
-          <a class="nav-link dropdown-toggle btn btn-outline-warning" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link btn btn-outline-warning dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="bi bi-person-check my-1 ms-1 fs-4"></span>
           </a>
 

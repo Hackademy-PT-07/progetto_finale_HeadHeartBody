@@ -136,7 +136,7 @@
             @empty
             <div class="col-12 vh-100">
                 <div class="alert alert-warning my-5">
-                    <p class="lead"> {{__('No announcement')}} </p>
+                    <p class="lead text-center"> {{__('No announcement')}} </p>
                 </div>
             </div>
             @endforelse
