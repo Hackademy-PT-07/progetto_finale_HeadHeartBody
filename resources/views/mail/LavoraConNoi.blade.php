@@ -11,6 +11,7 @@
         <br>
         Nome: {{$name}} <br>
         Email: {{$email}} <br>
+        Testo : {{$textMessage}} <br>
         @if(auth()->user()->role == 'user')
         Message: "Salve, posso essere anche io un revisore? Grazie in anticipo." <br>
         Clicca per rendere {{$name}} revisore: <br>
