@@ -123,9 +123,9 @@
                                     </div>
 
                                     <div class="col-8">
-                                        <label for="announce.price">{{ __('ui.messageForm') }}</label>
+                                        <label for="textMessage">{{ __('ui.messageForm') }}</label>
                                         <textarea rows="6" name="textMessage" id="textMessage" class="form-control"></textarea>
-                                        @error('textMessage') <span class="small text-danger">{{ $message }}</span> @enderror
+                                        @error('text') <span class="small text-danger">{{ $message }}</span> @enderror
 
                                     </div>
 
@@ -171,15 +171,15 @@
                                     <div class="row justify-content-around">
 
                                         <div class="col-8">
-                                            <label for="username">{{ __('ui.nameForm') }}</label>
+                                            <label for="name">{{ __('ui.nameForm') }}</label>
                                             <input type="text" name="name" id="name" class="form-control">
                                             @error('name') <span class="small text-danger">{{ $message }}</span> @enderror
 
                                         </div>
                                         <div class="col-8">
-                                            <label for="description">Email</label>
+                                            <label for="email">Email</label>
                                             <input type="email" name="email" id="email" class="form-control">
-                                            @error('Email') <span class="small text-danger">{{ $message }}</span> @enderror
+                                            @error('email') <span class="small text-danger">{{ $message }}</span> @enderror
 
                                         </div>
 

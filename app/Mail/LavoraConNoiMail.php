@@ -19,7 +19,7 @@ class LavoraConNoiMail extends Mailable
      * Create a new message instance.
      */
     
-    public function __construct(public $name, public $email, public $message, public $user)
+    public function __construct(public $name, public $email, public $textMessage, public $user)
     {
         
     }
