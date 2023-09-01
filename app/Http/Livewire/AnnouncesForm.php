@@ -52,7 +52,7 @@ class AnnouncesForm extends Component
 
         "required" => "Il campo è obbligatorio",
 
-        "announce.title.max:50" => "Massimo 50 caratteri",
+        "announce.title.max:20" => "Massimo 20 caratteri",
 
         "images.*.image" => "Deve essere un file immagine",
 
@@ -128,7 +128,6 @@ class AnnouncesForm extends Component
                 dispatch(new ResizeImage($newImage->path, 400, 300));
 
             }
-
             File::deleteDirectory(storage_path("/app/livewire-tmp"));
         }
 

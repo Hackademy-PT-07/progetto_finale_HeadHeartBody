@@ -9,11 +9,14 @@
     <div>
         Hai ricevuto una richiesta di contatto:
         <br>
-        Nome: {{$user->name}} <br>
-        Email: {{$user->email}} <br>
+        Nome: {{$name}} <br>
+        Email: {{$email}} <br>
+        Testo : {{$textMessage}} <br>
+        @if(auth()->user()->role == 'user')
         Message: "Salve, posso essere anche io un revisore? Grazie in anticipo." <br>
-        Clicca per rendere {{$user->name}} revisore: <br>
+        Clicca per rendere {{$name}} revisore: <br>
         <a href="{{route('revisor.acceptRequest', compact('user'))}}">Rendi Revisore</a>
+        @endif
     </div>
 </body>
 </html>

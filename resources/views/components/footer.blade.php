@@ -4,9 +4,11 @@
             <a class="footerRef mt-1" href=""><i class="bi bi-facebook mx-2"></i></a>
             <a class="footerRef" href=""><i class="bi bi-whatsapp mx-2"></i></a>
             <a class="footerRef" href=""><i class="bi bi-instagram mx-2"></i></a><br>
-            <a class="footerRef" href=""><span>{{ __('ui.workWithUsForm') }}</span></a>
+            @if(auth()->user() && auth()->user()->role == "user")
+            <a class="footerRef" href="{{route('home', '#form')}}"><span>{{ __('ui.workWithUsForm') }}</span></a>
+            @endif
     </div>
-    <div class="col-4">
+    <div class="col-4 my-3">
         <h6 class="py-4 mb-0 fw-semibold">
         <span class="fst-italic">Created by </span>
         <span class="fw-bold text-decoration-underline text-warning">HeadHeartBody</span>

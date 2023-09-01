@@ -12,12 +12,7 @@
 
       
       <ul class="navbar-nav align-items-center">
-        @if(auth()->user())
-            <li class="text-decoration-underline">
-              {{auth()->user()->email}} 
-            </li>
-        @endif
-        <span> </span>
+
         <li class="nav-item dropdown pe-3 d-flex align-items-center">
 
           @guest
@@ -93,31 +88,18 @@
           <ul class="dropdown-menu select-bg me-4">
             <div class="d-flex flex-column align-items-start">
             <li>
-              <form action="{{route('setLocale', 'it')}}" method="POST">
-                @csrf
-                <button type="submit" class="btn border-0 ms-2 fi fi-it"></button>
-              </form>
+              <x-_locale :lang="$lang = 'it'" :nation="$nation = 'it'" />
             </li>
             <li>
-              <form action="{{route('setLocale', 'en')}}" method="POST">
-                @csrf
-                <button type="submit" class="btn border-0 ms-2 fi fi-gb"></button>
-              </form>
+              <x-_locale :lang="$lang = 'en'" :nation="$nation = 'gb'" />
             </li>
             <li>
-              <form action="{{route('setLocale', 'es')}}" method="POST">
-                @csrf
-                <button type="submit" class="btn border-0 ms-2 fi fi-es"></button>
-              </form>
+              <x-_locale :lang="$lang = 'es'" :nation="$nation = 'es'" />
             </li>
             </div>
           </ul>
         </li>
-        <!-- @if(auth()->user() && auth()->user()->role != "revisor")
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('revisor.request')}}">{{ __('ui.workWithUsForm') }}</a>
-        </li>
-        @endif -->
+       
        
       </ul>
 
