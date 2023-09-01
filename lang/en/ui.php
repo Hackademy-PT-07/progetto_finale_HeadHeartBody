@@ -40,7 +40,7 @@ return [
     'priceAd' => 'Price',
     'modAd' => 'Edit',
     'createAd' => 'Create',
-
+    'photoCar' => 'Photo uploaded',
     'yourAds' => 'All your Adverts',
     'deleteAd' => 'Delete',
 

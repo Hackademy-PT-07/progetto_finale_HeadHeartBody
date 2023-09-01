@@ -100,6 +100,19 @@ body {
     
   }
 
+  .formLine {
+    background: transparent;
+    border-color: white;  
+    border-top: none;  
+    border-right: none;
+    border-radius: 0;
+    margin-bottom: 5px;
+  }
+  
+  #announce.category_id{
+    background-color: #4C5958;
+  }
+
   .purple {
     color:var(--primary-dark-color);
     text-shadow: 5px 5px 10px white;

@@ -41,6 +41,7 @@ return [
     'priceAd' => 'Precio',
     'modAd' => 'Editar',
     'createAd' => 'Crear',
+    'photoCar' => 'Fotos subidas',
 
     'yourAds' => 'Tus anuncios',
     'deleteAd' => 'Borrar',
