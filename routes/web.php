@@ -23,8 +23,8 @@ use App\Http\Controllers\PublicController;
 // Homepage
 Route::get('/', [HomepageController::class, "homepage"])->name('home');
 
-Route::get('/{category}', [HomepageController::class, "announceCategorySearch"])->name('hp.announces.category');
-
+// Homepage filter for category
+Route::get('/homepage/filter/{category}', [HomepageController::class, "announceCategorySearch"])->name('hp.announces.category');
 
 // Announces
 Route::get('/announces', [AnnounceController::class, "index"])->name('announces.index');
@@ -74,8 +74,4 @@ Route::get("/auth/google", [GoogleController::class, "loginUsingGoogle"])->name(
 Route::get("/auth/google/callback", [GoogleController::class, "callbackFromGoogle"])->name("google.callback");
 
 // Cambio Lingua
-
 Route::post("/language/{lang}", [HomepageController::class, "setLanguage"])->name("setLocale");
-
-
-
