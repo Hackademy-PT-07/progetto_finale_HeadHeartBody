@@ -9,7 +9,7 @@
 
             <div class="col-12 text-light">
                 <h3 class="display-4 text-center">
-                {{ __('ui.txtRevAd') }}:
+                    {{ __('ui.txtRevAd') }}:
                 </h3>
             </div>
             <div class="col-12">
@@ -31,15 +31,11 @@
                                 <div class="col-12 col-xl-8">
                                     <div id="carouselExampleFade" class="carousel slide carousel-fade me-5 pb-3">
                                         <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="{{Storage::url($announce_to_check->img)}}" class="d-block w-100" alt="Foto Annuncio1">
+                                            @foreach($announce_to_check->images as $image)
+                                            <div class="carousel-item @if($image == $announce_to_check->images()->first()) active @endif">
+                                                <img style="width: 400px; height: 400px;" src="{{Storage::url($image->path)}}" class="d-block w-100" alt="Foto Annuncio1">
                                             </div>
-                                            <div class="carousel-item">
-                                                <img src="https://picsum.photos/300/150/?blur" class="d-block w-100" alt="Foto Annuncio2">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="https://picsum.photos/300/150?grayscale" class="d-block w-100" alt="Foto Annuncio3">
-                                            </div>
+                                            @endforeach
                                         </div>
                                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -88,7 +84,7 @@
                 @else
                 <div class="col-12 vh-100">
                     <h3 class="display-4 text-center">
-                    {{ __('ui.noRevAd') }} <a href="{{route('revisor.revised')}}" class="btn btn-secondary">{{ __('ui.adRevised') }}</a>
+                        {{ __('ui.noRevAd') }} <a href="{{route('revisor.revised')}}" class="btn btn-secondary">{{ __('ui.adRevised') }}</a>
                     </h3>
                 </div>
 
