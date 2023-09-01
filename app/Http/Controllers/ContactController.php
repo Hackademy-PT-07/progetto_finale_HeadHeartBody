@@ -21,7 +21,7 @@ class ContactController extends Controller
         Mail::to('admin@example.com')->send($mail);
 
         return redirect()->route('home')
-                         ->with(['success'=>'Abbiamo ricevuto la tua richiesta. Ti risponderemo il prima possibile.']);
+                         ->with(['message'=>'Abbiamo ricevuto la tua richiesta. Ti risponderemo il prima possibile.']);
     }
 
    

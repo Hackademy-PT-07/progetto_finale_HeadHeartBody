@@ -25,7 +25,7 @@ class AnnounceController extends Controller
       
 
       $announces = Announce::where("is_accepted", true)->orderBy("created_at", "DESC")->paginate(15);
-
+      
       return view('announces.index', compact("announces", "searched", "category", "order"));
    }
 

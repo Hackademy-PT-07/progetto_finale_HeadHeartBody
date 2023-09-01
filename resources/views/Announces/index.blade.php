@@ -1,49 +1,7 @@
 <x-main>
     <x-slot:pageName>{{ __('ui.announces') }}</x-slot:pageName>
 
-    <div class="d-flex justify-content-center mt-3 pt-5 search">
-
-
-    <form action="{{route('announces.filter')}}" class="row d-flex justify-content-center align-items-center ms-5 ps-5" method="GET">
-
-        <div class="col-12 col-md-3">
-        <label for="category" class="form-label"></label>
-        <select class="form-select select-bg" aria-label="Default select example" id="category" name="category">
-            <option  selected @if($category) value="{{key($category)}}" @else value="" @endif>
-                @if($category) {{$category[key($category)]}} @else {{__('ui.categories')}} @endif</option>
-            @if($category)<option value="">{{ __('ui.filterOff') }}</option>@endif
-            @foreach($categories as $category)
-            <option value="{{$category->id}}">{{__('ui.category_'.$category->id)}}</option>
-            @endforeach
-        </select>
-        </div>
-
-        <div class="col-12 col-md-3">
-            <label for="searched" class="form-label"></label>
-            <input name="searched" class="form-control select-bg" list="datalistOptions" id="searched" name="searched" type="search" placeholder="{{ __('ui.search') }}" @if($searched) value="{{$searched}}" @endif>
-
-        </div>
-
-        <div class="col-12 col-md-3">
-            <label for="order" class="form-label"></label>
-            <select class="form-select select-bg" aria-label="Default select example" id="order" name="order">
-            <option  selected @if($order) value="{{key($order)}}" @else value="" @endif>
-                    @if($order) {{$order[key($order)]}} @else {{ __('ui.reorder') }} @endif</option>
-                @if($order)<option value="">{{ __('ui.filterOff') }}</option>@endif
-                <option value="Desc">{{ __('ui.mostRecent') }}</option>
-                <option value="Asc">{{ __('ui.older') }}</option>
-                <option value="PriceDesc">{{ __('ui.moreExpensive') }}</option>
-                <option value="PriceAsc">{{ __('ui.lessExpensive') }}</option>
-            </select>
-
-        </div>
-
-        <div class="col-12 col-md-3">
-            <button class="btn btn-warning mt-4"> {{ __('ui.search') }} </button>
-        </div>
-    </form>
-
-</div>
+    <x-search :category="$category" :searched="$searched" :order="$order"/>
 
     <div class="container mt-4 justify-content-center py-5">
         <div class="row pt-5">
@@ -109,8 +67,8 @@ php                            <option selected @if($category) value="{{key($cat
             <!-- Filter/Reorder section end -->
 
             <!-- Announces card -->
-
-            @forelse($announces as $announce)
+            @if(count($announces))
+            @foreach($announces as $announce)
             <div class="col-12 col-md-6 col-lg-4 md-5 pt-3 d-flex justify-content-center">
                 <figure class="snip1418 card">
                     <img class="img-fluid" style="height: 240px" @foreach($announce->images as $img) src="{{Storage::url($img->path)}}" @endforeach alt="{{$announce->title}}" />
@@ -133,14 +91,15 @@ php                            <option selected @if($category) value="{{key($cat
                     <a href="{{route('announces.show', $announce->id) }}"></a>
                 </figure>
             </div>
-            @empty
+            @endforeach
+            {{$announces->links()}}
+            @else
             <div class="col-12 vh-100">
                 <div class="alert alert-warning my-5">
                     <p class="lead"> {{__('ui.noAdfound')}} </p>
                 </div>
             </div>
-            @endforelse
-            {{$announces->links()}}
+            @endif
 
             <!-- Announces card end -->
 
