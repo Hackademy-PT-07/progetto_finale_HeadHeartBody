@@ -16,7 +16,7 @@
 
             <div class="col-12 col-md-6 col-lg-4 md-5 pt-3 d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
-                    <img style="height: 200px" src="{{Storage::url($announce->img)}}" class="card-img-top img-fluid" alt="{{$announce->title}}">
+                <img class="img-fluid" style="height: 240px" @foreach($announce->images as $img) src="{{Storage::url($img->path)}}" @endforeach alt="{{$announce->title}}" />
                     <div class="card-body">
                         <h5 class="card-title text-center">{{ $announce->title }}</h5>
                         <span class="small">{{__('ui.category_'.$announce->category_id)}}</span>
