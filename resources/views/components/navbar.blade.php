@@ -39,17 +39,13 @@
             </li>
 
             <li>
-              <hr>
-            </li>
-
-            <li>
               <a class="dropdown-item" href="{{route('announces.livewire')}}">{{ __('ui.addAnnounce') }}</a>
             </li>
-
+            @if(auth()->user()->role == "admin")
             <li>
-              <hr>
+              <a class="dropdown-item" href="{{route('admin.panel')}}">Pannello admin</a>
             </li>
-
+            @endif
             <li>
               <form class="d-flex justify-content-center" action="/logout" method="POST">
                 @csrf
@@ -64,7 +60,7 @@
 
         </li>
 
-        @if(auth()->user() && auth()->user()->role == "revisor")
+        @if(auth()->user() && auth()->user()->role == "revisor" || auth()->user() && auth()->user()->role == "admin")
         <li class="nav-item">
           <a class="nav-link btn btn-outline-warning me-4 btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">
           {{ __('ui.revisorPage') }}

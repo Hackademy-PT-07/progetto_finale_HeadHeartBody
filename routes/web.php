@@ -3,11 +3,20 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomepageController;
+
 use App\Http\Controllers\AnnounceController;
+
 use App\Http\Controllers\RevisorController;
+
 use Laravel\Socialite\Facades\Socialite;
+
 use App\Http\Controllers\GoogleController;
+
 use App\Http\Controllers\ContactController;
+
+use App\Http\Controllers\AdminController;
+
+
 /*
 use App\Http\Controllers\PublicController;
 |--------------------------------------------------------------------------
@@ -75,3 +84,6 @@ Route::get("/auth/google/callback", [GoogleController::class, "callbackFromGoogl
 
 // Cambio Lingua
 Route::post("/language/{lang}", [HomepageController::class, "setLanguage"])->name("setLocale");
+
+// Admin panel
+Route::get("/admin/panel", [AdminController::class, "panel"])->middleware("admin")->name("admin.panel");
