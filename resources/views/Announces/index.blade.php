@@ -3,68 +3,19 @@
 
     <x-search :category="$category" :searched="$searched" :order="$order"/>
 
-    <div class="container mt-4 justify-content-center py-5">
-        <div class="row pt-5">
-            <div class="container d-inline-flex">
-                <div class="col-3">
-                    <img class="immagine" src="https://www.farolloefalpala.it/wp-content/uploads/2017/07/megafono_urlo.png" alt="megafono">
+    <div class="container mt-4 justify-content-center py-3">
+        <div class="row">
+            <div class="container col-12 d-inline-flex mt-0">
+                <div class="col-3 text-center">
+                    <img class="immagine" src="https://png.pngtree.com/png-clipart/20220926/ourmid/pngtree-3d-red-portable-speaker-megaphone-announcement-and-promotion-png-image_6217784.png" alt="megafono">
                 </div>
-                <div class="col-9 formTitle">
+                <div class="col-9 formTitle mt-3">
                     <div class="text-center">
                         <h2 class="d-inline">{{ __('ui.announces') }}</h2>
                     </div>
                 </div>
             </div>
-            <!-- Filter/Reorder section -->
-            <!-- <div class="d-flex flex-wrap justify-content-between align-items-start pb-5">
-
-                <form action="{{route('announces.filter')}}" class="row d-flex justify-content-center align-items-center ms-5 ps-5" method="GET">
-
-                    <div class="col-12 col-md-3">
-                        <label for="category" class="form-label"></label>
-                        <select class="form-select select-bg" aria-label="Default select example" id="category" name="category">
-php                            <option selected @if($category) value="{{key($category)}}" @else value="" @endif>
-                                @if($category) {{$category[key($category)]}} @else Categorie @endif</option>
-                            @if($category)<option value="">{{ __('ui.filterOff') }}</option>@endif
-                            @foreach($categories as $category)
-                            <option value="{{$category->id}}">{{$category->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <div class="col-12 col-md-3">
-                        <label for="searched" class="form-label"></label>
-                        <input name="searched" class="form-control select-bg" list="datalistOptions" id="searched" name="searched" type="search" placeholder="Cerca" @if($searched) value="{{$searched}}" @endif>
-
-                    </div>
-
-                    <div class="col-12 col-md-3">
-                        <label for="order" class="form-label"></label>
-                        <select class="form-select select-bg" aria-label="Default select example" id="order" name="order">
-                            <option selected @if($order) value="{{key($order)}}" @else value="" @endif>
-                                @if($order) {{$order[key($order)]}} @else {{ __('ui.reorder') }} @endif</option>
-                            @if($order)<option value="">{{ __('ui.filterOff') }}</option>@endif
-                            <option value="Desc">{{ __('ui.mostRecent') }}</option>
-                            <option value="Asc">{{ __('ui.older') }}</option>
-                            <option value="PriceDesc">{{ __('ui.moreExpensive') }}</option>
-                            <option value="PriceAsc">{{ __('ui.lessExpensive') }}</option>
-                        </select>
-
-                    </div>
-
-                    <div class="col-12 col-md-3">
-                        <button class="btn btn-warning mt-4"> {{ __('ui.search') }} </button>
-                    </div>
-                </form>
-
-                <div>
-                    @if(auth()->user())
-                    <a class="btn btn-warning buttonStyle mb-3" href="{{route('announces.livewire')}}">{{ __('ui.addAnnounce') }}</a>
-                    @endif
-                </div>
-            </div> -->
-
-            <!-- Filter/Reorder section end -->
+            
 
             <!-- Announces card -->
             @if(count($announces))

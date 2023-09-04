@@ -1,6 +1,7 @@
 <x-main>
     <x-slot:pageName>{{ __('ui.titleAd') }} {{$announce->title}}</x-slot:pageName>
 
+    
     <div>
 
         <div class="pt-5 mt-5 mb-3 me-3 text-end">

@@ -88,4 +88,11 @@ return [
 
     'noAdfound' => 'No announcement',
 
+    /* Admin page */
+    'adminTitle' => "Admin page",
+    'role' => 'Role',
+    'users' => 'Users',
+    'userName' => 'User name',
+    'userSelect' => "Select the user's name",
+    'newCategory' => 'New category'
 ];

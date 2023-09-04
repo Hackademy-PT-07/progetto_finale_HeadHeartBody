@@ -77,19 +77,19 @@
         <li class="nav-item">
           <a class="nav-link me-4 btn btn-outline-warning" href="{{route('announces.index') }}">{{ __('ui.announces') }}</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown me-5">
           <a class="nav-link dropdown-toggle btn btn-outline-warning" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span>{{ __('ui.lang') }}</span>
           </a>
           <ul class="dropdown-menu select-bg me-4">
-            <div class="d-flex flex-column align-items-start">
+            <div class="d-flex justify-content-around">
             <li>
               <x-_locale :lang="$lang = 'it'" :nation="$nation = 'it'" />
             </li>
             <li>
               <x-_locale :lang="$lang = 'en'" :nation="$nation = 'gb'" />
             </li>
-            <li>
+            <li class="pe-2">
               <x-_locale :lang="$lang = 'es'" :nation="$nation = 'es'" />
             </li>
             </div>

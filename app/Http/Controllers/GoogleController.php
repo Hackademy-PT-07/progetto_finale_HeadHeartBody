@@ -61,7 +61,7 @@ class GoogleController extends Controller
             
             //throw $th;
 
-            dd("Qualcosa è andato storo!" . $th->getMessage());
+            dd("Qualcosa è andato storto!" . $th->getMessage());
         }
     }
 }

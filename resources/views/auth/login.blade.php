@@ -26,7 +26,7 @@
                                     <button type="submit" class="btn btn-warning buttonStyle" >{{ __('ui.login') }}</button>
                                 </div>
                                <div class="col-12 text-center">
-                                        <a href="{{route('google.login')}}" class="btn btn-lg btn-danger">{{ __('ui.loginGoogle') }}</a>
+                                        <a href="{{route('google.login')}}" class="btn btn-warning buttonStyle"><img id="googleLogo" src="https://logo.clearbit.com/googlemail.com?size=50" alt="Google"> {{ __('ui.loginGoogle') }} </a>
                                 </div>
                             </div>
                         </form>
