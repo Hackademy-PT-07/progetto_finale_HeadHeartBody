@@ -11,6 +11,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Mulish:ital,wght@1,300&family=Roboto:ital,wght@0,700;1,700&family=Satisfy&family=Shantell+Sans:wght@300;400&display=swap');
     </style>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     @livewireStyles
 
     <title>{{$pageName}}</title>
