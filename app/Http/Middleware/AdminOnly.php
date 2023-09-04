@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ReviserOnly
+class AdminOnly
 {
     /**
      * Handle an incoming request.
@@ -15,8 +15,8 @@ class ReviserOnly
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->user()->role != "revisor" && auth()->user()->role != "admin") {
-            return redirect("/")->with(["message" => "Accesso negato: area riservata accessibile solo ai revisori"]);
+        if(auth()->user()->role != "admin") {
+            return redirect("/")->with(["message" => "Accesso negato: area riservata accessibile solo all'amministratore del sito"]);
         }
         return $next($request);
     }

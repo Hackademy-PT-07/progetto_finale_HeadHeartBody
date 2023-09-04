@@ -107,7 +107,7 @@ class AnnouncesForm extends Component
         $this->announce->user_id = auth()->user()->id;
                 
 
-        if (auth()->user()->role == "revisor") {
+        if (auth()->user()->role == "revisor" || auth()->user()->role == "admin") {
 
             $this->announce->is_accepted = true;
         }
