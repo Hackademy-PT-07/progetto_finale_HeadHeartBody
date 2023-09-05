@@ -33,7 +33,7 @@
                                         <div class="carousel-inner">
                                             @foreach($announce_to_check->images as $image)
                                             <div class="carousel-item @if($image == $announce_to_check->images()->first()) active @endif">
-                                                <img style="width: 400px; height: 400px;" src="{{Storage::url($image->path)}}" class="d-block w-100" alt="Foto Annuncio1">
+                                                <img src="{{$image->getUrl(400, 300)}}" class="d-block w-100" alt="Foto Annuncio1">
                                             </div>
                                             @endforeach
                                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
