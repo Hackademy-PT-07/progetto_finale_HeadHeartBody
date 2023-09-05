@@ -105,7 +105,7 @@ class AnnouncesForm extends Component
     {
 
         $this->validate();
-
+        
         $this->announce->user_id = auth()->user()->id;
                 
 
@@ -130,6 +130,8 @@ class AnnouncesForm extends Component
                 dispatch(new ResizeImage($newImage->path, 400, 300));
                 dispatch(new GoogleVisionSafeSearch($newImage->id));
                 dispatch(new GoogleVisionLabelImage($newImage->id));
+                
+
 
             }
             File::deleteDirectory(storage_path("/app/livewire-tmp"));
