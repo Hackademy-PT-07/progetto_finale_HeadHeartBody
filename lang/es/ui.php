@@ -89,4 +89,12 @@ return [
     'carousel_3_2' => 'Compra y vende los artículos de tu interés',
 
     'noAdfound' => 'Sin anuncios',
+
+    /* Admin page */
+    'adminTitle' => "Página de Administrador",
+    'role' => 'role',
+    'users' => 'Usuarios',
+    'userName' => 'Nombre usuario',
+    'userSelect' => "Seleccione el nombre del usuario",
+    'newCategory' => 'Nueva categoría'
 ];

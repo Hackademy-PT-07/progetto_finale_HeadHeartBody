@@ -36,15 +36,31 @@
                                                 <img style="width: 400px; height: 400px;" src="{{Storage::url($image->path)}}" class="d-block w-100" alt="Foto Annuncio1">
                                             </div>
                                             @endforeach
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
                                         </div>
-                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Previous</span>
-                                        </button>
-                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Next</span>
-                                        </button>
+                                        <div class="col-12 mt-5 pt-5">
+                                            <div class="pt-5">
+                                                <h5>
+                                                    <span>Tags:</span> <br>
+                                                    @foreach($image->labels as $label)
+                                                    <span>{{$label}},</span>
+                                                    @endforeach
+                                                    <hr>
+                                                    <p>Adulti: <span class="{{$image->adult}}"></span></p>
+                                                    <p>Satira: <span class="{{$image->spoof}}"></span></p>
+                                                    <p>Medicina: <span class="{{$image->medical}}"></span></p>
+                                                    <p>Violenza: <span class="{{$image->violence}}"></span></p>
+                                                    <p>Contenuto Ammiccante: <span class="{{$image->racy}}"></span></p>
+                                                </h5>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-xl-4">

@@ -1,12 +1,6 @@
 <x-main>
     <x-slot:pageName>{{ __('ui.createAnnounce') }}</x-slot:pageName>
 
-    <!-- <div class="pt-5">
-        <div class="d-flex align-items-center justify-content-center pt-5 pe-5">
-            <img src="https://png.pngtree.com/png-vector/20220821/ourmid/pngtree-speed-arrow-fast-quick-icon-logo-design-png-image_6119232.png" alt="Logo" width="80">
-            <h1 id="logo">Presto.it</h1>
-        </div>
-    </div> -->
 
     <div class="container py-5 mt-4">
         <div class="row pt-3">

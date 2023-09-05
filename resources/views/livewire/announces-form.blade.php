@@ -4,7 +4,7 @@
                 <div class="text-center mt-4 mb-3 formTitle"><h2>{{ __('ui.writeAd') }}</h2></div>
                 
                 <div class="card-body"> 
-                        <div class="formBox mx-4">
+                        <div class="formBox me-4 p-4">
                             <br>
                     <x-success />
 
@@ -26,7 +26,7 @@
                                     <select name="announce.category_id" id="announce.category_id" wire:model="announce.category_id" class="form-select formLine" aria-label="Default select example">
                                         <option selected">{{ __('ui.selectCategoryAd') }}</option>
                                         @foreach($categories as $category)
-                                        <option style='background-color:var(--background-color);' value="{{$category->id}}">{{__('ui.category_'.$category->id)}}</option>
+                                        <option value="{{$category->id}}">{{__('ui.category_'.$category->id)}}</option>
                                         @endforeach
                                     </select>
                                     @error('announce.category_id') <span class="small text-danger">{{ $message }}</span> @enderror
@@ -78,12 +78,12 @@
                                 @endif
 
                                 @if($announce->id)
-                                <div class="col-12 py-3 text-center">
-                                    <button type="submit" class="btn btn-warning buttonStyle">{{ __('ui.modAd') }}</button>
+                                <div class="col-12 py-3 text-end">
+                                    <button type="submit" class="btn btn-warning buttonStyle me-3">{{ __('ui.modAd') }}</button>
                                 </div>
                                 @else
-                                <div class="col-12 py-3 text-center">
-                                    <button type="submit" class="btn btn-warning buttonStyle">{{ __('ui.createAd') }}</button>
+                                <div class="col-12 py-3 text-end">
+                                    <button type="submit" class="btn btn-warning buttonStyle me-3">{{ __('ui.createAd') }}</button>
                                 </div>
                                 @endif
                             </div>

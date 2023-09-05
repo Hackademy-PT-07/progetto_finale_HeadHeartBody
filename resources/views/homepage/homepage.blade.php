@@ -66,7 +66,7 @@
     <div class="container mb-5">
         <div class="row d-flex justify-content-center">
             <div class="col-12 mt-5 align-items-center">
-                <h2 class="formTitle ps-5 mb-3">{{ __('ui.categories') }}</h2>
+                <h2 class="formTitle ps-5">{{ __('ui.categories') }}</h2>
             </div>
 
             @foreach($categories as $category)
@@ -88,7 +88,7 @@
 
     <!-- form lavora con noi -->
 
-    <div class="py-5" id="form"></div>
+    <div class="py-3" id="form"></div>
 
     @if(auth()->user() && auth()->user()->role != 'revisor'&& auth()->user()->role != 'admin')
     <div class="container">
