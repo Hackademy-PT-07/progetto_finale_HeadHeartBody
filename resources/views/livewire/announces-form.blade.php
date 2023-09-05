@@ -24,7 +24,7 @@
                                 <div class="col-12">
                                     <label for="announce.category_id">{{ __('ui.categoryAd') }}</label>
                                     <select name="announce.category_id" id="announce.category_id" wire:model="announce.category_id" class="form-select formLine" aria-label="Default select example">
-                                        <option selected">{{ __('ui.selectCategoryAd') }}</option>
+                                        <option selected>{{ __('ui.selectCategoryAd') }}</option>
                                         @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{__('ui.category_'.$category->id)}}</option>
                                         @endforeach

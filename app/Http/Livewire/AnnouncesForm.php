@@ -109,7 +109,7 @@ class AnnouncesForm extends Component
     {
 
         $this->validate();
-
+        
         $this->announce->user_id = auth()->user()->id;
                 
 
