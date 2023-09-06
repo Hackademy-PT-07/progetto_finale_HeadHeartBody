@@ -3,11 +3,11 @@
 
     <x-search :category="$category" :searched="$searched" :order="$order"/>
 
-    <div class="container mt-4 justify-content-center py-3">
+    <div class="container mt-3 justify-content-center py-3">
         <div class="row">
-            <div class="container col-12 d-inline-flex mt-0">
+            <div class="container col-12 d-inline-flex">
                 <div class="col-3 text-center">
-                    <img class="immagine" src="https://png.pngtree.com/png-clipart/20220926/ourmid/pngtree-3d-red-portable-speaker-megaphone-announcement-and-promotion-png-image_6217784.png" alt="megafono">
+                    <img class="immagine mb-2 me-1" src="https://png.pngtree.com/png-clipart/20220926/ourmid/pngtree-3d-red-portable-speaker-megaphone-announcement-and-promotion-png-image_6217784.png" alt="megafono">
                 </div>
                 <div class="col-9 formTitle mt-3">
                     <div class="text-center">

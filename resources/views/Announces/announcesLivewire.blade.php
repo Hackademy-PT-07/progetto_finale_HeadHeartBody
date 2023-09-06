@@ -7,6 +7,7 @@
             <div class="col-12 col-xl-6">
                 <livewire:announces-form>
             </div>
+            
             <div class="col-12 col-xl-6">
                 <livewire:announces-list>
             </div>

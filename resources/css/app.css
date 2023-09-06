@@ -97,20 +97,15 @@ body {
   border-radius: 50px 5px 50px 5px; 
   height: 50px;
   box-shadow: 5px 5px 5px  rgb(84, 36, 36);
-    
-  }
-
-  /* .formLine {
-    background: transparent;
-    border-color: white;  
-    border-top: none;  
-    border-right: none;
-    border-radius: 0;
-    margin-bottom: 5px;
-  }
-
-   */
   
+}
+
+.immagine {
+  width: 70%;
+  
+}
+
+
   #announce.category_id{
     background-color: #4C5958;
   }
@@ -154,12 +149,6 @@ body {
 
   }
 
-  .immagine {
-    width: 60%;
-    margin-bottom: 5px;
-    
-  }
-  
   .carouselText {
     color: rgb(81,189,181); 
     text-shadow: 2px 2px rgb(84, 36, 36);
