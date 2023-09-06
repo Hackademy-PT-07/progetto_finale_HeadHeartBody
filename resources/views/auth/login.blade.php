@@ -1,7 +1,7 @@
 <x-main>
     <x-slot:pageName>{{ __('ui.login') }}</x-slot:pageName>
    
-    <div class="container mt-4 pt-5 vh-100">
+    <div class="container mt-4 mb-5 pt-5 vh-100">
         <div class="row">
             <div class="col-12 col-xl-8 mx-auto mt-5 pt-5">
                 <h2 class="ps-2 formTitle text-center">{{ __('ui.login') }}</h2>

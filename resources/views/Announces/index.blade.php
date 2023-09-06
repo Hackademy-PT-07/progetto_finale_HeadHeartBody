@@ -36,7 +36,7 @@
 
                         <div class="price text-center"><span>€{{ $announce->price }}</span></div>
 
-                        <p class="card-footer fst-italic"> {{ __('ui.createAt') }}: {{ $announce->created_at->format("d/m/Y") }} </p>
+                        <p class="card-footer mb-4 fst-italic"> {{ __('ui.createAt') }}: {{ $announce->created_at->format("d/m/Y") }} </p>
                     </figcaption>
 
                     <a href="{{route('announces.show', $announce->id) }}"></a>
