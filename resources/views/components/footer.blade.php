@@ -1,4 +1,4 @@
-<div class="text-center bgfooter d-flex align-items-center">
+<div class="text-center bgfooter pisition-stiky d-flex align-items-center">
     <div class="col-4">
         <span class="text-decoration-underline">{{ __('ui.social') }}</span><br>   
             <a class="footerRef mt-1" href=""><i class="bi bi-facebook mx-2"></i></a>
