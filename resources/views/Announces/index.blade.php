@@ -3,24 +3,10 @@
 
     <div class="container mt-4 justify-content-center py-5">
 
-<<<<<<< HEAD
         <section class="row mt-5">
             <div class="col-1"></div>
             <div class="col-10">
                 <x-search :category="$category" :searched="$searched" :order="$order" />
-=======
-    <div class="container mt-3 justify-content-center py-3">
-        <div class="row">
-            <div class="container col-12 d-inline-flex">
-                <div class="col-3 text-center">
-                    <img class="immagine mb-2 me-1" src="https://png.pngtree.com/png-clipart/20220926/ourmid/pngtree-3d-red-portable-speaker-megaphone-announcement-and-promotion-png-image_6217784.png" alt="megafono">
-                </div>
-                <div class="col-9 formTitle mt-3">
-                    <div class="text-center">
-                        <h2 class="d-inline">{{ __('ui.announces') }}</h2>
-                    </div>
-                </div>
->>>>>>> e6bb058095eddd83526ed375451c81e2a4c4cdae
             </div>
 
             <div class="col-1"></div>

@@ -7,17 +7,12 @@
             <div class="col-12 col-xl-6">
                 <livewire:announces-form>
             </div>
-<<<<<<< HEAD
             <div class="col-12 col-xl-6 d-none d-xl-block">
                 <img class="img-fluid mt-5 pt-3" src="https://www.sicurezzanazionale.gov.it/sisr.nsf/wp-content/uploads/2015/11/scrivi-per-noi-.jpg" alt="foto slogan">
             </div>
         </section>
         <section class="row pt-3 d-flex justify-content-center align-items-center">
             <div class="col-12">
-=======
-            
-            <div class="col-12 col-xl-6">
->>>>>>> e6bb058095eddd83526ed375451c81e2a4c4cdae
                 <livewire:announces-list>
             </div>
         </section>
