@@ -17,6 +17,8 @@
   --secondary-color: #BFBFBF;
   --secondary-dark-color: #4C5958;
 
+  --hover-color: rgba(252,212,5,1);
+
 }
 /* Body */
 * {
@@ -73,41 +75,18 @@ body {
   font-family: 'Aclonica', sans-serif;
 }
 
-.formTitle {
-  font-family: 'Racing Sans One';
-  font-weight: bold;
-  height: 80 px;
-  padding: 5px;
-  align-items: center;
-  color: var(--primary-dark-color);
-  
-  background: rgb(252,212,5);
-  background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%); 
-  border-radius: 50px 5px 50px 5px; 
-  height: 50px;
-  box-shadow: 5px 5px 5px  rgb(84, 36, 36);
-    
-  }
+#navbarLink:hover {
 
-  /* .formLine {
-    background: transparent;
-    border-color: white;  
-    border-top: none;  
-    border-right: none;
-    border-radius: 0;
-    margin-bottom: 5px;
-  }
+  color: var(--hover-color);
 
-   */
-  
-  #announce.category_id{
-    background-color: #4C5958;
-  }
 
-  .purple {
-    color:var(--primary-dark-color);
-    text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.619);
-  }
+}
+
+#navbarLinks:hover {
+
+  color: var(--hover-color);
+
+  background-color: var(--background-color);
 
 
 
@@ -118,47 +97,35 @@ body {
 
 }
 
-  #googleLogo {
-    width: 10%;
-    margin-right: 5px;
-  }
-  
-  .search {
-    background:  var(--background-color);
-    background: radial-gradient(circle,  var(--primary-color), var(--background-color));
-    border-radius: 16rem;
-    padding-bottom: 20px;
+.navDropdown {
 
+  background-color: none;
 
-  }
+  border: 0;
+  
+}
 
-  .immagine {
-    width: 60%;
-    margin-bottom: 5px;
-    
-  }
-  
-  .carouselText {
-    color: rgb(81,189,181); 
-    text-shadow: 2px 2px rgb(84, 36, 36);
-    text-transform: uppercase;
-  }
-   
-  .textShadow {
-    text-shadow: 2px 2px 3px rgb(61, 27, 27);
-  }
-  
-  
-  
-  /* Homepage */
-  
-  .homeImg {
-    
-    width: 900px;
-    
-    height: 450px;
-    
-  }
+.navDropdown:focus {
+
+  background-color: none;
+
+  border: 0;
+
+}
+
+.bgDropdown {
+
+  border: 0;
+
+  background-color: var(--background-color);
+
+  border-bottom: 2px var(--primary-dark-color) solid;
+
+  border-right: 2px var(--primary-dark-color) solid;
+
+}
+
+/* Homepage */
 
 #firstTitle {
   color: var(--primary-dark-color);
