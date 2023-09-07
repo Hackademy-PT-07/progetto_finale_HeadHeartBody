@@ -2,32 +2,33 @@
     <x-slot:pageName>Pannello Admin</x-slot:pageName>
 
     <div class="col-12 mt-5 pt-5">
-        <div class="text-center mt-3 mb-3 formTitle">
-            <h2>{{ __('ui.adminTitle') }}</h2>
-        </div>
+            <h2 class="text-center fw-bold fst-italic py-5">{{ __('ui.adminTitle') }}</h2>
 
-            <div class="row">
-                <div class="col-6">
-                    <div class="row align-items-center formBox mx-1 ps-5 pb-5">
-                        <div class="col-10 d-flex flex-column justify-content-center" style="height: 400px;">
+
+            <section class="row">
+                <div class="col-12 col-xl-6">
+                <h3 class="fw-bold fst-italic py-3 p-xl-0 pt-xl-3">Sezione Categorie:</h3>
+                    <div class="row justify-content-center">
+                        <div class="col-10 pt-5 py-xl-5">
                             <livewire:category-form/>
                         </div>
-                        <div class="col-10">
+                        <div class="col-10 pt-5 mt-xl-5">
                             <livewire:category-list/>
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="row flex-column align-items-center formBox ms-4 me-2 pt-5">
-                        <div class="col-10" style="height: 400px;">
+                <div class="col-12 col-xl-6">
+                <h3 class="fw-bold fst-italic py-3 pt-5 p-xl-0">Sezione Utenti:</h3>
+                    <div class="row justify-content-center">
+                        <div class="col-10 pt-5">
                             <livewire:user-form/>
                         </div>
-                        <div class="col-10">
+                        <div class="col-10 pt-5 pt-xl-4">
                             <livewire:user-list/>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             
     </div>
     

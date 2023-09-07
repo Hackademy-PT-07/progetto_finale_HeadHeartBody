@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Artisan;
 use App\Models\User;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -15,7 +16,7 @@ class ContactController extends Controller
 
     }
 
-    public function Save(Request $request){
+    public function Save(ContactRequest $request){
 
         $mail= new LavoraConNoiMail($request->name, $request->email, $request->textMessage, auth()->user());
         Mail::to('admin@example.com')->send($mail);

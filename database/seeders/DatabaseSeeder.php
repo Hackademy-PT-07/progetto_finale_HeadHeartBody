@@ -53,14 +53,14 @@ class DatabaseSeeder extends Seeder
     {
         User::create([
             'name' => 'Max',
-            'role' => 'revisor',
+            'role' => 'admin',
             'email' => 'maxattianesekr94@gmail.com',
             'password' => \Illuminate\Support\Facades\Hash::make('12345678'),
         ]);
 
         User::create([
             'name' => 'Alessandro',
-            'role' => 'revisor',
+            'role' => 'admin',
             'email' => 'ale@example.it',
             'password' => \Illuminate\Support\Facades\Hash::make('12345678'),
         ]);

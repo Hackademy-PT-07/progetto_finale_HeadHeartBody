@@ -23,7 +23,9 @@ class HomepageController extends Controller
 
         $order = [];
 
-        return view("homepage.homepage", compact('searched', 'category', 'order'));
+        $announces = Announce::take(6)->where('is_accepted', true)->orderBy("created_at", "DESC")->get();
+
+        return view("homepage.homepage", compact('searched', 'category', 'order', 'announces'));
     }
 
     public function setLanguage($lang)

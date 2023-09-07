@@ -19,69 +19,58 @@
 
 }
 /* Body */
+* {
+  padding: 0;
 
-/*palette colori sito:
-    giallo chiaro-  rgba(252,212,5,1) (la 'a' è per la trasparenza, casomai eliminarla)
-    giallo scuro-  rgba(245,161,4,1)
-    verde/azzurro/acqua-  rgb(81,189,181);
-    viola-  rgb(87, 7, 141);
-    bordeaux(ombre di alcuni testi e di alcuni box)- rgb(84, 36, 36);
-*/
-
-body {
-    
-  background-image: url('https://thumbs.dreamstime.com/z/cart-background-made-carts-vector-illustration-36868023.jpg?w=768');
-  
-  
+  margin: 0;
 }
 
-.ovBg {
+body {
 
-  background-color: rgba(138, 166, 163, 0.6);
+  background-image: url('https://thumbs.dreamstime.com/z/cart-background-made-carts-vector-illustration-36868023.jpg?w=768%27');
+
+}
+
+.bgColor {
+
+  background-color: var(--background-color);
+
   background: radial-gradient(circle,  var(--background-color-opacity), var(--background-color));
  
 
 }
 
 /* Navbar */
-.navSize {
-  
-  height: 65px;
+
+.navStyle {
   box-shadow: 10px 10px 15px var(--secondary-dark-color);
+
   background:  var(--background-color);
+
   background: radial-gradient(circle,  var(--primary-color), var(--background-color));
-}
 
-.navButton {
-  background-color: none;
-}
+  font-size: 18px;
 
-
-#navbarNav {
-
-  font-family: 'Aclonica', sans-serif;
 }
 
 #logo {
+
   font-family: 'Racing Sans One', cursive;
+  
   font-size: xx-large;
+  
   color: var(--primary-dark-color); 
-    
+
 }
 
 #logo:hover {
-  color:rgb(81,189,181);
+
+  color: var(--hover-color);
 }
 
-.formBox {
-  font-family: 'Aclonica', sans-serif;;
-  font-size: x-large;
-  margin-bottom: 20px;
-  text-align: start;
-  color:var(--primary-dark-color);
-  border-radius: 25px;
-  background-color: var(--background-color);
-  box-shadow: 0 0 50px rgb(84, 36, 36);
+#navbarLink {
+
+  font-family: 'Aclonica', sans-serif;
 }
 
 .formTitle {
@@ -120,25 +109,14 @@ body {
     text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.619);
   }
 
-  #titleForm {
-    text-shadow: 5px 5px 10px rgb(84, 36, 36);
-        
-  }
 
-  .buttonStyle {
-    
-    background-color: rgba(252,212,5,1);
-    border-color: rgba(245,161,4,1) ;
-    border-radius: 5px;
-    font-family: 'Aclonica', sans-serif;
-    color: var(--primary-dark-color);
-    /* box-shadow: 5px 5px 5px rgb(84, 36, 36); */
-  }
+}
 
-  .buttonStyle:hover {
-    color:rgb(81,189,181);
-    
-  }
+#navbarLinkRevisor {
+
+  color: var(--primary-dark-color);
+
+}
 
   #googleLogo {
     width: 10%;
@@ -182,190 +160,72 @@ body {
     
   }
 
-  #firstTitle {
-    color: var(--primary-dark-color);
-  }
-  
-  #firstTitle:hover {
-    color:rgb(81,189,181);
-  }
-
-  .joinUs {
-    width: 40%;
-    margin-right: 100px;
-    
-  }
-  
-  
-  .card {
-      box-shadow: 10px 10px 15px rgb(84, 36, 36);
-      background-color: var(--background-color);
-      
-  }
-    
-  @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
-.snip1418 {
-  font-family: 'Aclonica', sans-serif;
-  position: relative;
-  overflow: hidden;
-  margin: 6px;
-  min-width: 180px;
-  max-width: 300px;
-  max-height: 500px;
-  width: 80%;
-  height: 90%;
-  background: var(--background-color);
-  text-align: left;
+#firstTitle {
   color: var(--primary-dark-color);
-  box-shadow: 10px 10px 15px var(--secondary-dark-color);
-  /* border-bottom-right-radius: 50px;
-  border-top-left-radius: 50px; */
-  border-radius: 15px;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-perspective: 20em;
-  perspective: 20em;
 }
 
-.hidden{
-  text-align: center;
-  margin-bottom: 3px;
-  display: none;
-  transition:all 1s ease-out;
+#firstTitle:hover {
+  color:rgb(81,189,181);;
 }
 
-.snip1418:hover {
-  background-color: var(--background-color);
+.carouselText {
+  color: rgb(81,189,181); 
+
+  text-shadow: 2px 2px rgb(84, 36, 36);
+  
+  text-transform: uppercase;
+}
+
+.formTitle {
+  
+  font-family: 'Racing Sans One';
+  
+  font-weight: bold;
+  
+  display: flex;
+  
+  justify-content: center;
+  
+  align-items: center;
+
+  padding: 25px 0px;
+  
   color: var(--primary-dark-color);
-  box-shadow: 0 0 50px 15px white;
-  border-radius: 15px;
-  /* width: 100%;
-  height: 100%; */
   
-}
-
-/* .snip1418:hover .hidden {
-  display: block;
-} */
-
-.snip1418 * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-.snip1418 img {
-  max-width: 100%;
-  vertical-align: top;
-  position: relative;
-  border-bottom-right-radius: 50px;
-    
-}
-.snip1418 .add-to-cart {
+  background: rgb(252,212,5);
   
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-right: 10px;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.9em;
-  opacity: 0;
-  background-color:var(--primary-color);
-  border-bottom-left-radius: 7px;
-  -webkit-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
-  -webkit-transform-origin: 100% 0;
-  -ms-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-}
-.snip1418 .add-to-cart i {
-  display: inline-block;
-  margin-right: 10px;
-  width: 40px;
-  line-height: 40px;
-  text-align: center;
-  background-color:var(--primary-dark-color);
-  color: #ffffff;
-  font-size: 1.4em;
-}
-
-.snip1418 figcaption {
-  padding: 10px;
-}
-.snip1418 h3,
-.snip1418 p {
-  margin: 0;
-}
-.snip1418 h3 {
-  font-size: 1.5em;
-  font-weight: 700;
-  margin-bottom: 10px;
+  background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%); 
   
-}
-.snip1418 p {
-  font-size: 0.9em;
-  letter-spacing: 1px;
-  font-weight: 400;
-}
-.snip1418 .price {
-  font-weight: 600;
-  font-size: 1.5em;
-  line-height: 48px;
-  letter-spacing: 1px;
+  border-radius: 50px 5px 50px 5px; 
   
-}
-.snip1418 .price s {
-  margin-right: 5px;
-  opacity: 0.5;
-  font-size: 0.9em;
-}
-.snip1418 a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.snip1418 #title {
-  font-family: 'Racing Sans One', cursive;
-  background: rgb(252,212,5); background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%);
-  border-radius: 0 5px 50px 0px;
-  margin-left: -25px;
-}
-.snip1418:hover .add-to-cart,
-.snip1418.hover .add-to-cart {
-  opacity: 1;
-  -webkit-transform: rotateX(0deg);
-  transform: rotateX(0deg);
-}
-.snip1418:hover .add-to-cart i,
-.snip1418.hover .add-to-cart i {
-  background-color:rgb(87, 7, 141);
+  height: 50px;
+  
+  box-shadow: 5px 5px 5px  rgb(84, 36, 36);
+
 }
 
+.search {
 
+  background:  var(--background-color);
+  
+  background: radial-gradient(circle,  var(--primary-color), var(--background-color));
+  
+  border-radius: 16px;
 
-/*Categories card custom*/
+  padding-bottom: 20px;
+
+}
+
+/* Categories card custom */
 
 .circle-airplane{
 
   display: flex;
-  
+
   justify-content: center;
 
   align-items: center;
 
-  width: 25px;
-
-  height: 25px;
-
-  border: 2px  var(--primary-dark-color);
-
-  border-style: solid;
-
-  border-radius: 50%;
 }
 
 
@@ -374,80 +234,75 @@ body {
 
   background-color:  var(--background-color);
 
-  border: 4px var(--primary-dark-color);
+  border: 4px var(--primary-dark-color) solid;
 
-  border-radius: 50%;
+  border-radius: 16px;
 
-  border-style: solid;
-
-  width: 50%;
-  
-  transition-duration: 1s, 1s;
 }
 
 .card-bdash:hover {
 
   background-color:  rgba(252,212,5,1);
+
+
+}
+
+/* Card */
+.cardAds {
+
+  background:  var(--background-color);
+
+  background: radial-gradient(circle,  var(--primary-color), var(--background-color));
+
+  border-radius: 16px;
   
-  border-radius: 25%;
-
+  box-shadow: 10px 10px 15px rgb(84, 36, 36);
 }
 
-.card-bdash:hover div div{
+.card-title {
+  font-family: 'Racing Sans One', cursive;
 
-  background-color:rgba(245,161,4,1);
+  background: rgb(252,212,5); background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%);
 
+  border-radius: 0 5px 50px 0px;
+
+  width: 100%;
+
+  height: 40px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
 }
 
-.card-bdash:hover div p{
+.cardAds:hover {
 
-  color: white;
-
+  box-shadow: 0 0 50px 15px white;
 }
 
+
+
+/* Footer */
 
 .bgfooter {
-  
+
   background:  var(--background-color);
   background: radial-gradient(circle,  var(--primary-color), var(--background-color));
-  
-  
+
+  width: 100%;
+
+
 }
 
 .footerRef {
    color: var(--primary-dark-color); 
+
    text-decoration: none;
-     
+
 }
 
 .footerRef:hover{
-  color: var(--primary-color)
+  color: var(--hover-color);
 }
-
-
-.select-bg {
-
-  border: 0;
-
-  background-color:var(--background-color);
-
-  border-bottom: 2px var(--primary-dark-color) solid;
-
-  border-right: 2px var(--primary-dark-color) solid;
-
-}
-
-.select-bg:focus {
-
-  color: var(--primary-dark-color);
-
-  background-color:var(--background-color);
-
-  border: 0;
-
-  border-bottom: 2px  var(--primary-dark-color) solid;
-  
-  /* transition: 0.5s; */
-
-}
-

@@ -1,18 +1,16 @@
 <x-main>
     <x-slot:pageName>{{ __('ui.login') }}</x-slot:pageName>
    
-    <div class="container mt-4 mb-5 pt-5 vh-100">
-        <div class="row">
-            <div class="col-12 col-xl-8 mx-auto mt-5 pt-5">
-                <h2 class="ps-2 formTitle text-center">{{ __('ui.login') }}</h2>
-                <div class="mt-4">
-                    <div class="card-body mx-4 formBox p-5">
-                        <form action="/login" method="POST">
+    <div class="container mt-5 pt-5">
+        <section class="row mt-5 pt-3 align-items-center">
+            <div class="col-12 col-xl-6">
+            <h2 class="text-center fw-bold fst-italic">{{ __('ui.login') }}</h2>
+            <form action="/login" method="POST">
                             @csrf
-                            <div class="row g-3">
+                            <section class="row g-3">
                                 <div class="col-12">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" >
+                                    <input type="email" name="email" id="email" class="form-control" value="{{old('email')}}" >
                                     @error('email') <span class="small text-danger">{{ $message }}</span> @enderror
 
                                 </div>
@@ -22,17 +20,19 @@
                                     @error('password') <span class="small text-danger">{{ $message }}</span> @enderror
                                     
                                 </div>
-                                <div class="col-12 text-center">
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <a href="/register" class="btn btn-warning">{{ __('ui.signUp') }}</a>
                                     <button type="submit" class="btn btn-warning buttonStyle" >{{ __('ui.login') }}</button>
                                 </div>
-                               <div class="col-12 text-center">
-                                        <a href="{{route('google.login')}}" class="btn btn-warning buttonStyle"><img id="googleLogo" src="https://logo.clearbit.com/googlemail.com?size=50" alt="Google"> {{ __('ui.loginGoogle') }} </a>
+                               <div class="col-12 text-center py-5">
+                                        <a href="{{route('google.login')}}" class="btn btn-warning buttonStyle"><img id="googleLogo" src="https://logo.clearbit.com/googlemail.com?size=30" alt="Google"> {{ __('ui.loginGoogle') }} </a>
                                 </div>
-                            </div>
+                            </section>
                         </form>
-                    </div>
-                </div>
             </div>
-        </div> 
+            <div class="col-12 col-xl-6 d-none d-xl-block">
+                <img class="img-fluid" src="https://img.itch.zone/aW1nLzgzMjEzOTkuanBn/original/R%2Br0qn.jpg" alt="immagine login">
+            </div>
+        </section> 
     </div>
 </x-main>
