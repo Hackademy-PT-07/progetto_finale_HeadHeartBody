@@ -118,6 +118,11 @@ class AnnouncesForm extends Component
             $this->announce->is_accepted = true;
         }
 
+        if($this->announce->is_accepted == 0) {
+
+            $this->announce->is_accepted = null;
+        }
+
         $this->announce->save();
 
 
