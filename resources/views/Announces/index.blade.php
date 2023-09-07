@@ -43,24 +43,7 @@
                             <p class="card-footer fst-italic m-0 text-center"> {{ __('ui.createAt') }}: {{ $announce->created_at->format("d/m/Y") }} </p>
                         </div>
                     </div>
-<<<<<<< HEAD
                 </a>
-=======
-                    <figcaption class="snip1418Body">
-                        <h3 class="text-center text-decoration-underline p-2 purple card" id="title">{{ $announce->title }}</h3>
-
-                        <p class="card-text text-warning fw-semibold mb-2 text-end fs-6">{{__('ui.category_'.$announce->category_id)}}</p>
-
-                        <p class="hidden">{{ $announce->description }}</p>
-
-                        <div class="price text-center"><span>€{{ $announce->price }}</span></div>
-
-                        <p class="card-footer mb-4 fst-italic"> {{ __('ui.createAt') }}: {{ $announce->created_at->format("d/m/Y") }} </p>
-                    </figcaption>
-
-                    <a href="{{route('announces.show', $announce->id) }}"></a>
-                </figure>
->>>>>>> e6bb058095eddd83526ed375451c81e2a4c4cdae
             </div>
             @endforeach
             {{$announces->links()}}
