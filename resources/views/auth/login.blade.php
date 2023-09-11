@@ -1,10 +1,19 @@
 <x-main>
     <x-slot:pageName>{{ __('ui.login') }}</x-slot:pageName>
    
-    <div class="container mt-5 pt-5">
+    <div class="container mt-5 py-5 formBox p-xl-5">
         <section class="row mt-5 pt-3 align-items-center">
             <div class="col-12 col-xl-6">
-            <h2 class="text-center fw-bold fst-italic">{{ __('ui.login') }}</h2>
+            <section class="row d-flex justify-content-center my-5">
+                <div class="col-1"></div>
+                <div class="col-10 text-center formTitle">
+                    <a href="{{route('announces.index')}}">
+                        <h2 class="text-capitalize fs-9 text-decoration-underline" id="firstTitle">{{ __('ui.login') }}</h2>
+                    </a>
+                </div>
+                <div class="col-1"></div>
+            </section>
+
             <form action="/login" method="POST">
                             @csrf
                             <section class="row g-3">
@@ -31,7 +40,7 @@
                         </form>
             </div>
             <div class="col-12 col-xl-6 d-none d-xl-block">
-                <img class="img-fluid" src="https://img.itch.zone/aW1nLzgzMjEzOTkuanBn/original/R%2Br0qn.jpg" alt="immagine login">
+                <img class="img-fluid" style="border-radius: 16px;" src="https://img.itch.zone/aW1nLzgzMjEzOTkuanBn/original/R%2Br0qn.jpg" alt="immagine login">
             </div>
         </section> 
     </div>

@@ -2,14 +2,23 @@
     <section class="row">
         <div class="col-12">
             @if(count($announces))
-            <h2 class="text-center fw-bold fst-italic">{{ __('ui.yourAds') }}</h2>
+
+            <section class="row d-flex justify-content-center mt-4">
+            <div class="col-1"></div>
+            <div class="col-10 text-center formTitle my-5">
+                <a href="{{route('announces.index')}}">
+                    <h2 class="text-capitalize fs-9 text-decoration-underline" id="firstTitle">{{ __('ui.yourAds') }}</h2>
+                </a>
+            </div>
+            <div class="col-1"></div>
+            </section>
 
             @foreach($announces as $announce)
             <div class="d-flex border-bottom py-2 justify-content-between  align-items-center">
                 <div>
-                    <a class="link-offset-2 link-underline link-underline-opacity-0 @if($announce->is_accepted == 0) text-danger @endif" href="{{route('announces.show', $announce->id) }}">
-                        <span>{{$announce->title}}</span>
-                        <span class="px-2">{{$announce->price}}€</span>
+                    <a class="link-offset-2 link-underline link-underline-opacity-0 @if($announce->is_accepted === 0) text-danger @elseif($announce->is_accepted === null) text-warning @else text-success @endif" href="{{route('announces.show', $announce->id) }}">
+                        <span class="fs-3 text-decoration-underline text-uppercase">{{$announce->title}}</span> <br>
+                        <span>{{$announce->price}}€</span>
                         <span>- {{$announce->created_at->format("d/m/Y")}}</span>
                     </a>
                 </div>
@@ -21,8 +30,15 @@
             @endforeach
 
             @else
-
-            <h2 class="text-center fw-bold fst-italic py-5">Non c'e nessun annuncio inserito da te.. Inizia subito compilando i campi qui sopra..</h2>
+            <section class="row d-flex justify-content-center mt-4">
+            <div class="col-1"></div>
+            <div class="col-10 text-center formTitle">
+                <a href="{{route('announces.index')}}">
+                    <h2 class="text-capitalize fs-5 text-decoration-underline" id="firstTitle">{{__('ui.listnone')}}</h2>
+                </a>
+            </div>
+            <div class="col-1"></div>
+            </section>
             
             @endif
         </div>

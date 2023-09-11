@@ -8,7 +8,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end">
-      <ul class="navbar-nav align-items-center">
+      <ul class="navbar-nav">
         <li class="nav-item">
           <div class="dropdown">
             @guest
@@ -16,8 +16,8 @@
               <span class="bi bi-person-dash text-danger fs-5"></span>
             </button>
             <ul class="dropdown-menu bgDropdown">
-              <li><a id="navbarLinks" class="dropdown-item nav-link" href="/login">{{ __('ui.login') }}</a></li>
-              <li><a id="navbarLinks" class="dropdown-item nav-link" href="/register">{{ __('ui.signUp') }}</a></li>
+              <li><a id="navbarLinks" class="dropdown-item nav-link text-center" href="/login">{{ __('ui.login') }}</a></li>
+              <li><a id="navbarLinks" class="dropdown-item nav-link text-center" href="/register">{{ __('ui.signUp') }}</a></li>
             </ul>
 
             @else
@@ -29,12 +29,12 @@
               <li class="text-center">
                 <span id="navbarLinks" class="fw-bold purple fs-6">{{auth()->user()->name}} </span>
               </li>
-              <li>
+              <li class="text-center">
                 <a id="navbarLinks" class="dropdown-item" href="{{route('announces.livewire')}}">{{ __('ui.addAnnounce') }}</a>
               </li>
               @if(auth()->user()->role == "admin")
-              <li>
-                <a id="navbarLinks" class="dropdown-item" href="{{route('admin.panel')}}">Pannello admin</a>
+              <li class="text-center">
+                <a id="navbarLinks" class="dropdown-item" href="{{route('admin.panel')}}">{{__('ui.adminTitle')}}</a>
               </li>
               @endif
               <hr>

@@ -1,13 +1,29 @@
 <x-main>
-    <x-slot:pageName>Pannello Admin</x-slot:pageName>
+    <x-slot:pageName>{{ __('ui.adminTitle') }}</x-slot:pageName>
 
-    <div class="col-12 mt-5 pt-5">
-            <h2 class="text-center fw-bold fst-italic py-5">{{ __('ui.adminTitle') }}</h2>
+    <div class="container mt-5 pt-5">
+        <section class="row d-flex justify-content-center my-3">
+                <div class="col-12 text-center formTitle">
+                    <a href="{{route('announces.index')}}">
+                        <h2 class="text-capitalize fs-9 text-decoration-underline" id="firstTitle">{{ __('ui.adminTitle') }}</h2>
+                    </a>
+                </div>
+            </section>
 
 
-            <section class="row">
+            <section class="row formBox mx-xl-5 mt-5 py-5">
                 <div class="col-12 col-xl-6">
-                <h3 class="fw-bold fst-italic py-3 p-xl-0 pt-xl-3">Sezione Categorie:</h3>
+
+                <section class="row d-flex justify-content-center my-3">
+                <div class="col-1"></div>
+                <div class="col-10 text-center formTitle">
+                    <a href="{{route('announces.index')}}">
+                        <h3 class="text-capitalize fs-9 text-decoration-underline" id="firstTitle">{{ __('ui.categorySection') }}:</h3>
+                    </a>
+                </div>
+                <div class="col-1"></div>
+            </section>
+                
                     <div class="row justify-content-center">
                         <div class="col-10 pt-5 py-xl-5">
                             <livewire:category-form/>
@@ -18,7 +34,16 @@
                     </div>
                 </div>
                 <div class="col-12 col-xl-6">
-                <h3 class="fw-bold fst-italic py-3 pt-5 p-xl-0">Sezione Utenti:</h3>
+
+                <section class="row d-flex justify-content-center my-3">
+                <div class="col-1"></div>
+                <div class="col-10 text-center formTitle">
+                    <a href="{{route('announces.index')}}">
+                        <h3 class="text-capitalize fs-9 text-decoration-underline" id="firstTitle">{{ __('ui.userSection') }}:</h3>
+                    </a>
+                </div>
+                <div class="col-1"></div>
+            </section>
                     <div class="row justify-content-center">
                         <div class="col-10 pt-5">
                             <livewire:user-form/>
