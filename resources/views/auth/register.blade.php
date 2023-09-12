@@ -1,14 +1,24 @@
 <x-main>
     <x-slot:pageName>{{ __('ui.signUp') }}</x-slot:pageName>
 
-    <div class="container mt-5 py-5">
+    <div class="container mt-5 py-5 formBox p-xl-5">
         <section class="row mt-5 pt-3 align-items-center">
             <div class="col-12 col-xl-6 d-none d-xl-block">
-                <img class="img-fluid" src="https://st4.depositphotos.com/26851100/41228/v/450/depositphotos_412284424-stock-illustration-register-now-vector-element-modern.jpg" alt="immagine register">
+                <img class="img-fluid" style="border-radius: 16px;" src="https://st4.depositphotos.com/26851100/41228/v/450/depositphotos_412284424-stock-illustration-register-now-vector-element-modern.jpg" alt="immagine register">
             </div>
 
-            <div class="col-12 col-xl-6">
-                <h2 class="text-center fw-bold fst-italic">{{ __('ui.signUp') }}</h2>
+            <div class="col-12 col-xl-6">   
+
+            <section class="row d-flex justify-content-center my-3">
+                <div class="col-1"></div>
+                <div class="col-10 text-center formTitle">
+                    <a href="{{route('announces.index')}}">
+                        <h2 class="text-capitalize fs-9 text-decoration-underline" id="firstTitle">{{ __('ui.signUp') }}</h2>
+                    </a>
+                </div>
+                <div class="col-1"></div>
+            </section>
+
                 <form action="/register" method="POST">
                     @csrf
                     <section class="row g-3">

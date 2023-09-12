@@ -1,7 +1,16 @@
     <div class="container">
         <section class="row pt-5">
             <div class="col-12">
-                <h2 class="text-center fw-bold fst-italic">{{ __('ui.writeAd') }}</h2>
+
+            <section class="row d-flex justify-content-center mt-4">
+            <div class="col-1"></div>
+            <div class="col-10 text-center formTitle">
+                <a href="{{route('announces.index')}}">
+                    <h2 class="text-capitalize fs-9 text-decoration-underline" id="firstTitle">{{ __('ui.writeAd') }}</h2>
+                </a>
+            </div>
+            <div class="col-1"></div>
+            </section>
 
                 <x-success />
 

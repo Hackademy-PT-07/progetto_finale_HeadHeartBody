@@ -5,7 +5,7 @@
 
         <section class="row mt-5">
             <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-10  search px-3">
                 <x-search :category="$category" :searched="$searched" :order="$order" />
             </div>
 
@@ -13,46 +13,53 @@
 
         </section>
 
-        <section class="row py-5">
-            <div class="col-12">
-                <h2 class="text-center fw-bold fst-italic">{{ __('ui.announces') }}</h2>
-            </div>
+        <section class="row d-flex justify-content-center">
+                <div class="col-1"></div>
+                <div class="col-10 text-center formTitle my-5">
+                    <a href="{{route('announces.index')}}">
+                        <h4 class="text-capitalize fs-2 text-decoration-underline" id="firstTitle">{{ __('ui.announces') }}</h4>
+                    </a>
+                </div>
+                <div class="col-1"></div>
         </section>
+
 
         <!-- Announces card -->
         <section class="row">
             @if(count($announces))
             @foreach($announces as $announce)
-            <div class="col-12 col-md-6 col-lg-4 mt-5 pt-5 d-flex justify-content-center">
-                <a href="{{route('announces.show', $announce)}}">
-                    <div class="card" style="width: 22rem;">
-                        <div class="card-title text-center">
-                        <p class="m-0 py-2">{{$announce->user->name}}</p>
-                        </div>
-                        @if(count($announce->images))
-                        <img style="height: 250px; width: 100%" class="img-fluid border-top border-bottom" @foreach($announce->images as $img) src="{{Storage::url($img->path)}}" @endforeach alt="{{$announce->title}}" />
-                        @else
-                        <img style="height: 250px; width: 100%" class="img-fluid border-top border-bottom" src="{{asset('img/non-disponibile.gif')}}" alt="Logo">
-                        @endif
-                        <div class="card-body">
-                            <h5 class="card-title text-center">{{ $announce->title }}</h5>
-                            <div class="d-flex justify-content-end">
-                                <span>{{__('ui.category_'.$announce->category->id)}}</span>
+            <div class="col-12 col-md-6 col-lg-4 py-5 d-flex justify-content-center">
+                    <a class="link-offset-2 link-underline link-underline-opacity-0" href="{{route('announces.show', $announce)}}">
+                        <div class="card cardAds" style="width: 20rem;">
+                            @if(count($announce->images))
+                            <img style="height: 250px; width: 100%; border-radius: 16px;" class="img-fluid p-2" @foreach($announce->images as $img) src="{{Storage::url($img->path)}}" @endforeach alt="{{$announce->title}}" />
+                            @else
+                            <img style="height: 250px; width: 100%; border-radius: 16px;" class="img-fluid p-2" src="{{asset('img/non-disponibile.gif')}}" alt="Logo">
+                            @endif
+                            <div class="card-body p-0">
+                                <div class="card-title">
+                                    <h5 class="text-center">{{ $announce->title }}</h5>
+                                </div>
+                                <div class="d-flex justify-content-end text-white fst-italic pe-3 pt-2">
+                                    <span>{{__('ui.category_'.$announce->category->id)}}</span>
+                                </div>
+                                <p class="card-text m-0 py-3 text-center fs-3 text-white">{{ $announce->price }}€</p>
+                                <p class="card-footer fst-italic m-0 d-flex justify-content-between text-white"><span><span class="small">{{ __('ui.createAt') }}:</span> {{ $announce->created_at->format("d/m/Y") }}</span> <span><span class="small">{{__('ui.createdBy')}}:</span> {{$announce->user->name}}</span> </p>
                             </div>
-                            <p class="card-text m-0 py-3 text-center">{{ $announce->price }}€</p>
-                            <p class="card-footer fst-italic m-0 text-center"> {{ __('ui.createAt') }}: {{ $announce->created_at->format("d/m/Y") }} </p>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
             @endforeach
             {{$announces->links()}}
             @else
-            <div class="col-12 vh-100">
-                <div class="alert alert-warning my-5">
-                    <p class="lead"> {{__('ui.noAdfound')}} </p>
+            <section class="row d-flex justify-content-center vh-100">
+                <div class="col-3"></div>
+                <div class="col-6 text-center formTitle my-5">
+                    <p class="m-0 fs-3">{{__('ui.noAdfound')}}!</a></p>
                 </div>
-            </div>
+                <div class="col-3"></div>
+            </section>
+
             @endif
         </section>
 
