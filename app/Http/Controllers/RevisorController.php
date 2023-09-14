@@ -22,7 +22,7 @@ class RevisorController extends Controller
 
     public function revisedAnnounces()
     {
-        $announces_revised = Announce::where("is_accepted", !null)->where("revisor_id", auth()->user()->id)->orderBy("updated_at", "DESC")->paginate(9);
+        $announces_revised = Announce::where("is_accepted", '!=', null)->where("revisor_id", auth()->user()->id)->orderBy("updated_at", "DESC")->paginate(15);
 
         return view("revisor.checked", compact("announces_revised"));
     }
@@ -52,7 +52,6 @@ class RevisorController extends Controller
 
     public function revisedAnnounceAgain(Announce $announce)
     {
-        $announce->revisor_id = auth()->user()->id;
 
         $announce->save();
 

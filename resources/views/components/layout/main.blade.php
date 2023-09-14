@@ -26,20 +26,16 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         <x-navbar />
     </header>
     
-   
-<div class="ovBg">
-    <main class="container">    
 
-
+    <div class="bgColor">
+        <main>    
             {{$slot}}
-    </main>
-    
-</div>
+        </main>  
+    </div>  
 
-<footer class="mt-auto">
     <x-footer />
-</footer>
-    
+
+        
     @livewireScripts
 
 </body>

@@ -96,5 +96,14 @@ return [
     'users' => 'Usuarios',
     'userName' => 'Nombre usuario',
     'userSelect' => "Seleccione el nombre del usuario",
-    'newCategory' => 'Nueva categoría'
+    'newCategory' => 'Nueva categoría',
+    'categorySection' => 'Sección de categorías',
+    'userSection' => 'Sección de usuarios',
+
+    'createdBy' => 'Por',
+
+    'listnone' => 'No hay ningún anuncio colocado por usted.. Comience ahora completando los campos de arriba..',
+
+    'contactadmin' => 'Contactar al administrador',
+
 ];

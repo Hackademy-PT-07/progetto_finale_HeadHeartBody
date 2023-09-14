@@ -95,6 +95,15 @@ return [
      'users' => 'Utenti',
      'userName' => 'Nome utente',
      'userSelect' => "Seleziona il ruolo dell'utente",
-     'newCategory' => 'Nuova categoria'
+     'newCategory' => 'Nuova categoria',
+     'categorySection' => 'sezione categorie',
+     'userSection' => 'Sezione utenti',
+
+     'createdBy' => 'Da',
+
+     'listnone' => 'Non c\'e nessun annuncio inserito da te.. Inizia subito compilando i campi qui sopra..',
+
+     'contactadmin' => 'Contatta l\'amministratore',
+
 
 ];
