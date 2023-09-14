@@ -94,5 +94,14 @@ return [
     'users' => 'Users',
     'userName' => 'User name',
     'userSelect' => "Select the user's name",
-    'newCategory' => 'New category'
+    'newCategory' => 'New category',
+    'categorySection' => 'Categories section',
+    'userSection' => 'Users section',
+
+    'createdBy' => 'By',
+
+    'listnone' => 'There is no ad inserted by you.. Start immediately by filling in the fields above..',
+
+    'contactadmin' => 'Contact the administrator',
+
 ];

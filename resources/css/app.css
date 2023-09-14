@@ -51,7 +51,7 @@ body {
 
   background: radial-gradient(circle,  var(--primary-color), var(--background-color));
 
-  font-size: 18px;
+  font-size: 20px;
 
 }
 
@@ -205,11 +205,17 @@ body {
 
   border-radius: 16px;
 
+  transition: 1s, 1s;
+
 }
 
 .card-bdash:hover {
 
   background-color:  rgba(252,212,5,1);
+
+  text-decoration: underline;
+
+  border-radius: 25%;
 
 
 }
@@ -248,7 +254,29 @@ body {
 
   box-shadow: 0 0 50px 15px white;
 }
+/* box */
 
+.formBox {
+  font-family: 'Aclonica', sans-serif;;
+  font-size: x-large;
+  margin-bottom: 20px;
+  text-align: start;
+  color:var(--primary-dark-color);
+  border-radius: 25px;
+  background-color: var(--background-color);
+  box-shadow: 0 0 50px rgb(84, 36, 36);
+}
+
+/* Button */
+
+.buttonStyle {
+
+  background-color: rgba(252,212,5,1);
+  border-color: rgba(245,161,4,1) ;
+  border-radius: 5px;
+  font-family: 'Aclonica', sans-serif;
+  color: var(--primary-dark-color);
+}
 
 
 /* Footer */
