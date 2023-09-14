@@ -3,7 +3,7 @@
 
     
     <div>
-
+     
         <div class="pt-5 mt-5 mb-3 me-3 text-end">
             <a class="btn btn-warning buttonStyle text-end" href="{{route('announces.index')}}">{{ __('ui.back') }}</a>
         </div>

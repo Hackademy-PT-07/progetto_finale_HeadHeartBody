@@ -20,13 +20,7 @@
 }
 /* Body */
 
-/*palette colori sito:
-    giallo chiaro-  rgba(252,212,5,1) (la 'a' è per la trasparenza, casomai eliminarla)
-    giallo scuro-  rgba(245,161,4,1)
-    verde/azzurro/acqua-  rgb(81,189,181);
-    viola-  rgb(87, 7, 141);
-    bordeaux(ombre di alcuni testi e di alcuni box)- rgb(84, 36, 36);
-*/
+
 
 body {
     
@@ -71,17 +65,6 @@ body {
   color:rgb(81,189,181);
 }
 
-.formBox {
-  font-family: 'Aclonica', sans-serif;;
-  font-size: x-large;
-  margin-bottom: 20px;
-  text-align: start;
-  color:var(--primary-dark-color);
-  border-radius: 25px;
-  background-color: var(--background-color);
-  box-shadow: 0 0 50px rgb(84, 36, 36);
-}
-
 .formTitle {
   font-family: 'Racing Sans One';
   font-weight: bold;
@@ -95,8 +78,19 @@ body {
   border-radius: 50px 5px 50px 5px; 
   height: 50px;
   box-shadow: 5px 5px 5px  rgb(84, 36, 36);
-  
 }
+
+.formBox {
+  font-family: 'Aclonica', sans-serif;;
+  font-size: x-large;
+  margin-bottom: 20px;
+  text-align: start;
+  color:var(--primary-dark-color);
+  border-radius: 25px;
+  background-color: var(--background-color);
+  box-shadow: 0 0 50px rgb(84, 36, 36);
+}
+
 
 .immagine {
   width: 70%;
@@ -104,11 +98,12 @@ body {
 }
 
 
-  #announce.category_id{
-    background-color: #4C5958;
-  }
+ 
+#announce.category_id{
+  background-color: #4C5958;
+}
 
-  .purple {
+.purple {
     color:var(--primary-dark-color);
     text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.619);
   }
@@ -190,9 +185,9 @@ body {
       
   }
     
-@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+  @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
-.cardHome {
+.snip1418 {
   font-family: 'Aclonica', sans-serif;
   position: relative;
   overflow: hidden;
@@ -222,7 +217,7 @@ body {
   transition:all 1s ease-out;
 }
 
-.cardHome:hover {
+.snip1418:hover {
   background-color: var(--background-color);
   color: var(--primary-dark-color);
   box-shadow: 0 0 50px 15px white;
@@ -232,24 +227,24 @@ body {
   
 }
 
-/* .cardHome:hover .hidden {
+/* .snip1418:hover .hidden {
   display: block;
 } */
 
-.cardHome * {
+.snip1418 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.cardHome img {
+.snip1418 img {
   max-width: 100%;
   vertical-align: top;
   position: relative;
   border-bottom-right-radius: 50px;
     
 }
-.cardHome .add-to-cart {
+.snip1418 .add-to-cart {
   
   position: absolute;
   top: 0;
@@ -267,7 +262,7 @@ body {
   -ms-transform-origin: 100% 0;
   transform-origin: 100% 0;
 }
-.cardHome .add-to-cart i {
+.snip1418 .add-to-cart i {
   display: inline-block;
   margin-right: 10px;
   width: 40px;
@@ -278,57 +273,57 @@ body {
   font-size: 1.4em;
 }
 
-.cardHome figcaption {
+.snip1418 figcaption {
   padding: 10px;
 }
-.cardHome h3,
-.cardHome p {
+.snip1418 h3,
+.snip1418 p {
   margin: 0;
 }
-.cardHome h3 {
+.snip1418 h3 {
   font-size: 1.5em;
   font-weight: 700;
   margin-bottom: 10px;
   
 }
-.cardHome p {
+.snip1418 p {
   font-size: 0.9em;
   letter-spacing: 1px;
   font-weight: 400;
 }
-.cardHome .price {
+.snip1418 .price {
   font-weight: 600;
   font-size: 1.5em;
   line-height: 48px;
   letter-spacing: 1px;
   
 }
-.cardHome .price s {
+.snip1418 .price s {
   margin-right: 5px;
   opacity: 0.5;
   font-size: 0.9em;
 }
-.cardHome a {
+.snip1418 a {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
-.cardHome #title {
+.snip1418 #title {
   font-family: 'Racing Sans One', cursive;
   background: rgb(252,212,5); background: radial-gradient(circle, rgba(252,212,5,1) 29%, rgba(245,161,4,1) 84%);
   border-radius: 0 5px 50px 0px;
   margin-left: -25px;
 }
-.cardHome:hover .add-to-cart,
-.cardHome.hover .add-to-cart {
+.snip1418:hover .add-to-cart,
+.snip1418.hover .add-to-cart {
   opacity: 1;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
 }
-.cardHome:hover .add-to-cart i,
-.cardHome.hover .add-to-cart i {
+.snip1418:hover .add-to-cart i,
+.snip1418.hover .add-to-cart i {
   background-color:rgb(87, 7, 141);
 }
 
